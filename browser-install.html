@@ -9,7 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="MO-Ni 0.13" />
+    <meta name="apple-mobile-web-app-title" content="MO-Ni 0.14" />
     <script>
       window.__moNiDeferredInstallPrompt = null;
       window.addEventListener("beforeinstallprompt", event => {
@@ -24,7 +24,7 @@
       document.write(`<link rel="manifest" href="./${manifestFile}?v=0.14.0-release-2">`);
       document.write(`<link rel="icon" href="${iconPrefix}icon-192.png">`);
       document.write(`<link rel="apple-touch-icon" sizes="180x180" href="${iconPrefix}apple-touch-icon-180.png">`);
-      document.write('<link rel="stylesheet" href="./styles.css?v=0.14.0-release-3">');
+      document.write('<link rel="stylesheet" href="./styles.css?v=0.14.0-release-4b">');
       document.write('<link rel="stylesheet" href="./pdf-actions.css?v=0.14.0-release-2">');
     </script>
     <title>MO-Ni installieren</title>
@@ -35,7 +35,7 @@
     <div id="app" class="app-shell"></div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script type="module">
-      await import(new URL("./app.js?v=0.14.0-release-3", document.baseURI).href);
+      await import(new URL("./app.js?v=0.14.0-release-4", document.baseURI).href);
     </script>
   </body>
 </html>

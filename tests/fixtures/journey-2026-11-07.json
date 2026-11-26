@@ -1,0 +1,312 @@
+{
+  "version": "0.10.0",
+  "title": "Knobelreise mit MO und Ni",
+  "season": "Unterwegs mit MO und Ni · MO65",
+  "description": "Begleite MO und Ni durch die Aufgaben der Mathematik-Olympiade.",
+  "channelId": "UCOJb9I7A5OFjwZVGkSk72Rg",
+  "channelUrl": "https://www.youtube.com/@MatheMitMONi/videos",
+  "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCOJb9I7A5OFjwZVGkSk72Rg",
+  "startCode": "NI650311",
+  "updatedAt": "2026-11-07T09:32:57.062Z",
+  "publicationSequence": [
+    "NI650311",
+    "NI650312",
+    "NI650313",
+    "NI650314",
+    "NI650315",
+    "NI650316",
+    "NI650321",
+    "NI650322",
+    "NI650323",
+    "NI650324",
+    "NI650325",
+    "NI650326",
+    "NI650331",
+    "NI650332",
+    "NI650333",
+    "NI650334",
+    "NI650335",
+    "NI650336",
+    "NI650411",
+    "NI650412",
+    "NI650413",
+    "NI650414",
+    "NI650415",
+    "NI650416",
+    "NI650421",
+    "NI650422",
+    "NI650423",
+    "NI650424",
+    "NI650425",
+    "NI650426",
+    "NI650431",
+    "NI650432",
+    "NI650433",
+    "NI650434",
+    "NI650435",
+    "NI650436"
+  ],
+  "schedule": {
+    "timeZone": "Europe/Berlin",
+    "weekdays": [
+      2,
+      4
+    ],
+    "time": "14:00",
+    "skipTuesdayAfterMatheAg": true,
+    "matheAg": {
+      "weekday": 1,
+      "time": "15:30",
+      "isoWeekParity": "even",
+      "skipDuringSchoolHolidays": true,
+      "schoolHolidayRegion": "Niedersachsen",
+      "schoolHolidays": [
+        {
+          "start": "2026-07-02",
+          "end": "2026-08-12",
+          "name": "Sommerferien 2026"
+        },
+        {
+          "start": "2026-10-12",
+          "end": "2026-10-24",
+          "name": "Herbstferien 2026"
+        },
+        {
+          "start": "2026-12-23",
+          "end": "2027-01-09",
+          "name": "Weihnachtsferien 2026/27"
+        },
+        {
+          "start": "2027-02-01",
+          "end": "2027-02-02",
+          "name": "Halbjahresferien 2027"
+        },
+        {
+          "start": "2027-03-22",
+          "end": "2027-04-03",
+          "name": "Osterferien 2027"
+        },
+        {
+          "start": "2027-05-07",
+          "end": "2027-05-07",
+          "name": "Tag nach Himmelfahrt 2027"
+        },
+        {
+          "start": "2027-05-18",
+          "end": "2027-05-18",
+          "name": "Pfingstferien 2027"
+        }
+      ]
+    }
+  },
+  "nextPublication": {
+    "code": "NI650411",
+    "sequence": 650411,
+    "title": "Neues Knobelvideo",
+    "scheduledAt": "2026-11-12T13:00:00.000Z",
+    "videoId": "",
+    "url": "",
+    "source": "schedule",
+    "confirmed": false
+  },
+  "videos": [
+    {
+      "code": "NI650336",
+      "sequence": 650336,
+      "title": "Plättchen-Puzzle: Figuren auslegen",
+      "fullTitle": "NI650336 | Plättchen-Puzzle: Figuren auslegen | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Kannst du Figuren mit Plättchen vollständig auslegen? Kannst du erkennen, wann das unmöglich ist?",
+      "videoId": "wXV5bihfgOc",
+      "url": "https://www.youtube.com/watch?v=wXV5bihfgOc",
+      "thumbnail": "https://i.ytimg.com/vi/wXV5bihfgOc/hqdefault.jpg",
+      "publishedAt": "2026-11-07T09:00:06.000Z"
+    },
+    {
+      "code": "NI650335",
+      "sequence": 650335,
+      "title": "Figurenmuster erkennen und fortsetzen",
+      "fullTitle": "NI650335 | Figurenmuster erkennen und fortsetzen | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Kannst du das Figurenmuster fortsetzen? Weißt du, welche Figur aus 55 Kästchen besteht?",
+      "videoId": "Gh977_Pzzqk",
+      "url": "https://www.youtube.com/watch?v=Gh977_Pzzqk",
+      "thumbnail": "https://i.ytimg.com/vi/Gh977_Pzzqk/hqdefault.jpg",
+      "publishedAt": "2026-11-03T13:00:03.000Z"
+    },
+    {
+      "code": "NI650334",
+      "sequence": 650334,
+      "title": "Zahlenspiel 24: Vier Zahlen, ein Ziel",
+      "fullTitle": "NI650334 | Zahlenspiel 24: Vier Zahlen, ein Ziel | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Kannst du aus vier Zahlen die 24 machen? Kannst du dabei jede Zahl genau einmal verwenden?",
+      "videoId": "J75e9kKNZGc",
+      "url": "https://www.youtube.com/watch?v=J75e9kKNZGc",
+      "thumbnail": "https://i.ytimg.com/vi/J75e9kKNZGc/hqdefault.jpg",
+      "publishedAt": "2026-10-29T13:00:34.000Z"
+    },
+    {
+      "code": "NI650333",
+      "sequence": 650333,
+      "title": "Oma Lottes Geld: Verteilen und Wechseln",
+      "fullTitle": "NI650333 | Oma Lottes Geld: Verteilen und Wechseln | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Kannst du Geld gerecht verteilen? Kannst du zehn Euro in genau acht Münzen wechseln?",
+      "videoId": "z0nU-f9WFBQ",
+      "url": "https://www.youtube.com/watch?v=z0nU-f9WFBQ",
+      "thumbnail": "https://i.ytimg.com/vi/z0nU-f9WFBQ/hqdefault.jpg",
+      "publishedAt": "2026-10-22T12:00:16.000Z"
+    },
+    {
+      "code": "NI650332",
+      "sequence": 650332,
+      "title": "Punkte-Rätsel: Zahlen zu 10 ergänzen",
+      "fullTitle": "NI650332 | Punkte-Rätsel: Zahlen zu 10 ergänzen | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Kannst du Zahlen zu 10 ergänzen? Kannst du dabei zwei Regeln gleichzeitig beachten?",
+      "videoId": "7HgTh-M-H9k",
+      "url": "https://www.youtube.com/watch?v=7HgTh-M-H9k",
+      "thumbnail": "https://i.ytimg.com/vi/7HgTh-M-H9k/hqdefault.jpg",
+      "publishedAt": "2026-10-20T12:00:32.000Z"
+    },
+    {
+      "code": "NI650331",
+      "sequence": 650331,
+      "title": "Quersumme, Querprodukt & Teilbarkeitsregeln",
+      "fullTitle": "NI650331 | Quersumme, Querprodukt & Teilbarkeitsregeln | Mathematik-Olympiade Klasse 3 | 3. Runde",
+      "summary": "Untersuche Quersumme und Querprodukt von Zahlen und wende Teilbarkeitsregeln an.",
+      "videoId": "jw90-95-jbQ",
+      "url": "https://www.youtube.com/watch?v=jw90-95-jbQ",
+      "thumbnail": "https://i.ytimg.com/vi/jw90-95-jbQ/hqdefault.jpg",
+      "publishedAt": "2026-10-15T12:00:29.000Z"
+    },
+    {
+      "code": "NI650326",
+      "sequence": 650326,
+      "title": "Zahlenkarten: zweistellige Zahlen legen",
+      "fullTitle": "NI650326 | Zahlenkarten: zweistellige Zahlen legen | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Lege mit Zahlenkarten zweistellige Zahlen. Welche Möglichkeiten findest du, und wie behältst du den Überblick?",
+      "videoId": "Y2kzqNsLa2I",
+      "url": "https://www.youtube.com/watch?v=Y2kzqNsLa2I",
+      "thumbnail": "https://i.ytimg.com/vi/Y2kzqNsLa2I/hqdefault.jpg",
+      "publishedAt": "2026-10-13T12:00:25.000Z"
+    },
+    {
+      "code": "NI650325",
+      "sequence": 650325,
+      "title": "Quader aus Würfeln",
+      "fullTitle": "NI650325 | Quader aus Würfeln | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Zähle die Würfel in den Quadern, erkenne das Muster und finde heraus, ob ein Quader aus genau 90 Würfeln entstehen kann.",
+      "videoId": "6eU1aiH-L_0",
+      "url": "https://www.youtube.com/watch?v=6eU1aiH-L_0",
+      "thumbnail": "https://i.ytimg.com/vi/6eU1aiH-L_0/hqdefault.jpg",
+      "publishedAt": "2026-10-08T12:00:25.000Z"
+    },
+    {
+      "code": "NI650324",
+      "sequence": 650324,
+      "title": "Plus und Minus einsetzen",
+      "fullTitle": "NI650324 | Plus und Minus einsetzen | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Wo setzt du Plus- und Minuszeichen ein, damit das vorgegebene Ergebnis entsteht? Finde auch das größtmögliche Ergebnis.",
+      "videoId": "tZQpfbn2Xnc",
+      "url": "https://www.youtube.com/watch?v=tZQpfbn2Xnc",
+      "thumbnail": "https://i.ytimg.com/vi/tZQpfbn2Xnc/hqdefault.jpg",
+      "publishedAt": "2026-10-06T12:00:10.000Z"
+    },
+    {
+      "code": "NI650323",
+      "sequence": 650323,
+      "title": "Einkaufen mit 20 Euro",
+      "fullTitle": "NI650323 | Einkaufen mit 20 Euro | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Kannst du ausrechnen, wie viel Theo bezahlen muss und wie viel Geld er zurückbekommt? Welche zwei Dinge kosten zusammen genau 15 Euro? Und wie viele Wochen muss Marie für ihr Skateboard sparen?",
+      "videoId": "KjZWuChp88A",
+      "url": "https://www.youtube.com/watch?v=KjZWuChp88A",
+      "thumbnail": "https://i.ytimg.com/vi/KjZWuChp88A/hqdefault.jpg",
+      "publishedAt": "2026-10-01T12:00:00.000Z"
+    },
+    {
+      "code": "NI650322",
+      "sequence": 650322,
+      "title": "Rechenketten mit Mal und Geteilt",
+      "fullTitle": "NI650322 | Rechenketten mit Mal und Geteilt | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Kannst du die fehlenden Zahlen und Rechenzeichen in diesen Rechenketten ergänzen? Wie helfen dir Mal, Geteilt und die passenden Umkehrrechnungen? Findest du durch Rückwärtsarbeiten die magische Startzahl des kleinen Z…",
+      "videoId": "XcyjXgi_dlM",
+      "url": "https://www.youtube.com/watch?v=XcyjXgi_dlM",
+      "thumbnail": "https://i.ytimg.com/vi/XcyjXgi_dlM/hqdefault.jpg",
+      "publishedAt": "2026-09-24T12:00:27.000Z"
+    },
+    {
+      "code": "NI650321",
+      "sequence": 650321,
+      "title": "Waagenrätsel lösen",
+      "fullTitle": "NI650321 | Waagenrätsel lösen | Mathematik-Olympiade Klasse 3 | 2. Runde",
+      "summary": "Ein neues Knobelvideo mit einer Aufgabe der 65. Mathematik-Olympiade.",
+      "videoId": "1lUQXLJgqXk",
+      "url": "https://www.youtube.com/watch?v=1lUQXLJgqXk",
+      "thumbnail": "https://i.ytimg.com/vi/1lUQXLJgqXk/hqdefault.jpg",
+      "publishedAt": "2026-09-24T05:30:12.936Z"
+    },
+    {
+      "code": "NI650316",
+      "sequence": 650316,
+      "title": "Magisches Labyrinth",
+      "fullTitle": "NI650316 | Magisches Labyrinth | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Wie viele Wege führen durch das magische Labyrinth? Zeichne alle erlaubten Wege ein und nutze die Summenregel, um ihre Anzahl systematisch und vollständig zu bestimmen.",
+      "videoId": "L-DDQhbrxdQ",
+      "url": "https://www.youtube.com/watch?v=L-DDQhbrxdQ",
+      "thumbnail": "https://i.ytimg.com/vi/L-DDQhbrxdQ/hqdefault.jpg",
+      "publishedAt": "2026-09-17T12:00:11.000Z"
+    },
+    {
+      "code": "NI650315",
+      "sequence": 650315,
+      "title": "Quader aus Würfeln",
+      "fullTitle": "NI650315 | Quader aus Würfeln | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Wie viele kleine Würfel stecken in diesem Quader? Wie viele Würfelflächen werden rot, wenn der Quader rundherum angemalt wird – auch von unten? Wie helfen dir Schichten, verschiedene Ansichten und die Eckwürfel beim g…",
+      "videoId": "Hhxy4ovi6Mk",
+      "url": "https://www.youtube.com/watch?v=Hhxy4ovi6Mk",
+      "thumbnail": "https://i.ytimg.com/vi/Hhxy4ovi6Mk/hqdefault.jpg",
+      "publishedAt": "2026-09-11T12:00:08.000Z"
+    },
+    {
+      "code": "NI650314",
+      "sequence": 650314,
+      "title": "Pluszeichen einsetzen",
+      "fullTitle": "NI650314 | Pluszeichen einsetzen | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Wo müssen die Pluszeichen stehen, damit die richtigen Ergebnisse entstehen? Wie findest du bei vier Ziffern mit genau einem Pluszeichen das größtmögliche Ergebnis? Hast du wirklich alle Möglichkeiten geprüft?",
+      "videoId": "IDr7RZPKJCo",
+      "url": "https://www.youtube.com/watch?v=IDr7RZPKJCo",
+      "thumbnail": "https://i.ytimg.com/vi/IDr7RZPKJCo/hqdefault.jpg",
+      "publishedAt": "2026-09-09T12:00:13.000Z"
+    },
+    {
+      "code": "NI650313",
+      "sequence": 650313,
+      "title": "Rechnen mit Figuren",
+      "fullTitle": "NI650313 | Rechnen mit Figuren | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Welche Zahlen verstecken sich hinter den Figuren? Vergleiche die Rechnungen, erkenne bekannte Päckchen und kontrolliere deine Lösung mit einer Probe.",
+      "videoId": "wbGuqWN3L70",
+      "url": "https://www.youtube.com/watch?v=wbGuqWN3L70",
+      "thumbnail": "https://i.ytimg.com/vi/wbGuqWN3L70/hqdefault.jpg",
+      "publishedAt": "2026-09-07T12:00:11.000Z"
+    },
+    {
+      "code": "NI650312",
+      "sequence": 650312,
+      "title": "Uhrzeiten und Zeitspannen",
+      "fullTitle": "NI650312 | Uhrzeiten und Zeitspannen | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Wie lange fahren Jan und Sina tatsächlich mit dem Fahrrad?\nWann beginnt ihre Pause – und wann fahren sie weiter?\nWie hilft ein Zeitdiagramm beim Rechnen mit Uhrzeiten und Zeitspannen?",
+      "videoId": "ssXjpy-Hrz0",
+      "url": "https://www.youtube.com/watch?v=ssXjpy-Hrz0",
+      "thumbnail": "https://i.ytimg.com/vi/ssXjpy-Hrz0/hqdefault.jpg",
+      "publishedAt": "2026-09-04T12:00:33.000Z"
+    },
+    {
+      "code": "NI650311",
+      "sequence": 650311,
+      "title": "Rechenketten lösen",
+      "fullTitle": "NI650311 | Rechenketten lösen | Mathematik-Olympiade Klasse 3 | 1. Runde",
+      "summary": "Rechenketten vorwärts und rückwärts bearbeiten, Umkehraufgaben nutzen und Annas Geheimzahl finden.",
+      "videoId": "iKPQYEVlyZU",
+      "url": "https://www.youtube.com/watch?v=iKPQYEVlyZU",
+      "thumbnail": "https://i.ytimg.com/vi/iKPQYEVlyZU/hqdefault.jpg",
+      "publishedAt": "2026-09-02T12:53:15.000Z"
+    }
+  ]
+}
