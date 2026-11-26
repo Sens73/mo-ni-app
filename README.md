@@ -39,6 +39,14 @@ den Versionsordnern in `Werkzeuge/MO-Ni-App/Serverautomatisierung` und gehört j
 zum Repo, weil die Tests ihn brauchen. Zugangsdaten gehören nie hierher: Der
 YouTube-Schlüssel kommt ausschließlich aus der Umgebungsvariablen `YOUTUBE_API_KEY`.
 
+## Vorschau zum Ausprobieren
+
+Nach jeder Übernahme in `main` steht der neue Stand unter
+<https://sens73.github.io/mo-ni-app/> bereit (`.github/workflows/vorschau.yml`), mit einem
+roten Schild „Vorschau – nicht mo-ni.de“. Die öffentliche App auf mo-ni.de ändert sich dadurch
+nicht. Aufgabenblätter, die auf mo-ni.de liegen, öffnen sich in der Vorschau eventuell nicht,
+weil sie von einer anderen Adresse kommen; die Sonntagsrätsel-Blätter liegen in der App selbst.
+
 ## Veröffentlichen
 
 Bis auf Weiteres wie bisher: Dateien in TYPO3 nach `fileadmin/grundschule-app-test/`
