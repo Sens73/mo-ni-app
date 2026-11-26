@@ -1,0 +1,44 @@
+# Vorschau-Link: Nach jeder Übernahme in main steht der aktuelle Stand unter
+# https://sens73.github.io/mo-ni-app/ zum Ausprobieren bereit (iPhone, Android, PC).
+# mo-ni.de bleibt davon unberührt. Einmalig nötig: GitHub › Settings › Pages ›
+# Source „GitHub Actions“.
+name: Vorschau
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: vorschau
+  cancel-in-progress: true
+
+jobs:
+  vorschau:
+    name: Vorschau veröffentlichen
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: App-Dateien zusammenstellen
+        run: |
+          mkdir _site
+          rsync -a --exclude '.git*' --exclude '_site' --exclude 'tests' --exclude 'browser-tests' \
+            --exclude 'Serverautomatisierung' --exclude 'docs' --exclude 'scripts' --exclude 'native-print' \
+            --exclude '*.command' --exclude 'package.json' --exclude 'pnpm-lock.yaml' --exclude 'README.md' ./ _site/
+          # Deutlich sichtbares Schild, damit niemand die Vorschau mit mo-ni.de verwechselt.
+          sed -i 's#</body>#<div style="position:fixed;left:8px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:9999;padding:4px 10px;border-radius:999px;background:\#b3261e;color:\#fff;font:700 12px system-ui,sans-serif;pointer-events:none">Vorschau – nicht mo-ni.de</div></body>#' _site/index.html
+          echo "Vorschau: $(find _site -type f | wc -l) Dateien, $(du -sh _site | cut -f1)"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
