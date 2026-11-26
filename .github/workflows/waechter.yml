@@ -1,0 +1,25 @@
+name: Wächter
+
+# Prüft jeden Morgen, ob in der App auf mo-ni.de etwas fehlt, das schon öffentlich ist.
+# Schlägt die Prüfung fehl, schickt GitHub automatisch eine E-Mail an den Inhaber des Repos.
+on:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [waechter]
+
+permissions:
+  contents: read
+
+jobs:
+  pruefen:
+    name: Fehlt etwas in der App?
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Öffentliche Seiten mit der App vergleichen
+        run: node scripts/waechter.mjs ${{ github.event_name == 'push' && '--nur-bericht' || '' }}
