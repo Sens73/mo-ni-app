@@ -39,6 +39,13 @@ den Versionsordnern in `Werkzeuge/MO-Ni-App/Serverautomatisierung` und gehört j
 zum Repo, weil die Tests ihn brauchen. Zugangsdaten gehören nie hierher: Der
 YouTube-Schlüssel kommt ausschließlich aus der Umgebungsvariablen `YOUTUBE_API_KEY`.
 
+## Video-Vorschaubilder
+
+Die Vorschaubilder der Videos liegen in `assets/vorschaubilder/` (eine Datei je Video,
+480×270). So fragt die App beim Stöbern nicht bei Google an. Kommen neue Videos dazu, lädt
+`bash scripts/update-vorschaubilder.sh` auf dem Mac nur die fehlenden Bilder. Bis dahin zeigt
+die App einen MO-Ni-Platzhalter. Der Test `tests/vorschaubilder.test.mjs` meldet fehlende Bilder.
+
 ## Veröffentlichen
 
 Bis auf Weiteres wie bisher: Dateien in TYPO3 nach `fileadmin/grundschule-app-test/`
