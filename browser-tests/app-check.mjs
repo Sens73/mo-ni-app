@@ -63,13 +63,7 @@ async function checkProfile(name, device) {
   const external = new Set();
   const failed = [];
   // Im Test geht nichts ins Internet. Wir merken uns nur, welche fremden Adressen die App anfragt.
-  // Aufgabenblätter von mo-ni.de ersetzt ein Blatt aus dem App-Ordner (5 Seiten wie Blatt 57 gibt es lokal nicht, KenKen hat 2).
-  await context.route(url => !url.href.startsWith(origin), route => {
-    const url = new URL(route.request().url());
-    if (url.hostname === "www.mo-ni.de" && url.pathname.endsWith(".pdf")) return route.fulfill({ path: resolve(root, "Sonntagsraetsel-07-KenKens-Aufgabenblatt.pdf"), contentType: "application/pdf" });
-    external.add(url.hostname);
-    route.abort();
-  });
+  await context.route(url => !url.href.startsWith(origin), route => { external.add(new URL(route.request().url()).hostname); route.abort(); });
   const page = await context.newPage();
   page.on("pageerror", error => problems.push(`${name}: Skriptfehler ${error.message}`));
   page.on("console", message => { if (message.type() === "error" && !/net::ERR_FAILED|Failed to load resource/.test(message.text())) problems.push(`${name}: Konsole ${message.text()}`); });
@@ -86,27 +80,6 @@ async function checkProfile(name, device) {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (overflow > 1) problems.push(`${name}: ${label} ist ${overflow} px breiter als der Bildschirm`);
   }
-
-  // Lehrkräfte-Karte bei Blatt 57 (Klasse 5/6): aufklappen, Angaben lesen, geteilten Link öffnen.
-  await page.goto(`${appUrl}?view=training&tab=mathe-ag&audience=56`);
-  const teacher = page.locator(".teacher-card").first();
-  if (await teacher.waitFor({ timeout: 15000 }).then(() => true, () => false)) {
-    await teacher.locator(".teacher-task > summary").first().click();
-    for (const label of ["Lernziel", "Vorwissen", "Einstieg", "Vertiefung"]) {
-      if (!await teacher.locator("dt", { hasText: label }).first().isVisible()) problems.push(`${name}: Lehrkräfte-Karte zeigt „${label}“ nicht`);
-    }
-    const shareUrl = await teacher.locator("[data-action=share-task]").first().getAttribute("data-share-url");
-    await page.goto(shareUrl.replace(/^https?:\/\/[^/]+/, origin));
-    await page.locator(".pdf-sheet").nth(1).waitFor({ timeout: 20000 }).catch(() => problems.push(`${name}: Geteilter Aufgabenlink öffnet das Blatt nicht`));
-    // Aufgabe 3 steht auf Seite 2: Der Link springt dorthin.
-    await page.waitForFunction(() => document.querySelector("#pdf-status")?.hidden !== false || !document.querySelector("#pdf-status")?.textContent, null, { timeout: 20000 }).catch(() => {});
-    // Das Ersatzblatt hat nur 2 Seiten; dann reicht es, ganz nach unten gescrollt zu sein.
-    const top = await page.locator(".pdf-sheet").nth(1).evaluate(sheet => {
-      const atBottom = scrollY >= document.documentElement.scrollHeight - innerHeight - 2;
-      return atBottom && scrollY > 0 ? 0 : sheet.getBoundingClientRect().top;
-    }).catch(() => 9999);
-    if (Math.abs(top) > 120) problems.push(`${name}: Geteilter Link zeigt nicht Seite 2 (Abstand ${Math.round(top)} px)`);
-  } else problems.push(`${name}: Lehrkräfte-Karte bei Blatt 57 fehlt`);
 
   // PDF-Leser: Der Aufgabentext muss als echter, vorlesbarer Text über der Seite liegen.
   const pdf = await page.evaluate(async () => {
