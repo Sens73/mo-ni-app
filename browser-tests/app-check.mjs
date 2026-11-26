@@ -162,6 +162,8 @@ async function checkProfile(name, device) {
   await context.setOffline(false);
 
   for (const entry of failed) problems.push(`${name}: Datei fehlt ${entry}`);
+  // Beim Stöbern fragt die App keine fremden Dienste an (Datenschutz an der Schule).
+  for (const host of external) problems.push(`${name}: Beim Stöbern angefragt: ${host}`);
   await context.close();
   return { name, ...shell, external: [...external].sort() };
 }

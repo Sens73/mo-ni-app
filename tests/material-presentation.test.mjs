@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { primaryMaterialPresentation, upcomingAgDate } from "../material-presentation.js";
+import { primaryMaterialPresentation, upcomingAgDate, localThumbnail } from "../material-presentation.js";
 
-const thumbnail = id => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+const thumbnail = id => `./assets/vorschaubilder/${id}.jpg`;
 const videoId = "abcdefghijk";
 for (const url of [
   `https://youtube.com/live/${videoId}`,
@@ -31,6 +31,13 @@ assert.equal(primaryMaterialPresentation({ video: `https://youtu.be/${videoId}`,
 assert.deepEqual(primaryMaterialPresentation({category:"olympiade", year: "2025/26", pages: 1 }).meta, []);
 assert.deepEqual(primaryMaterialPresentation({ pages: -1 }).meta, []);
 
+// Vorschaubilder: YouTube-Adressen werden lokal, fremde Bildquellen nie geladen, eigene bleiben.
+assert.equal(localThumbnail("https://i.ytimg.com/vi/abcdefghijk/hqdefault.jpg"), thumbnail(videoId));
+assert.equal(localThumbnail("https://i9.ytimg.com/vi_webp/abcdefghijk/mqdefault.webp"), thumbnail(videoId));
+assert.equal(localThumbnail("./assets/sonntagsraetsel-07-kenkens.png?v=20261031"), "./assets/sonntagsraetsel-07-kenkens.png?v=20261031");
+for (const foreign of ["https://example.com/x.png", "//cdn.example.com/x.png", "data:image/png;base64,AAAA", "javascript:alert(1)"]) assert.equal(localThumbnail(foreign), "", foreign);
+assert.equal(primaryMaterialPresentation({ thumbnail: "https://i.ytimg.com/vi/lmnopqrstuv/hqdefault.jpg" }).thumbnail, thumbnail("lmnopqrstuv"));
+
 function deepFreeze(value) {
   if (value && typeof value === "object") {
     Object.values(value).forEach(deepFreeze);
@@ -51,7 +58,7 @@ for (const item of [...ag.items, ...olympiad.items]) {
   assert.equal(presentation.subtitle, item.subtitle, `${item.id}: keep the source topic or stage.`);
   assert.deepEqual(presentation.meta, item.category === "mathe-ag" ? [`Schuljahr ${item.year}`] : [], item.id);
   assert.ok(!presentation.meta.some(value => /Seiten?/.test(value)), item.id);
-  assert.match(presentation.thumbnail, /^https:\/\/i\.ytimg\.com\/vi\/[A-Za-z0-9_-]{11}\/hqdefault\.jpg$/, item.id);
+  assert.match(presentation.thumbnail, /^\.\/assets\/vorschaubilder\/[A-Za-z0-9_-]{11}\.jpg$/, item.id);
   for (const video of item.videos) {
     const url = new URL(video.url);
     const id = url.hostname === "youtu.be"

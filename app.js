@@ -5,7 +5,7 @@ import { createMentalMathGame } from "./mental-math-view.js?v=0.14.0-release-2";
 import { createNumberWhirlGame } from "./number-whirl-view.js?v=0.14.0-release-2";
 import { prepareMaterialLink } from "./material-links.js?v=0.14.0-release-2";
 import { filterJourneyItems, matchesJourneyFilters, journeyFilterOptions, toggleJourneyFilter } from "./journey-filters.js?v=0.14.0-release-2";
-import { primaryMaterialPresentation, upcomingAgDate } from "./material-presentation.js?v=0.14.0-release-2";
+import { primaryMaterialPresentation, upcomingAgDate, localThumbnail, THUMBNAIL_PLACEHOLDER } from "./material-presentation.js?v=0.14.0-release-2";
 import { videosFor, kangarooVideosFor, kangarooCardLabel, KANGAROO_GROUPS, withAg56Dates } from "./video-content.js?v=0.14.0-release-2";
 import { AUDIENCES, availableDestination, validAudience, matchesAudience, gradesFor, gradeLabel, olympiadSeason } from "./audience.js?v=0.14.0-release-2";
 import { fetchPdfFile } from "./download-manager.js?v=0.14.0-release-2";
@@ -386,7 +386,7 @@ function resourceMatches(item, query) {
 
 function illustratedMaterialCard({className,thumbnail,thumbnailAlt,title,subtitle,iconName,meta,actions,before = "",after = ""}) {
   return `<article class="resource-card archive-card ${className}">
-    ${thumbnail ? `<img class="sunday-card-thumbnail" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(thumbnailAlt)}" loading="lazy" data-card-thumbnail />` : ""}
+    ${localThumbnail(thumbnail) ? `<img class="sunday-card-thumbnail" src="${escapeHtml(localThumbnail(thumbnail))}" alt="${escapeHtml(thumbnailAlt)}" loading="lazy" data-card-thumbnail data-thumbnail />` : ""}
     ${before}
     ${title ? `<div class="resource-top"><span class="icon-tile home-accent">${icon(iconName)}</span><div><h3>${escapeHtml(title)}</h3>${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ""}</div></div>` : ""}
     ${meta ? `<div class="meta-row">${meta}</div>` : ""}
@@ -613,7 +613,7 @@ function playlistSection(key, training = false, standalone = false) {
     });
     const metadata = kangarooCardLabel(video);
     return `<article class="journey-video-card kangaroo-video-card">
-    <button class="kangaroo-thumbnail" type="button" data-action="open-playlist-video" data-collection="${key}" data-video-id="${video.videoId}" data-video-entry="thumbnail" aria-label="Video ansehen: ${escapeHtml(video.displayTitle || video.title)} · ${escapeHtml(metadata)}" title="Video ansehen"><img src="${escapeHtml(video.thumbnail)}" alt="Vorschaubild zu ${escapeHtml(video.displayTitle || video.title)}" loading="lazy" /></button>
+    <button class="kangaroo-thumbnail" type="button" data-action="open-playlist-video" data-collection="${key}" data-video-id="${video.videoId}" data-video-entry="thumbnail" aria-label="Video ansehen: ${escapeHtml(video.displayTitle || video.title)} · ${escapeHtml(metadata)}" title="Video ansehen"><img src="${escapeHtml(localThumbnail(video.thumbnail) || THUMBNAIL_PLACEHOLDER)}" alt="Vorschaubild zu ${escapeHtml(video.displayTitle || video.title)}" loading="lazy" data-thumbnail /></button>
     <p class="kangaroo-card-meta">${escapeHtml(metadata)}</p>
     <div class="kangaroo-card-actions"><button class="secondary-button" type="button" data-action="open-playlist-video" data-collection="${key}" data-video-id="${video.videoId}" data-video-entry="button" aria-label="Video ansehen: ${escapeHtml(metadata)}">${icon("play")} Video ansehen</button></div>
   </article>`;
@@ -675,7 +675,7 @@ function journeyView() {
       ? `<span class="journey-premiere-date">${icon("calendar")} Premiere: ${escapeHtml(formatPublicationDateTime(video.publishedAt))} Uhr</span>`
       : "";
     return `<article class="journey-video-card ${status ? "latest" : ""}">
-    <img src="${escapeHtml(video.thumbnail)}" alt="Vorschaubild zu ${escapeHtml(video.code)}" loading="lazy" />
+    <img src="${escapeHtml(localThumbnail(video.thumbnail) || THUMBNAIL_PLACEHOLDER)}" alt="Vorschaubild zu ${escapeHtml(video.code)}" loading="lazy" data-thumbnail />
     <div class="journey-video-copy">${premiereDate}<div class="meta-row"><span class="meta-chip">${escapeHtml(video.code)}</span>${audienceChip(video)}${status ? `<span class="meta-chip current">${status}</span>` : ""}</div><h3>${escapeHtml(video.title)}</h3><p>${escapeHtml(video.summary)}</p><button class="secondary-button" type="button" data-action="open-journey-video" data-journey-video-id="${escapeHtml(video.videoId)}">${icon("play")} Video ansehen</button></div>
   </article>`;
   }).join("");
@@ -1040,7 +1040,12 @@ async function requestSystemPrint() {
 
 // A missing external preview does not remove the card's own title or links.
 document.addEventListener("error", event => {
-  if (event.target.matches?.("img[data-card-thumbnail]")) event.target.hidden = true;
+  const image = event.target;
+  // Fehlt das Bild eines ganz neuen Videos noch, erscheint der MO-Ni-Platzhalter (nie das Google-Bild).
+  if (image.matches?.("img[data-thumbnail]") && !image.dataset.thumbnailFallback) {
+    image.dataset.thumbnailFallback = "1";
+    image.src = THUMBNAIL_PLACEHOLDER;
+  } else if (image.matches?.("img[data-card-thumbnail]")) image.hidden = true;
 }, true);
 
 document.addEventListener("toggle", event => {

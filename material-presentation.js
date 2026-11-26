@@ -1,3 +1,17 @@
+// Vorschaubilder kommen aus dem eigenen App-Ordner statt von Google (i.ytimg.com).
+// scripts/update-vorschaubilder.sh lädt fehlende Bilder einmalig dorthin.
+export const THUMBNAIL_FOLDER = "./assets/vorschaubilder/";
+export const THUMBNAIL_PLACEHOLDER = "./assets/vorschaubild-platzhalter.svg";
+
+/** Wandelt eine Bildadresse in eine lokale um. Fremde Bildquellen werden nie geladen. */
+export function localThumbnail(value) {
+  if (typeof value !== "string" || !value.trim()) return "";
+  const youtube = value.trim().match(/^https?:\/\/i\d?\.ytimg\.com\/vi(?:_webp)?\/([A-Za-z0-9_-]{11})\//i);
+  if (youtube) return `${THUMBNAIL_FOLDER}${youtube[1]}.jpg`;
+  if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value.trim())) return "";
+  return value.trim();
+}
+
 function youtubeThumbnail(value) {
   if (typeof value !== "string" || !value.trim()) return "";
   try {
@@ -15,7 +29,7 @@ function youtubeThumbnail(value) {
       id = url.pathname.match(/^\/embed\/([A-Za-z0-9_-]{11})\/?$/)?.[1] || "";
     }
     return /^[A-Za-z0-9_-]{11}$/.test(id)
-      ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+      ? `${THUMBNAIL_FOLDER}${id}.jpg`
       : "";
   } catch {
     return "";
@@ -50,7 +64,7 @@ export function primaryMaterialPresentation(item = {}, {dates = [], now = new Da
   return {
     title: item.category === "olympiade" ? title.replace(/^(?:Mathematik-)?Olympiade\b/, "Mathe-Olympiade") : title,
     subtitle: String(item.subtitle || ""),
-    thumbnail: existingThumbnail || youtubeThumbnail(item.videos?.[0]?.url || item.video),
+    thumbnail: localThumbnail(existingThumbnail) || youtubeThumbnail(item.videos?.[0]?.url || item.video),
     meta
   };
 }

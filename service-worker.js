@@ -97,6 +97,7 @@ const APP_SHELL = [
 // Bilder und Filme werden einzeln geladen. Eine fehlende Datei blockiert kein Update.
 // Aufgabenblätter (PDF) werden nicht vorab geladen; ein einmal geöffnetes Blatt bleibt über den Laufzeitspeicher offline verfügbar.
 const OPTIONAL_ASSETS = [
+  "./assets/vorschaubild-platzhalter.svg",
   "./assets/puzzles/kenken-example.png",
   "./assets/puzzles/kenken-solution.png",
   "./assets/sonntagsraetsel-07-kenkens.png?v=20261031",
