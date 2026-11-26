@@ -4,10 +4,9 @@ name: Wächter
 # Schlägt die Prüfung fehl, schickt GitHub automatisch eine E-Mail an den Inhaber des Repos.
 on:
   schedule:
-    - cron: "15 5 * * *"
+    # 17:15 Uhr UTC = 18:15 Uhr in Deutschland (Winterzeit), nach dem täglichen Abgleich auf dem Mac.
+    - cron: "15 17 * * *"
   workflow_dispatch:
-  push:
-    branches: [waechter]
 
 permissions:
   contents: read
@@ -22,4 +21,4 @@ jobs:
         with:
           node-version: 22
       - name: Öffentliche Seiten mit der App vergleichen
-        run: node scripts/waechter.mjs ${{ github.event_name == 'push' && '--nur-bericht' || '' }}
+        run: node scripts/waechter.mjs
