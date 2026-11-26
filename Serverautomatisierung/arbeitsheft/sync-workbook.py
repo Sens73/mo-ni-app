@@ -162,10 +162,14 @@ def merge_journey(journey, incoming, content, now):
     result['videos'] = sorted(by_code.values(), key=lambda x: (date(x['publishedAt']), x['code']), reverse=True)
     next_code = next((code for code in journey['publicationSequence'] if code not in by_code), None)
     editorial = journey.get('nextPublication') or {}
-    if next_code is None:
+    confirmed_upcoming = (editorial.get('confirmed') and editorial.get('code') == next_code
+                          and editorial.get('scheduledAt') and date(editorial['scheduledAt']) > now)
+    # Seit 26.11.2026 gibt es für die Knobelreise keine festen Termine mehr: Ein Termin wird nur
+    # angekündigt, wenn er bestätigt ist (z. B. geplante YouTube-Premiere). Feste Wochentage nur,
+    # wenn der Zeitplan sie ausdrücklich wieder einschaltet ("announceSlots": true).
+    if next_code is None or (not confirmed_upcoming and not journey.get('schedule', {}).get('announceSlots')):
         result['nextPublication'] = None
-    elif not (editorial.get('confirmed') and editorial.get('code') == next_code
-              and editorial.get('scheduledAt') and date(editorial['scheduledAt']) > now):
+    elif not confirmed_upcoming:
         result['nextPublication'] = {'code': next_code, 'sequence': int(next_code[2:]),
                                     'title': 'Neues Knobelvideo', 'scheduledAt': next_slot(now, journey['schedule'], content),
                                     'videoId': '', 'url': '', 'source': 'schedule', 'confirmed': False}
