@@ -37,7 +37,9 @@ export async function renderPdfDocument({ url, container, onProgress = () => {} 
   container.replaceChildren();
   onProgress("Aufgabenblatt wird geladen …");
 
-  const task = pdfjs.getDocument({ url });
+  // Ganze Datei statt Teilstücke laden: So funktioniert das Blatt auch aus dem Offline-Speicher,
+  // und zum Drucken wird die ganze Datei ohnehin gebraucht.
+  const task = pdfjs.getDocument({ url, disableRange: true });
   const pdfDocument = await task.promise;
 
   for (let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber += 1) {

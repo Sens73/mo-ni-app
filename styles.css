@@ -4006,3 +4006,10 @@ body > .pdf-print-surface {
 .logic-board.sunday.deka .logic-cell.selected { background:#e4f1df; }
 .logic-board.sunday.deka .logic-cell.conflict { background:#ffe8e0; }
 .logic-board.sunday.deka .logic-overlay circle { r:7px; fill:#fd6b29; stroke:none; }
+
+/* Offline gesicherte Blätter unter „Mehr“ */
+.viewer-actions.pdf-actions .offline-action { grid-column: 1 / -1; white-space: nowrap; }
+.viewer-actions .offline-action.saved { color: var(--green); background: var(--green-soft); }
+.settings-row.offline-row { grid-template-columns: auto 1fr; cursor: default; }
+.offline-row-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: 8px; }
+.offline-row-actions .soft-button { min-height: 36px; padding: 0 14px; font-size: 13px; }

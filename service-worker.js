@@ -5,6 +5,11 @@ const RELEASE_CACHE = "v0.14.0-release-4";
 const SHELL_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-shell`;
 const DATA_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-data`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-runtime`;
+// Vom Kind ausdrücklich gesicherte Blätter. Der Name hängt nicht an der Release-Kennung,
+// deshalb bleibt dieser Speicher bei jedem App-Update erhalten (gleicher Name in offline-materials.js).
+const SAVED_CACHE = "moni-saved-materials";
+// Zuletzt geöffnete Dateien, die nicht gesichert wurden. Ältere Einträge fallen heraus.
+const RUNTIME_LIMIT = 60;
 
 // Ohne diese Dateien startet die App offline nicht; fehlt eine davon, bleibt die bisherige Version aktiv.
 const APP_SHELL = [
@@ -64,6 +69,7 @@ const APP_SHELL = [
   "./pdf-actions.css?v=0.14.0-release-2",
   "./workbook-print.js?v=0.14.0-release-2",
   "./pdf-viewer.js?v=0.14.0-release-2",
+  "./offline-materials.js?v=0.14.0-release-5",
   "./external-view.html",
   "./workbook-view.html",
   "./workbook-view.js?v=0.14.0-release-2",
@@ -179,11 +185,22 @@ async function networkFirst(request, cacheName, fallbackUrl) {
   }
 }
 
+async function trimCache(cache, limit) {
+  const keys = await cache.keys();
+  await Promise.all(keys.slice(0, Math.max(0, keys.length - limit)).map(key => cache.delete(key)));
+}
+
 async function staleWhileRevalidate(request) {
-  const cache = await caches.open(RUNTIME_CACHE);
-  const cached = await caches.match(request);
-  const update = fetch(request).then(response => {
-    if (response.ok) cache.put(request, response.clone());
+  const saved = await caches.open(SAVED_CACHE);
+  const savedResponse = await saved.match(request, { ignoreVary: true });
+  const cache = savedResponse ? saved : await caches.open(RUNTIME_CACHE);
+  const cached = savedResponse || await caches.match(request);
+  const update = fetch(request).then(async response => {
+    // Gesicherte Blätter werden still auf den neuesten Stand gebracht.
+    if (response.ok && response.status === 200) {
+      await cache.put(request, response.clone());
+      if (cache !== saved) await trimCache(cache, RUNTIME_LIMIT);
+    }
     return response;
   }).catch(() => null);
   return cached || (await update) || Response.error();
