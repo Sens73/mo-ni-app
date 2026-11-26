@@ -67,7 +67,16 @@ class SynchronizationTest(unittest.TestCase):
         self.assertNotEqual(result['pdfUrl'], old['pdfUrl'])
         self.assertTrue((self.root / old['pdfUrl'][2:]).exists())
         journey = sync.read_json(self.root / 'data/journey.json')
-        self.assertEqual(journey['nextPublication']['code'], 'NI650325')
+        # Keine festen Termine mehr: ohne bestätigte Premiere wird nichts angekündigt.
+        self.assertIsNone(journey['nextPublication'])
+
+    def test_fixed_slots_only_when_switched_on(self):
+        journey_path = self.root / 'data/journey.json'
+        journey = sync.read_json(journey_path)
+        journey['schedule']['announceSlots'] = True
+        journey_path.write_text(json.dumps(journey, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        sync.synchronize(self.root, NOW, feed([('NI650324', 'ABCDEFGHIJK', '2026-10-03T12:00:00Z')]))
+        self.assertEqual(sync.read_json(journey_path)['nextPublication']['code'], 'NI650325')
 
     def test_invalid_feed_keeps_public_files(self):
         before = {p:p.read_bytes() for p in (self.root / 'data').iterdir()}

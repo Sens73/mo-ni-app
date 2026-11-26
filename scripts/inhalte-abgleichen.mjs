@@ -11,10 +11,10 @@
 import { cp, mkdtemp, mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, realpathSync } from "node:fs";
 import { tmpdir, homedir } from "node:os";
 import { dirname, join, resolve, relative, sep } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
 const run = promisify(execFile);
@@ -173,7 +173,9 @@ async function prepare({ appBase, output, log }) {
     }
     const lastOrder = ["journey", "content"];
     changedData.sort((a, b) => lastOrder.indexOf(a.name) - lastOrder.indexOf(b.name));
-    for (const { name } of changedData) files.push({ path: `data/${name}.json`, source: join(work, "data", `${name}.json`), grund: "neue Einträge" });
+    const addedTo = new Set(report.neu.map(line => line.split(":")[0]));
+    const labels = { "mathe-ag": "Mathe-AG 3/4", "mathe-ag-56": "Mathe-AG 5/6", olympiade: "Olympiade", matheplus: "MathePlus", journey: "Knobelreise", content: "Arbeitsheft" };
+    for (const { name } of changedData) files.push({ path: `data/${name}.json`, source: join(work, "data", `${name}.json`), grund: addedTo.has(labels[name]) ? "neue Einträge" : "aktualisierte Angaben (keine neuen Einträge)" });
 
     await rm(output, { recursive: true, force: true });
     await mkdir(output, { recursive: true });
@@ -221,7 +223,9 @@ export async function verify(reportFile, log = console.log) {
   return problems;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+// Auch über /tmp (auf dem Mac ein Verweis auf /private/tmp) oder andere Verknüpfungen aufrufbar.
+const calledDirectly = (() => { try { return realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url)); } catch { return false; } })();
+if (calledDirectly) {
   const option = name => process.argv.find(argument => argument.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
   if (option("rueckpruefen")) {
     if ((await verify(resolve(option("rueckpruefen")))).length) process.exitCode = 1;

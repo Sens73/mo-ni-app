@@ -706,7 +706,7 @@ function sundayView() {
     : `<article class="sunday-empty"><span class="icon-tile home-accent">${icon("sundayPuzzle")}</span><div><small>Demnächst</small><h2>Das erste Rätsel ist unterwegs</h2><p>Sobald das erste Aufgabenblatt bereitsteht, findest du es hier. Das passende Video kommt anschließend dazu.</p><span class="sunday-rhythm">${icon("calendar")} ${escapeHtml(sunday.rhythm)}</span></div></article>`;
 
   return `<main class="page training-page sunday-page" id="main-content">
-    ${offerHeader("sunday", sunday.title, "Knoble an unserem Rätsel zum Wochenende und entdecke im Video den Lösungsweg.")}
+    ${offerHeader("sunday", sunday.title, "Knifflige Rätsel zum Nachknobeln – zu jedem zeigt ein Video den Lösungsweg.")}
     ${search}
     ${archive}
   </main>`;
