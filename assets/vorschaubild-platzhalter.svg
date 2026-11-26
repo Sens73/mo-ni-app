@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-label="Video von MO und Ni">
+  <rect width="480" height="270" fill="#e7f4ed"/>
+  <circle cx="240" cy="120" r="46" fill="#176b4d"/>
+  <path d="M226 98v44l36-22z" fill="#fff"/>
+  <text x="240" y="212" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#176b4d">Mathe mit MO &amp; Ni</text>
+</svg>
