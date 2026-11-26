@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "version": "0.11.0",
+    "schoolYear": "2026/27",
+    "updated": "28. September 2026",
+    "website": "https://www.mo-ni.de/",
+    "contactEmail": "mo@mo-ni.de",
+    "brandColor": "#176b4d"
+  },
+  "news": [
+    {
+      "id": "mathe-ag-118",
+      "label": "Mathe-AG",
+      "title": "Das 118. Aufgabenblatt ist da",
+      "body": "Mit Türmen aus Dosen, Zahlen in den Vierecken, dem Ergebnis 33, einer Sitzordnung und Sumdoku. Der Livestream beginnt am 26. Oktober um 15:30 Uhr.",
+      "date": "28. September 2026"
+    },
+    {
+      "id": "matheplus-serie-2",
+      "label": "MathePlus",
+      "title": "MathePlus Serie 2 ist da",
+      "body": "Die neuen Aufgabenblätter sind für den Bearbeitungszeitraum vom 28. September bis 13. November verfügbar.",
+      "date": "28. September 2026"
+    },
+    {
+      "id": "school-year",
+      "label": "Neu",
+      "title": "Willkommen im Schuljahr 2026/27!",
+      "body": "Alle wichtigen Termine der Grundschul-Olympiade sind jetzt auf einen Blick verfügbar.",
+      "date": "29. August 2026"
+    },
+    {
+      "id": "mathe-ag-117",
+      "label": "Mathe-AG",
+      "title": "Das 117. Aufgabenblatt ist da",
+      "body": "Mit Autos auf der Fähre, Eriks Zahl, einer Würfelpyramide und Turn-Mazes.",
+      "date": "15. September 2026"
+    },
+    {
+      "id": "sonntagsraetsel-01",
+      "label": "Sonntagsrätsel",
+      "title": "Das erste Sonntagsrätsel ist da",
+      "body": "Fünf Sumdokus zum Herunterladen, Ausdrucken und gemeinsamen Knobeln.",
+      "date": "18. September 2026"
+    }
+  ],
+  "dates": [
+    {
+      "id": "ag-115",
+      "date": "2026-08-31",
+      "time": "15:30–16:15",
+      "type": "Mathe-AG",
+      "title": "115. Mathe-Online-AG",
+      "description": "Gemeinsam knobeln, denken und Lösungswege entdecken.",
+      "accent": "teal"
+    },
+    {
+      "id": "ag-116",
+      "date": "2026-09-14",
+      "time": "15:30–16:15",
+      "type": "Mathe-AG",
+      "title": "116. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal"
+    },
+    {
+      "id": "ag-117",
+      "date": "2026-09-28",
+      "time": "ab 15:30",
+      "type": "Mathe-AG",
+      "title": "117. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal"
+    },
+    {
+      "id": "mo-send",
+      "date": "2026-10-19",
+      "time": "",
+      "type": "Olympiade",
+      "title": "Versand der Aufgaben zur 1. Stufe",
+      "description": "Bereits teilnehmende Schulen erhalten die Aufgaben automatisch.",
+      "accent": "blue"
+    },
+    {
+      "id": "ag-118",
+      "date": "2026-10-26",
+      "time": "15:30–16:30",
+      "type": "Mathe-AG",
+      "title": "118. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal"
+    },
+    {
+      "id": "mo-stage-1",
+      "date": "2026-10-26",
+      "endDate": "2026-12-18",
+      "time": "",
+      "type": "Olympiade",
+      "title": "1. Stufe: Einstiegsrunde",
+      "description": "Die Kontaktlehrkräfte legen die Durchführungsform fest.",
+      "accent": "blue"
+    },
+    {
+      "id": "mo-stage-2",
+      "date": "2027-02-10",
+      "time": "90 Minuten",
+      "type": "Olympiade",
+      "title": "2. Stufe: Auswahlklausur",
+      "description": "Die Auswahlklausur findet an den teilnehmenden Schulen statt.",
+      "accent": "red"
+    },
+    {
+      "id": "mo-feedback-2",
+      "date": "2027-03-03",
+      "time": "",
+      "type": "Organisation",
+      "title": "Rückmeldeschluss der 2. Stufe",
+      "description": "Termin für die teilnehmenden Kontaktlehrkräfte.",
+      "accent": "gold"
+    },
+    {
+      "id": "mo-stage-3",
+      "date": "2027-04-14",
+      "time": "90 Minuten",
+      "type": "Olympiade",
+      "title": "3. Stufe: Landesrunde",
+      "description": "Landesrunde an Schulen und ausgewählten zentralen Standorten.",
+      "accent": "red"
+    },
+    {
+      "id": "mo-feedback-3",
+      "date": "2027-05-10",
+      "time": "",
+      "type": "Organisation",
+      "title": "Rückmeldeschluss der 3. Stufe",
+      "description": "Termin für die teilnehmenden Kontaktlehrkräfte.",
+      "accent": "gold"
+    },
+    {
+      "id": "certificates",
+      "date": "2027-05-12",
+      "endDate": "2027-05-13",
+      "time": "",
+      "type": "Organisation",
+      "title": "Versand der Urkunden und Preise",
+      "description": "Der feierliche Abschluss des Olympiadejahres.",
+      "accent": "gold"
+    }
+  ],
+  "resources": [
+    {
+      "id": "ag-115-resource",
+      "category": "mathe-ag",
+      "title": "Mathe-AG 115",
+      "subtitle": "Zwerge, Quadrate, Frühstück und Polyominos",
+      "grade": "Klasse 3/4",
+      "year": "2026/27",
+      "duration": "4 Seiten",
+      "video": "https://youtube.com/live/EOG2fIeU0TI",
+      "pdf": "https://www.mo-ni.de/fileadmin/JagtMrX/Mathe_AG/Schuljahr_2026_2027/AG_115__310826_.pdf",
+      "featured": true
+    },
+    {
+      "id": "ag-114-resource",
+      "category": "mathe-ag",
+      "title": "Mathe-AG 114",
+      "subtitle": "Aufgabenblatt und Aufzeichnung zum gemeinsamen Knobeln",
+      "grade": "Klasse 3/4",
+      "year": "2025/26",
+      "duration": "Video & Blatt",
+      "video": "https://youtube.com/live/7K0jtTuzTN4",
+      "pdf": "https://www.mo-ni.de/fileadmin/JagtMrX/Mathe_AG/Schuljahr_2025_2026/65034.pdf"
+    },
+    {
+      "id": "olympiad-3",
+      "category": "olympiade",
+      "title": "Olympiadeaufgaben Klasse 3",
+      "subtitle": "Aufgaben aus mehreren Jahren und Wettbewerbsstufen",
+      "grade": "Klasse 3",
+      "year": "Archiv",
+      "duration": "Aufgabensammlung",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben"
+    },
+    {
+      "id": "olympiad-4",
+      "category": "olympiade",
+      "title": "Olympiadeaufgaben Klasse 4",
+      "subtitle": "Trainieren, Lösungswege vergleichen und weiterknobeln",
+      "grade": "Klasse 4",
+      "year": "Archiv",
+      "duration": "Aufgabensammlung",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben"
+    },
+    {
+      "id": "matheplus-3",
+      "category": "matheplus",
+      "title": "MathePlus Klasse 3",
+      "subtitle": "Zusätzliches Knobelfutter für neugierige Drittklässler",
+      "grade": "Klasse 3",
+      "year": "Sammlung",
+      "duration": "Übungsaufgaben",
+      "url": "https://www.mo-ni.de/matheplus"
+    },
+    {
+      "id": "matheplus-4",
+      "category": "matheplus",
+      "title": "MathePlus Klasse 4",
+      "subtitle": "Anspruchsvolle Aufgaben zum Entdecken und Begründen",
+      "grade": "Klasse 4",
+      "year": "Sammlung",
+      "duration": "Übungsaufgaben",
+      "url": "https://www.mo-ni.de/matheplus"
+    }
+  ],
+  "collections": {
+    "mathe-ag": {
+      "title": "Alle Mathe-AG-Folgen",
+      "body": "Die vollständige Übersicht mit Aufgabenblättern und Livestreams aufrufen.",
+      "url": "https://www.mo-ni.de/mathe-ag-grundschule"
+    },
+    "olympiade": {
+      "title": "Olympiade-Aufgabenarchiv",
+      "body": "Aufgaben nach Klassenstufe und Schuljahr auf der MO-Ni-Website entdecken.",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben"
+    },
+    "matheplus": {
+      "title": "MathePlus-Sammlung",
+      "body": "Alle verfügbaren MathePlus-Angebote für die Klassenstufen 3 und 4 öffnen.",
+      "url": "https://www.mo-ni.de/matheplus"
+    }
+  },
+  "workbooks": {
+    "title": "Arbeitshefte",
+    "description": "Mit MO und Ni knobeln, eigene Lösungswege finden und Mathematik entdecken.",
+    "availableFrom": "Jetzt verfügbar · Klasse 3 und 4",
+    "announcementTitle": "Arbeitsheft mit QR-Codes für MO65",
+    "announcementBody": "36 Aufgaben für Klasse 3 und 4 aus drei Stufen der Mathematik-Olympiade. 9 Erklärvideos sind bereits direkt im Heft verlinkt. Tippe in der PDF auf den QR-Code oder das Videofeld. Im gedruckten Heft scannst du den QR-Code.",
+    "pdfUrl": "./MO65-Arbeitsheft-57b98401f16742b1fffd.pdf",
+    "fileName": "MO65-Arbeitsheft.pdf",
+    "details": "57 Seiten · PDF · 24,7 MB",
+    "videoCount": 9,
+    "revision": "57b98401f16742b1fffd",
+    "sha256": "4d1e47d1d96c1e7b77112d0bbab44bced47770b4b29005ec4111bc90480cd6c8",
+    "sizeBytes": 25925039,
+    "updatedAt": "2026-10-04T16:18:54.639Z"
+  }
+}
