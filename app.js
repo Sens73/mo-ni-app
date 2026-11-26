@@ -32,8 +32,6 @@ const supportedTrainingTabs = new Set(["mathe-ag", "olympiade", "matheplus", "bi
 const requestedView = initialParameters.get("view") === "community" ? "workbooks" : initialParameters.get("view");
 const requestedTrainingTab = initialParameters.get("tab");
 const requestedInstallHelp = initialParameters.get("install") === "1";
-const requestedMaterial = initialParameters.get("material") || "";
-const requestedTask = initialParameters.get("aufgabe") || "";
 const requestedInstallDevice = location.hash.toLowerCase() === "#computer" ? "computer" : "";
 const localIphoneTest = initialParameters.get("iphone-test") === "1";
 const PUBLIC_APP_PATH = "/fileadmin/grundschule-app-test/";
@@ -384,43 +382,14 @@ function resourceMatches(item, query) {
   return tokens.every(token => haystack.includes(token));
 }
 
-function illustratedMaterialCard({className,thumbnail,thumbnailAlt,title,subtitle,iconName,meta,actions,before = "",after = ""}) {
+function illustratedMaterialCard({className,thumbnail,thumbnailAlt,title,subtitle,iconName,meta,actions,before = ""}) {
   return `<article class="resource-card archive-card ${className}">
     ${localThumbnail(thumbnail) ? `<img class="sunday-card-thumbnail" src="${escapeHtml(localThumbnail(thumbnail))}" alt="${escapeHtml(thumbnailAlt)}" loading="lazy" data-card-thumbnail data-thumbnail />` : ""}
     ${before}
     ${title ? `<div class="resource-top"><span class="icon-tile home-accent">${icon(iconName)}</span><div><h3>${escapeHtml(title)}</h3>${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ""}</div></div>` : ""}
     ${meta ? `<div class="meta-row">${meta}</div>` : ""}
     ${actions ? `<div class="action-row">${actions}</div>` : ""}
-    ${after}
   </article>`;
-}
-
-// „Eine Aufgabe für meine Stunde“: Angaben für Lehrkräfte je Aufgabe (data/lehrkraefte.json).
-function teacherTasks(item) {
-  const tasks = state.teacherNotes?.items?.[item.id]?.tasks;
-  return Array.isArray(tasks) ? tasks.filter(task => Number.isInteger(task.number) && task.title) : [];
-}
-
-function teacherShareUrl(item, task) {
-  const url = new URL(location.href);
-  url.search = "";
-  url.hash = "";
-  for (const [key, value] of [["audience", state.audience], ["view", "training"], ["tab", item.category], ["material", item.id], ["aufgabe", task.number]]) url.searchParams.set(key, value);
-  return url.href;
-}
-
-function teacherCard(item) {
-  const tasks = teacherTasks(item);
-  if (!tasks.length) return "";
-  const field = (label, value) => value ? `<div><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>` : "";
-  const sections = tasks.map(task => `<details class="teacher-task">
-      <summary><span class="teacher-task-number">Aufgabe ${task.number}</span> ${escapeHtml(task.title)}${task.minutes ? `<span class="teacher-task-time">${icon("clock")} ${escapeHtml(task.minutes)}</span>` : ""}</summary>
-      ${task.source ? `<p class="teacher-task-source">${escapeHtml(task.source)}${Number.isInteger(task.page) ? ` · Seite ${task.page}` : ""}</p>` : ""}
-      <dl>${field("Lernziel", task.goal)}${field("Vorwissen", task.prior)}${field("Einstieg", task.impulse)}${field("Vertiefung", task.deepening)}</dl>
-      ${task.results ? `<details class="teacher-results"><summary>Ergebnisse anzeigen</summary><p>${escapeHtml(task.results)}</p></details>` : ""}
-      <div class="action-row">${item.pdf ? `<button class="soft-button" type="button" data-open-resource data-resource-id="${escapeHtml(item.id)}" data-viewer-type="pdf" data-page="${Number.isInteger(task.page) ? task.page : ""}">${icon("download")} Aufgabe öffnen</button>` : ""}<button class="soft-button" type="button" data-action="share-task" data-share-url="${escapeHtml(teacherShareUrl(item, task))}" data-share-title="${escapeHtml(`${item.title} · Aufgabe ${task.number}: ${task.title}`)}">${icon("share")} Link teilen</button></div>
-    </details>`).join("");
-  return `<section class="teacher-card" aria-label="Für Lehrkräfte"><h4>${icon("info")} Für Lehrkräfte: ${tasks.length === 1 ? "eine Aufgabe" : `${tasks.length} Aufgaben`} für Ihre Stunde</h4>${sections}</section>`;
 }
 
 function websiteAction(value, className = "soft-button", content = "") {
@@ -442,7 +411,7 @@ function resourceCard(item) {
     if (item.enrichment) presentation.meta.unshift(item.audienceLabel || "Vertiefung aus Klasse 7–8");
     const announcement = upcomingAgDate(item,state.content.dates);
     const meta = presentation.meta.map(value => `<span class="meta-chip" ${value === announcement ? `data-ag-announcement="${escapeHtml(item.id)}"` : ""}>${escapeHtml(value)}</span>`).join("") + offlineChip(item.pdf);
-    return illustratedMaterialCard({className:"material-card",thumbnail:presentation.thumbnail,thumbnailAlt:`Vorschaubild zu ${presentation.title}`,title:presentation.title,subtitle:presentation.subtitle,iconName,meta,actions:archiveActions,after:teacherCard(item)});
+    return illustratedMaterialCard({className:"material-card",thumbnail:presentation.thumbnail,thumbnailAlt:`Vorschaubild zu ${presentation.title}`,title:presentation.title,subtitle:presentation.subtitle,iconName,meta,actions:archiveActions});
   }
   return `<article class="resource-card ${isArchiveMaterial ? "archive-card" : ""}"><div class="resource-top"><span class="icon-tile ${color}">${icon(iconName)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.subtitle)}</p></div></div><div class="meta-row">${audienceChip(item)}<span class="meta-chip">${escapeHtml(item.year)}</span><span class="meta-chip">${escapeHtml(item.duration)}</span>${offlineChip(item.pdf)}</div><div class="action-row">${archiveActions}</div></article>`;
 }
@@ -828,8 +797,6 @@ async function hydratePdfViewer() {
       }
     });
     documentRendered = true;
-    // Ein geteilter Aufgabenlink springt direkt zur richtigen Seite.
-    if (current() && viewer.page > 1) container.children[viewer.page - 1]?.scrollIntoView({ block: "start" });
     if (current()) {
       if (!viewer.statisticsPdfOpened) {
         usageStatistics.trackPdf("pdf_open", viewer.url);
@@ -926,30 +893,7 @@ function syncViewUrl() {
   else url.searchParams.delete("tab");
   if (state.view === "games") url.searchParams.set("game", state.selectedGame);
   else url.searchParams.delete("game");
-  url.searchParams.delete("material");
-  url.searchParams.delete("aufgabe");
   history.replaceState(null, "", url);
-}
-
-function openResource(resource, type, page = 0) {
-  const videos = resource.videos?.length ? resource.videos : resource.video ? [{ label: "Video", url: resource.video }] : [];
-  state.previousView = state.view === "viewer" ? state.previousView || "training" : state.view;
-  state.viewer = {
-    type,
-    url: type === "video" ? videos[0]?.url : resource.pdf,
-    title: `${resource.title} · ${type === "video" ? "Video" : "Aufgabenblatt"}`,
-    resourceNumber: resource.number,
-    resourceCollection: resource.collection,
-    resourceCategory: resource.category,
-    resourceId: resource.id,
-    videos,
-    videoIndex: 0,
-    page: type === "pdf" && page > 0 ? page : 0,
-    pdfReady: false
-  };
-  state.view = "viewer";
-  render();
-  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function rememberViewerOrigin(button) {
@@ -1138,8 +1082,25 @@ document.addEventListener("click", async event => {
   if (resourceViewerButton) {
     const resource = state.content.resources.find(item => item.id === resourceViewerButton.dataset.resourceId);
     if (!resource) return;
+    const type = resourceViewerButton.dataset.viewerType;
+    const videos = resource.videos?.length ? resource.videos : resource.video ? [{ label: "Video", url: resource.video }] : [];
     rememberViewerOrigin(resourceViewerButton);
-    openResource(resource, resourceViewerButton.dataset.viewerType, Number(resourceViewerButton.dataset.page) || 0);
+    state.previousView = state.view;
+    state.viewer = {
+      type,
+      url: type === "video" ? videos[0]?.url : resource.pdf,
+      title: `${resource.title} · ${type === "video" ? "Video" : "Aufgabenblatt"}`,
+      resourceNumber: resource.number,
+      resourceCollection: resource.collection,
+      resourceCategory: resource.category,
+      resourceId: resource.id,
+      videos,
+      videoIndex: 0,
+      pdfReady: false
+    };
+    state.view = "viewer";
+    render();
+    window.scrollTo({ top: 0, behavior: "auto" });
     return;
   }
 
@@ -1245,15 +1206,6 @@ document.addEventListener("click", async event => {
     }
     viewer.offlineSaving = false;
     if (state.viewer === viewer) render();
-  } else if (action === "share-task") {
-    const url = actionButton.dataset.shareUrl;
-    const title = actionButton.dataset.shareTitle;
-    try {
-      if (navigator.share) await navigator.share({ title, url });
-      else { await navigator.clipboard.writeText(url); showToast("Link kopiert. Er öffnet direkt diese Aufgabe."); }
-    } catch (error) {
-      if (error?.name !== "AbortError") showToast("Der Link konnte nicht geteilt werden.");
-    }
   } else if (action === "offline-info") {
     showToast("Dieses Blatt ist offline gesichert. Entfernen kannst du es unter „Mehr“.");
   } else if (action === "open-offline") {
@@ -1514,18 +1466,6 @@ async function refreshContent() {
   return refreshPromise;
 }
 
-// Die Angaben für Lehrkräfte sind freiwillig: Fehlt die Datei, bleibt alles wie bisher.
-async function loadTeacherNotes() {
-  try {
-    const response = await fetch("./data/lehrkraefte.json", { cache: "no-store" });
-    if (response.ok) state.teacherNotes = await response.json();
-  } catch { /* offline ohne gespeicherte Datei */ }
-  const resource = requestedMaterial && state.content?.resources.find(item => item.id === requestedMaterial);
-  const task = resource && teacherTasks(resource).find(item => String(item.number) === requestedTask);
-  if (resource?.pdf) openResource(resource, "pdf", task?.page || 0);
-  else if (state.teacherNotes && state.view === "training" && !state.modal) render();
-}
-
 async function start() {
   writeStored("audience", state.audience);
   writeStored("trainingTab", state.trainingTab);
@@ -1539,7 +1479,6 @@ async function start() {
     syncViewUrl();
     render();
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
-    await loadTeacherNotes();
     usageStatistics.appStarted();
   } catch (error) {
     console.error(error);
