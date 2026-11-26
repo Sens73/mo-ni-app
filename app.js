@@ -10,6 +10,7 @@ import { videosFor, kangarooVideosFor, kangarooCardLabel, KANGAROO_GROUPS, withA
 import { AUDIENCES, availableDestination, validAudience, matchesAudience, gradesFor, gradeLabel, olympiadSeason } from "./audience.js?v=0.14.0-release-2";
 import { fetchPdfFile } from "./download-manager.js?v=0.14.0-release-2";
 import { renderPdfDocument } from "./pdf-viewer.js?v=0.14.0-release-2";
+import { createOfflineMaterials, formatBytes } from "./offline-materials.js?v=0.14.0-release-5";
 import { createPrintManager } from "./print-manager.js?v=0.14.0-release-2";
 import { shouldUseOriginalPdfPrint, prepareOriginalPdfPrint } from "./original-pdf-print.js?v=0.14.0-release-2";
 import { canActivateAppUpdate, createAppUpdateCoordinator } from "./app-updates.js?v=0.14.0-release-2";
@@ -31,6 +32,8 @@ const supportedTrainingTabs = new Set(["mathe-ag", "olympiade", "matheplus", "bi
 const requestedView = initialParameters.get("view") === "community" ? "workbooks" : initialParameters.get("view");
 const requestedTrainingTab = initialParameters.get("tab");
 const requestedInstallHelp = initialParameters.get("install") === "1";
+const requestedMaterial = initialParameters.get("material") || "";
+const requestedTask = initialParameters.get("aufgabe") || "";
 const requestedInstallDevice = location.hash.toLowerCase() === "#computer" ? "computer" : "";
 const localIphoneTest = initialParameters.get("iphone-test") === "1";
 const PUBLIC_APP_PATH = "/fileadmin/grundschule-app-test/";
@@ -56,6 +59,10 @@ function browserInstallUrl() {
 
 const storageKey = key => `${STORAGE_PREFIX}-${key}`;
 const readStored = (key, fallback = "") => { try { return localStorage.getItem(storageKey(key)) ?? fallback; } catch { return fallback; } };
+const offlineMaterials = createOfflineMaterials({
+  storage: (() => { try { return window.localStorage; } catch { return null; } })(),
+  storageKey: `${STORAGE_PREFIX}-saved-materials`
+});
 const writeStored = (key, value) => { try { localStorage.setItem(storageKey(key), String(value)); } catch { /* Private mode may deny storage. */ } };
 const state = {
   content: null,
@@ -234,6 +241,20 @@ function showToast(message) {
   showToast.timer = setTimeout(() => toast.classList.remove("visible"), 2800);
 }
 
+function offlineChip(url) {
+  return url && offlineMaterials.isSaved(url) ? `<span class="meta-chip offline-chip">${icon("download")} Offline gesichert</span>` : "";
+}
+
+function offlineSection() {
+  if (!offlineMaterials.available()) return "";
+  const saved = offlineMaterials.list();
+  const rows = saved.map(entry => `<div class="settings-row offline-row"><span class="icon-tile mint">${icon("download")}</span><span><strong>${escapeHtml(entry.title)}</strong><span>${escapeHtml(formatBytes(entry.bytes))} · gesichert am ${escapeHtml(new Date(entry.savedAt).toLocaleDateString("de-DE"))}</span></span><span class="offline-row-actions"><button class="soft-button" type="button" data-action="open-offline" data-offline-url="${escapeHtml(entry.url)}">Öffnen</button><button class="soft-button" type="button" data-action="remove-offline" data-offline-url="${escapeHtml(entry.url)}" aria-label="${escapeHtml(`${entry.title} nicht mehr offline sichern`)}">Entfernen</button></span></div>`).join("");
+  const summary = saved.length
+    ? `${saved.length} ${saved.length === 1 ? "Blatt" : "Blätter"}, zusammen ${formatBytes(offlineMaterials.totalBytes())}. Sie bleiben auch nach einem App-Update erhalten.`
+    : "Öffne ein Aufgabenblatt und tippe auf „Offline sichern“. Dann kannst du es auch ohne Internet öffnen.";
+  return `<section class="section settings-card offline-card"><div class="section-header"><div><h2>Offline gesicherte Blätter</h2><p>${summary}</p></div></div>${rows ? `<div class="settings-list">${rows}</div>` : ""}</section>`;
+}
+
 function topbar() {
   return `<header class="topbar">
     <button class="brand text-button" type="button" data-view="home" aria-label="Zur Startseite">
@@ -363,14 +384,43 @@ function resourceMatches(item, query) {
   return tokens.every(token => haystack.includes(token));
 }
 
-function illustratedMaterialCard({className,thumbnail,thumbnailAlt,title,subtitle,iconName,meta,actions,before = ""}) {
+function illustratedMaterialCard({className,thumbnail,thumbnailAlt,title,subtitle,iconName,meta,actions,before = "",after = ""}) {
   return `<article class="resource-card archive-card ${className}">
     ${thumbnail ? `<img class="sunday-card-thumbnail" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(thumbnailAlt)}" loading="lazy" data-card-thumbnail />` : ""}
     ${before}
     ${title ? `<div class="resource-top"><span class="icon-tile home-accent">${icon(iconName)}</span><div><h3>${escapeHtml(title)}</h3>${subtitle ? `<p>${escapeHtml(subtitle)}</p>` : ""}</div></div>` : ""}
     ${meta ? `<div class="meta-row">${meta}</div>` : ""}
     ${actions ? `<div class="action-row">${actions}</div>` : ""}
+    ${after}
   </article>`;
+}
+
+// „Eine Aufgabe für meine Stunde“: Angaben für Lehrkräfte je Aufgabe (data/lehrkraefte.json).
+function teacherTasks(item) {
+  const tasks = state.teacherNotes?.items?.[item.id]?.tasks;
+  return Array.isArray(tasks) ? tasks.filter(task => Number.isInteger(task.number) && task.title) : [];
+}
+
+function teacherShareUrl(item, task) {
+  const url = new URL(location.href);
+  url.search = "";
+  url.hash = "";
+  for (const [key, value] of [["audience", state.audience], ["view", "training"], ["tab", item.category], ["material", item.id], ["aufgabe", task.number]]) url.searchParams.set(key, value);
+  return url.href;
+}
+
+function teacherCard(item) {
+  const tasks = teacherTasks(item);
+  if (!tasks.length) return "";
+  const field = (label, value) => value ? `<div><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>` : "";
+  const sections = tasks.map(task => `<details class="teacher-task">
+      <summary><span class="teacher-task-number">Aufgabe ${task.number}</span> ${escapeHtml(task.title)}${task.minutes ? `<span class="teacher-task-time">${icon("clock")} ${escapeHtml(task.minutes)}</span>` : ""}</summary>
+      ${task.source ? `<p class="teacher-task-source">${escapeHtml(task.source)}${Number.isInteger(task.page) ? ` · Seite ${task.page}` : ""}</p>` : ""}
+      <dl>${field("Lernziel", task.goal)}${field("Vorwissen", task.prior)}${field("Einstieg", task.impulse)}${field("Vertiefung", task.deepening)}</dl>
+      ${task.results ? `<details class="teacher-results"><summary>Ergebnisse anzeigen</summary><p>${escapeHtml(task.results)}</p></details>` : ""}
+      <div class="action-row">${item.pdf ? `<button class="soft-button" type="button" data-open-resource data-resource-id="${escapeHtml(item.id)}" data-viewer-type="pdf" data-page="${Number.isInteger(task.page) ? task.page : ""}">${icon("download")} Aufgabe öffnen</button>` : ""}<button class="soft-button" type="button" data-action="share-task" data-share-url="${escapeHtml(teacherShareUrl(item, task))}" data-share-title="${escapeHtml(`${item.title} · Aufgabe ${task.number}: ${task.title}`)}">${icon("share")} Link teilen</button></div>
+    </details>`).join("");
+  return `<section class="teacher-card" aria-label="Für Lehrkräfte"><h4>${icon("info")} Für Lehrkräfte: ${tasks.length === 1 ? "eine Aufgabe" : `${tasks.length} Aufgaben`} für Ihre Stunde</h4>${sections}</section>`;
 }
 
 function websiteAction(value, className = "soft-button", content = "") {
@@ -391,10 +441,10 @@ function resourceCard(item) {
     const presentation = primaryMaterialPresentation(item, {dates:state.content.dates});
     if (item.enrichment) presentation.meta.unshift(item.audienceLabel || "Vertiefung aus Klasse 7–8");
     const announcement = upcomingAgDate(item,state.content.dates);
-    const meta = presentation.meta.map(value => `<span class="meta-chip" ${value === announcement ? `data-ag-announcement="${escapeHtml(item.id)}"` : ""}>${escapeHtml(value)}</span>`).join("");
-    return illustratedMaterialCard({className:"material-card",thumbnail:presentation.thumbnail,thumbnailAlt:`Vorschaubild zu ${presentation.title}`,title:presentation.title,subtitle:presentation.subtitle,iconName,meta,actions:archiveActions});
+    const meta = presentation.meta.map(value => `<span class="meta-chip" ${value === announcement ? `data-ag-announcement="${escapeHtml(item.id)}"` : ""}>${escapeHtml(value)}</span>`).join("") + offlineChip(item.pdf);
+    return illustratedMaterialCard({className:"material-card",thumbnail:presentation.thumbnail,thumbnailAlt:`Vorschaubild zu ${presentation.title}`,title:presentation.title,subtitle:presentation.subtitle,iconName,meta,actions:archiveActions,after:teacherCard(item)});
   }
-  return `<article class="resource-card ${isArchiveMaterial ? "archive-card" : ""}"><div class="resource-top"><span class="icon-tile ${color}">${icon(iconName)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.subtitle)}</p></div></div><div class="meta-row">${audienceChip(item)}<span class="meta-chip">${escapeHtml(item.year)}</span><span class="meta-chip">${escapeHtml(item.duration)}</span></div><div class="action-row">${archiveActions}</div></article>`;
+  return `<article class="resource-card ${isArchiveMaterial ? "archive-card" : ""}"><div class="resource-top"><span class="icon-tile ${color}">${icon(iconName)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.subtitle)}</p></div></div><div class="meta-row">${audienceChip(item)}<span class="meta-chip">${escapeHtml(item.year)}</span><span class="meta-chip">${escapeHtml(item.duration)}</span>${offlineChip(item.pdf)}</div><div class="action-row">${archiveActions}</div></article>`;
 }
 
 const offerPictures = {
@@ -475,6 +525,14 @@ function viewerPdfUrl(viewer) {
   return viewer.url;
 }
 
+function offlineAction(viewer, pdfUrl) {
+  if (!offlineMaterials.available() || !pdfUrl || pdfUrl.includes("/api/")) return "";
+  if (viewer.offlineSaving) return `<button class="soft-button offline-action" type="button" disabled>${icon("download")} Wird gesichert …</button>`;
+  return offlineMaterials.isSaved(pdfUrl)
+    ? `<button class="soft-button offline-action saved" type="button" data-action="offline-info">${icon("download")} Offline gesichert ✓</button>`
+    : `<button class="soft-button offline-action" type="button" data-action="save-offline">${icon("download")} Offline sichern</button>`;
+}
+
 function viewerView() {
   const viewer = state.viewer;
   if (!viewer) return trainingView();
@@ -507,7 +565,7 @@ function viewerView() {
         : "Zurück zur vorherigen Ansicht";
   const returnAction = `<button class="soft-button viewer-home-action" type="button" data-action="close-viewer" aria-label="${returnLabel}" title="${returnLabel}">${icon("back")} ${viewer.type === "web" || gameCards ? returnLabel : "Zurück"}</button>`;
   const materialActions = viewer.type === "pdf"
-    ? `${returnAction}<button class="soft-button viewer-print-action" type="button" data-action="print-document">${icon("printer")} Drucken</button><button class="soft-button" type="button" data-pdf-download data-download-url="${escapeHtml(downloadUrl)}" data-download-name="${escapeHtml(viewer.title)}.pdf">${icon("download")} Herunterladen</button>`
+    ? `${returnAction}<button class="soft-button viewer-print-action" type="button" data-action="print-document">${icon("printer")} Drucken</button><button class="soft-button" type="button" data-pdf-download data-download-url="${escapeHtml(downloadUrl)}" data-download-name="${escapeHtml(viewer.title)}.pdf">${icon("download")} Herunterladen</button>${offlineAction(viewer, pdfUrl)}`
     : returnAction;
   const actionBar = `<div class="viewer-actions ${viewer.type === "pdf" ? "pdf-actions" : "video-actions"}">${materialActions}</div>${viewer.type === "pdf" ? '<p class="print-result" id="print-result" role="status" aria-live="polite" hidden></p>' : ""}`;
   return `<main class="page viewer-page${gameCards ? " game-material-page" : ""}${viewer.type === "web" ? " website-page" : ""}" id="main-content">
@@ -657,7 +715,7 @@ function sundayCard(item, index) {
   const meta = [item.code, item.dateLabel || item.date]
     .filter(Boolean)
     .map(value => `<span class="meta-chip">${escapeHtml(value)}</span>`)
-    .join("");
+    .join("") + offlineChip(item.pdf);
   const actions = `${videos.length && videoReady ? `<button class="secondary-button" type="button" data-open-sunday-resource data-sunday-id="${escapeHtml(item.id)}" data-viewer-type="video">${icon("play")} ${videoLabel}</button>` : ""}${item.pdf ? `<button class="soft-button" type="button" data-open-sunday-resource data-sunday-id="${escapeHtml(item.id)}" data-viewer-type="pdf">${icon("download")} PDF öffnen</button>` : ""}`;
 
   return illustratedMaterialCard({className:`sunday-card ${index === 0 ? "latest" : ""}`,thumbnail:item.thumbnail,thumbnailAlt:`Vorschaubild zu ${item.code || item.title}: ${item.title}`,title:item.title,subtitle:item.subtitle || "Erst selbst knobeln, dann den Lösungsweg entdecken.",iconName:"sundayPuzzle",meta,actions:actions+(puzzleGame.registry.list().some(t=>t.episodes?.some(e=>e.id===item.id))?`<button class="primary-button" type="button" data-play-sunday="${escapeHtml(item.id)}">In der App lösen</button>`:""),before:publicationDate});
@@ -698,6 +756,7 @@ function moreView() {
     <div class="page-heading"><span class="eyebrow">MO-Ni e.V.</span><h1>Mehr</h1><p>Fragen, Tipps und Neues.</p></div>
     <section class="contact-card"><div class="contact-heading"><span class="icon-tile">${icon("mail")}</span><h2>Deine Nachricht an MO und Ni</h2></div><p>Hast du eine Frage oder eine Idee? Schreib uns!</p><form data-role="contact-form"><div class="form-field"><label for="message">Deine Nachricht</label><textarea id="message" name="message" placeholder="Schreibe hier deine Nachricht …" aria-describedby="contact-note" required>${escapeHtml(state.contactMessage)}</textarea></div><p class="contact-note" id="contact-note">Öffnet dein E-Mail-Programm. Dort schickst du die Nachricht ab.</p><button class="secondary-button" type="submit">${icon("send")} Nachricht senden</button></form></section>
     <section class="section settings-card"><div class="section-header"><div><h2>Rund um MO-Ni</h2></div></div><div class="settings-list"><button class="settings-row text-button" type="button" data-open-viewer data-viewer-type="web" data-viewer-url="${escapeHtml(state.content.meta.website)}" data-viewer-title="MO-Ni-Website"><span class="icon-tile">${icon("globe")}</span><span><strong>MO-Ni-Website</strong><span>Aktuelles und weitere Informationen</span></span>${icon("chevron")}</button><button class="settings-row text-button" type="button" data-action="open-about"><span class="icon-tile mint">${icon("info")}</span><span><strong>Neues zur App</strong><span>Versionen und neue Funktionen</span></span>${icon("chevron")}</button>${installRow}</div></section>
+    ${offlineSection()}
   </main>`;
 }
 
@@ -769,6 +828,8 @@ async function hydratePdfViewer() {
       }
     });
     documentRendered = true;
+    // Ein geteilter Aufgabenlink springt direkt zur richtigen Seite.
+    if (current() && viewer.page > 1) container.children[viewer.page - 1]?.scrollIntoView({ block: "start" });
     if (current()) {
       if (!viewer.statisticsPdfOpened) {
         usageStatistics.trackPdf("pdf_open", viewer.url);
@@ -865,7 +926,30 @@ function syncViewUrl() {
   else url.searchParams.delete("tab");
   if (state.view === "games") url.searchParams.set("game", state.selectedGame);
   else url.searchParams.delete("game");
+  url.searchParams.delete("material");
+  url.searchParams.delete("aufgabe");
   history.replaceState(null, "", url);
+}
+
+function openResource(resource, type, page = 0) {
+  const videos = resource.videos?.length ? resource.videos : resource.video ? [{ label: "Video", url: resource.video }] : [];
+  state.previousView = state.view === "viewer" ? state.previousView || "training" : state.view;
+  state.viewer = {
+    type,
+    url: type === "video" ? videos[0]?.url : resource.pdf,
+    title: `${resource.title} · ${type === "video" ? "Video" : "Aufgabenblatt"}`,
+    resourceNumber: resource.number,
+    resourceCollection: resource.collection,
+    resourceCategory: resource.category,
+    resourceId: resource.id,
+    videos,
+    videoIndex: 0,
+    page: type === "pdf" && page > 0 ? page : 0,
+    pdfReady: false
+  };
+  state.view = "viewer";
+  render();
+  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function rememberViewerOrigin(button) {
@@ -1049,25 +1133,8 @@ document.addEventListener("click", async event => {
   if (resourceViewerButton) {
     const resource = state.content.resources.find(item => item.id === resourceViewerButton.dataset.resourceId);
     if (!resource) return;
-    const type = resourceViewerButton.dataset.viewerType;
-    const videos = resource.videos?.length ? resource.videos : resource.video ? [{ label: "Video", url: resource.video }] : [];
     rememberViewerOrigin(resourceViewerButton);
-    state.previousView = state.view;
-    state.viewer = {
-      type,
-      url: type === "video" ? videos[0]?.url : resource.pdf,
-      title: `${resource.title} · ${type === "video" ? "Video" : "Aufgabenblatt"}`,
-      resourceNumber: resource.number,
-      resourceCollection: resource.collection,
-      resourceCategory: resource.category,
-      resourceId: resource.id,
-      videos,
-      videoIndex: 0,
-      pdfReady: false
-    };
-    state.view = "viewer";
-    render();
-    window.scrollTo({ top: 0, behavior: "auto" });
+    openResource(resource, resourceViewerButton.dataset.viewerType, Number(resourceViewerButton.dataset.page) || 0);
     return;
   }
 
@@ -1160,6 +1227,43 @@ document.addEventListener("click", async event => {
     render();
   } else if (action === "print-document" && state.viewer?.type === "pdf") {
     void requestSystemPrint();
+  } else if (action === "save-offline" && state.viewer?.type === "pdf") {
+    const viewer = state.viewer;
+    viewer.offlineSaving = true;
+    render();
+    try {
+      const { bytes } = await offlineMaterials.save({ url: viewerPdfUrl(viewer), title: viewer.title.replace(/ · Aufgabenblatt$/, "") });
+      showToast(`Offline gesichert (${formatBytes(bytes)}). Du findest das Blatt auch unter „Mehr“.`);
+    } catch (error) {
+      console.warn(error);
+      showToast("Das Blatt konnte gerade nicht gesichert werden. Bitte versuche es mit Internet noch einmal.");
+    }
+    viewer.offlineSaving = false;
+    if (state.viewer === viewer) render();
+  } else if (action === "share-task") {
+    const url = actionButton.dataset.shareUrl;
+    const title = actionButton.dataset.shareTitle;
+    try {
+      if (navigator.share) await navigator.share({ title, url });
+      else { await navigator.clipboard.writeText(url); showToast("Link kopiert. Er öffnet direkt diese Aufgabe."); }
+    } catch (error) {
+      if (error?.name !== "AbortError") showToast("Der Link konnte nicht geteilt werden.");
+    }
+  } else if (action === "offline-info") {
+    showToast("Dieses Blatt ist offline gesichert. Entfernen kannst du es unter „Mehr“.");
+  } else if (action === "open-offline") {
+    const entry = offlineMaterials.list().find(item => item.url === actionButton.dataset.offlineUrl);
+    if (!entry) return;
+    rememberViewerOrigin(actionButton);
+    state.previousView = state.view;
+    state.viewer = { type: "pdf", url: entry.url, title: `${entry.title} · Aufgabenblatt` };
+    state.view = "viewer";
+    render();
+    window.scrollTo({ top: 0, behavior: "auto" });
+  } else if (action === "remove-offline") {
+    await offlineMaterials.remove(actionButton.dataset.offlineUrl);
+    showToast("Das Blatt ist nicht mehr offline gesichert.");
+    render();
 
   } else if (action === "install") {
     if (state.installed) {
@@ -1405,6 +1509,18 @@ async function refreshContent() {
   return refreshPromise;
 }
 
+// Die Angaben für Lehrkräfte sind freiwillig: Fehlt die Datei, bleibt alles wie bisher.
+async function loadTeacherNotes() {
+  try {
+    const response = await fetch("./data/lehrkraefte.json", { cache: "no-store" });
+    if (response.ok) state.teacherNotes = await response.json();
+  } catch { /* offline ohne gespeicherte Datei */ }
+  const resource = requestedMaterial && state.content?.resources.find(item => item.id === requestedMaterial);
+  const task = resource && teacherTasks(resource).find(item => String(item.number) === requestedTask);
+  if (resource?.pdf) openResource(resource, "pdf", task?.page || 0);
+  else if (state.teacherNotes && state.view === "training" && !state.modal) render();
+}
+
 async function start() {
   writeStored("audience", state.audience);
   writeStored("trainingTab", state.trainingTab);
@@ -1418,6 +1534,7 @@ async function start() {
     syncViewUrl();
     render();
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+    await loadTeacherNotes();
     usageStatistics.appStarted();
   } catch (error) {
     console.error(error);
@@ -1425,6 +1542,8 @@ async function start() {
   }
 
   registerPwaServiceWorker().catch(() => {});
+  const savedBefore = offlineMaterials.list().length;
+  offlineMaterials.reconcile().then(kept => { if (kept.length !== savedBefore) render(); }).catch(() => {});
   document.addEventListener("visibilitychange", () => {
     divisorGame.setVisible(document.visibilityState === "visible" && state.view === "games" && state.selectedGame === "divisors" && !state.modal);
     puzzleGame.setVisible(document.visibilityState === "visible" && state.view === "games" && state.selectedGame === "puzzles" && !state.modal);

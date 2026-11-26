@@ -2403,6 +2403,7 @@ a {
 }
 
 .pdf-sheet {
+  position: relative;
   margin: 0;
   overflow: hidden;
   background: white;
@@ -2417,6 +2418,52 @@ a {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* Textebene des PDF-Lesers (Regeln aus pdf.js 5, auf das Nötige gekürzt). */
+.pdf-sheet .textLayer {
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  line-height: 1;
+  text-align: initial;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  caret-color: CanvasText;
+  z-index: 0;
+}
+.pdf-sheet .textLayer :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+.pdf-sheet .textLayer > :not(.markedContent),
+.pdf-sheet .textLayer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv));
+}
+.pdf-sheet .textLayer .markedContent { display: contents; }
+.pdf-sheet .textLayer span[role="img"] { user-select: none; cursor: default; }
+.pdf-sheet .textLayer ::selection { background: rgba(0, 100, 255, .25); }
+.pdf-sheet .textLayer br::selection { background: transparent; }
+.pdf-sheet .textLayer .endOfContent {
+  display: block;
+  position: absolute;
+  inset: 100% 0 0;
+  z-index: 0;
+  cursor: default;
+  user-select: none;
 }
 
 .external-preview {
@@ -3272,7 +3319,7 @@ body > .pdf-print-surface {
     box-shadow: none !important;
   }
   .pdf-sheet:last-child { break-after: auto; }
-  .pdf-sheet canvas { display: none !important; }
+  .pdf-sheet canvas, .pdf-sheet .textLayer { display: none !important; }
   .pdf-print-image {
     display: block !important;
     width: 190mm !important;
@@ -3959,3 +4006,27 @@ body > .pdf-print-surface {
 .logic-board.sunday.deka .logic-cell.selected { background:#e4f1df; }
 .logic-board.sunday.deka .logic-cell.conflict { background:#ffe8e0; }
 .logic-board.sunday.deka .logic-overlay circle { r:7px; fill:#fd6b29; stroke:none; }
+
+/* Offline gesicherte Blätter unter „Mehr“ */
+.viewer-actions.pdf-actions .offline-action { grid-column: 1 / -1; white-space: nowrap; }
+.viewer-actions .offline-action.saved { color: var(--green); background: var(--green-soft); }
+.settings-row.offline-row { grid-template-columns: auto 1fr; cursor: default; }
+.offline-row-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: 8px; }
+.offline-row-actions .soft-button { min-height: 36px; padding: 0 14px; font-size: 13px; }
+
+/* Lehrkräfte-Karte: „Eine Aufgabe für meine Stunde“ */
+.teacher-card { margin-top: 14px; padding: 12px; border-radius: 14px; background: var(--green-pale); border: 1px solid var(--green-soft); }
+.teacher-card h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 14px; color: var(--green); }
+.teacher-card h4 svg { width: 18px; height: 18px; flex: none; }
+.teacher-task { border-top: 1px solid var(--green-soft); padding: 8px 0 4px; }
+.teacher-task > summary { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 40px; cursor: pointer; font-weight: 800; font-size: 14px; }
+.teacher-task-number { padding: 2px 8px; border-radius: 999px; background: var(--green); color: white; font-size: 12px; }
+.teacher-task-time { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; font-weight: 600; font-size: 12px; color: var(--green-dark); }
+.teacher-task-time svg { width: 14px; height: 14px; }
+.teacher-task-source { margin: 2px 0 8px; font-size: 12px; color: var(--green-dark); }
+.teacher-task dl { display: grid; gap: 8px; margin: 0 0 10px; }
+.teacher-task dt { font-size: 12px; font-weight: 800; color: var(--green); }
+.teacher-task dd { margin: 2px 0 0; font-size: 14px; line-height: 1.45; }
+.teacher-results { margin: 0 0 10px; font-size: 14px; }
+.teacher-results summary { cursor: pointer; font-weight: 700; color: var(--green); min-height: 32px; }
+.teacher-results p { margin: 4px 0 0; }
