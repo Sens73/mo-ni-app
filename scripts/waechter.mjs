@@ -7,7 +7,7 @@ const option = name => process.argv.find(argument => argument.startsWith(`--${na
 const APP = new URL(option("app") || "https://www.mo-ni.de/fileadmin/grundschule-app-test/");
 const REPORT_ONLY = process.argv.includes("--nur-bericht");
 const HEADERS = { "User-Agent": "MO-Ni-App-Waechter/1.0 (+https://www.mo-ni.de/app)" };
-// Bewusst nicht in der App: Lösungen, Hinweisblätter u. Ä. Ein Eintrag je Zeile, Teil der Adresse genügt.
+// Bewusst nicht in der App (Bastelvorlagen, altes Archiv, ersetzte Fassungen): Teil der Adresse und Grund.
 const exceptions = JSON.parse(await readFile(new URL("./waechter-ausnahmen.json", import.meta.url), "utf8").catch(() => "[]"));
 
 async function fetchText(url) {
@@ -17,9 +17,9 @@ async function fetchText(url) {
 }
 const fetchJson = async url => JSON.parse(await fetchText(url));
 const normalize = href => {
-  try { const url = new URL(href.replace(/&amp;/g, "&"), "https://www.mo-ni.de/"); url.hash = ""; return decodeURI(url.href).toLowerCase(); } catch { return ""; }
+  try { const url = new URL(href.replace(/&amp;/g, "&"), "https://www.mo-ni.de/"); url.hash = ""; url.search = ""; return decodeURI(url.href).toLowerCase(); } catch { return ""; }
 };
-const excepted = href => exceptions.some(part => href.includes(String(part).toLowerCase()));
+const excepted = href => exceptions.some(entry => href.includes(String(entry.teil || entry).toLowerCase()));
 
 // Aufgabenblätter: Jede PDF auf der Quellseite sollte in der App vorkommen.
 export function missingWorksheets(pageHtml, appItems) {
