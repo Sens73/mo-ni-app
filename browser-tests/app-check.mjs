@@ -28,7 +28,16 @@ const server = createServer(async (request, response) => {
   try {
     const info = await stat(file);
     if (!info.isFile()) throw new Error("kein Dateiname");
-    response.writeHead(200, { "Content-Type": types[extname(file)] || "application/octet-stream", "Content-Length": info.size });
+    const headers = { "Content-Type": types[extname(file)] || "application/octet-stream", "Accept-Ranges": "bytes" };
+    // Wie der echte Webserver: Teilstücke auf Anfrage (pdf.js und Videos nutzen das).
+    const range = /^bytes=(\d+)-(\d*)$/.exec(request.headers.range || "");
+    if (range) {
+      const start = Number(range[1]), end = Math.min(range[2] ? Number(range[2]) : info.size - 1, info.size - 1);
+      response.writeHead(206, { ...headers, "Content-Range": `bytes ${start}-${end}/${info.size}`, "Content-Length": end - start + 1 });
+      if (request.method === "HEAD") return response.end();
+      return createReadStream(file, { start, end }).pipe(response);
+    }
+    response.writeHead(200, { ...headers, "Content-Length": info.size });
     if (request.method === "HEAD") return response.end();
     createReadStream(file).pipe(response);
   } catch {
@@ -102,10 +111,27 @@ async function checkProfile(name, device) {
     return { active: Boolean(registration.active), bytes, files };
   });
   if (!shell.active || !shell.files) problems.push(`${name}: Offline-Paket wurde nicht installiert`);
+
+  // Blatt offline sichern, App-Update nachstellen (Laufzeitspeicher weg), im Flugmodus wieder öffnen.
+  const sheetButton = "[data-open-sunday-resource][data-viewer-type=pdf]";
+  await page.goto(`${appUrl}?view=sunday&audience=34`);
+  await page.locator(sheetButton).first().click();
+  await page.locator(".pdf-sheet canvas").first().waitFor({ timeout: 20000 });
+  await page.locator("[data-action=save-offline]").click();
+  await page.locator("[data-action=offline-info]").waitFor({ timeout: 20000 })
+    .catch(() => problems.push(`${name}: „Offline sichern“ meldet keinen Erfolg`));
+  await page.evaluate(async () => { for (const key of await caches.keys()) if (key.endsWith("-runtime")) await caches.delete(key); });
   await context.setOffline(true);
   await page.goto(`${appUrl}?view=home&audience=34`).catch(error => problems.push(`${name}: Offline-Start ${error.message}`));
   await page.waitForFunction(() => document.querySelector("#app")?.children.length > 0, null, { timeout: 15000 })
     .catch(() => problems.push(`${name}: Im Flugmodus startet die App nicht`));
+  await page.goto(`${appUrl}?view=sunday&audience=34`).catch(() => {});
+  await page.locator(sheetButton).first().click().catch(() => {});
+  await page.locator(".pdf-sheet canvas").first().waitFor({ timeout: 20000 })
+    .catch(() => problems.push(`${name}: Gesichertes Blatt öffnet sich nach einem Update im Flugmodus nicht`));
+  await page.goto(`${appUrl}?view=more&audience=34`).catch(() => {});
+  await page.locator(".offline-row").first().waitFor({ timeout: 15000 }).catch(() => {});
+  if (!await page.locator(".offline-row").count()) problems.push(`${name}: „Mehr“ zeigt das gesicherte Blatt nicht`);
   await context.setOffline(false);
 
   for (const entry of failed) problems.push(`${name}: Datei fehlt ${entry}`);
@@ -116,7 +142,7 @@ async function checkProfile(name, device) {
 try {
   for (const [name, device] of profiles) {
     const result = await checkProfile(name, device);
-    console.log(`${result.name}: ${views.length + 1} Ansichten geöffnet, Offline-Paket ${result.files} Dateien, ${(result.bytes / 1e6).toFixed(1)} MB, PDF-Text geprüft, Flugmodus-Start geprüft.`);
+    console.log(`${result.name}: ${views.length + 1} Ansichten geöffnet, Offline-Paket ${result.files} Dateien, ${(result.bytes / 1e6).toFixed(1)} MB, PDF-Text geprüft, Blatt gesichert und nach Update im Flugmodus geöffnet.`);
     console.log(`  Fremde Adressen beim Stöbern: ${result.external.length ? result.external.join(", ") : "keine"}`);
   }
 } finally {
