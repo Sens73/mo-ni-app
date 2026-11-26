@@ -70,6 +70,7 @@ const APP_SHELL = [
   "./workbook-print.js?v=0.14.0-release-2",
   "./pdf-viewer.js?v=0.14.0-release-2",
   "./offline-materials.js?v=0.14.0-release-5",
+  "./install-guide.js?v=0.14.0-release-5",
   "./external-view.html",
   "./workbook-view.html",
   "./workbook-view.js?v=0.14.0-release-2",
@@ -98,6 +99,7 @@ const APP_SHELL = [
 // Aufgabenblätter (PDF) werden nicht vorab geladen; ein einmal geöffnetes Blatt bleibt über den Laufzeitspeicher offline verfügbar.
 const OPTIONAL_ASSETS = [
   "./assets/vorschaubild-platzhalter.svg",
+  "./assets/app-qr-code.svg",
   "./assets/puzzles/kenken-example.png",
   "./assets/puzzles/kenken-solution.png",
   "./assets/sonntagsraetsel-07-kenkens.png?v=20261031",

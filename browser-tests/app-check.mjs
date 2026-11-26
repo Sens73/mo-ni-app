@@ -141,12 +141,52 @@ async function checkProfile(name, device) {
   return { name, ...shell, external: [...external].sort() };
 }
 
+// Installationshilfe an den vier Einstiegen: YouTube-App (iPhone, Android), Safari, Computer.
+const YOUTUBE_IOS = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 com.google.ios.youtube/19.45.4";
+const ANDROID_WEBVIEW = "Mozilla/5.0 (Linux; Android 14; Pixel 7; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/131.0.0.0 Mobile Safari/537.36";
+const installCases = [
+  ["iPhone in der YouTube-App", { ...devices["iPhone 13"], userAgent: YOUTUBE_IOS }, { link: /^x-safari-http/, text: /In Safari öffnen/ }],
+  ["iPhone in Safari", devices["iPhone 13"], { text: /Seitenmenü öffnen/, picture: true }],
+  ["Android in der YouTube-App", { ...devices["Pixel 7"], userAgent: ANDROID_WEBVIEW }, { link: /^intent:\/\/.*package=com\.android\.chrome/, text: /In Chrome öffnen/ }],
+  ["Computer", { viewport: { width: 1280, height: 800 } }, { text: /Auf das Handy holen/, qr: true }]
+];
+async function checkInstallPaths() {
+  const checked = [];
+  for (const [label, device, expected] of installCases) {
+    const context = await browser.newContext({ ...device, serviceWorkers: "block" });
+    await context.route(url => !url.href.startsWith(origin), route => route.abort());
+    const page = await context.newPage();
+    page.on("pageerror", error => problems.push(`Installation ${label}: Skriptfehler ${error.message}`));
+    await page.goto(`${appUrl}?install=1&audience=34`);
+    const modal = page.locator(".modal .install-guides");
+    await modal.waitFor({ timeout: 15000 }).catch(() => problems.push(`Installation ${label}: Hilfe erscheint nicht`));
+    const text = await modal.innerText().catch(() => "");
+    if (!expected.text.test(text)) problems.push(`Installation ${label}: erwartet ${expected.text}, sichtbar: ${text.slice(0, 120)}`);
+    if (expected.link) {
+      const href = await page.locator("[data-install-escape]").first().getAttribute("href").catch(() => "");
+      if (!expected.link.test(href || "")) problems.push(`Installation ${label}: Knopf öffnet ${href}`);
+      if (!/install=1/.test(href || "")) problems.push(`Installation ${label}: Browser öffnet nicht die Installationshilfe`);
+    }
+    if (expected.picture && !await page.locator(".install-picture svg").isVisible().catch(() => false)) problems.push(`Installation ${label}: Bild zum Seitenmenü fehlt`);
+    if (expected.qr) {
+      const loaded = await page.locator(".install-qr img").evaluate(img => img.complete && img.naturalWidth > 0).catch(() => false);
+      if (!loaded) problems.push(`Installation ${label}: QR-Code lädt nicht`);
+    }
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+    if (overflow > 1) problems.push(`Installation ${label}: Seite ist ${overflow}px zu breit`);
+    checked.push(label);
+    await context.close();
+  }
+  return checked;
+}
+
 try {
   for (const [name, device] of profiles) {
     const result = await checkProfile(name, device);
     console.log(`${result.name}: ${views.length + 1} Ansichten geöffnet, Offline-Paket ${result.files} Dateien, ${(result.bytes / 1e6).toFixed(1)} MB, PDF-Text geprüft, Blatt gesichert und nach Update im Flugmodus geöffnet.`);
     console.log(`  Fremde Adressen beim Stöbern: ${result.external.length ? result.external.join(", ") : "keine"}`);
   }
+  console.log(`Installationshilfe geprüft: ${(await checkInstallPaths()).join(", ")}.`);
 } finally {
   await browser.close();
   server.close();

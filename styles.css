@@ -4013,3 +4013,18 @@ body > .pdf-print-surface {
 .settings-row.offline-row { grid-template-columns: auto 1fr; cursor: default; }
 .offline-row-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: 8px; }
 .offline-row-actions .soft-button { min-height: 36px; padding: 0 14px; font-size: 13px; }
+/* Installationshilfe: Ausweg aus eingebauten Browsern, Bild zum Safari-Menü, QR-Code am Computer */
+.install-escape { display: grid; gap: 0; }
+.install-escape .full-button { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+.install-lead { margin: 4px 0 0; font-size: 15px; line-height: 1.45; }
+.install-hint { margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.install-picture { margin: 10px 0 0; }
+.install-picture svg { display: block; width: 100%; max-width: 320px; height: auto; }
+.install-picture figcaption { margin-top: 4px; color: var(--muted); font-size: 12px; }
+.install-picture-arrow { animation: install-nudge 1.2s ease-in-out infinite; }
+@keyframes install-nudge { 50% { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .install-picture-arrow { animation: none; } }
+.install-qr { display: flex; gap: 14px; align-items: center; margin: 0 0 12px; padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.install-qr img { flex: none; width: 150px; height: 150px; }
+.install-qr figcaption { display: grid; gap: 4px; font-size: 13px; line-height: 1.45; }
+@media (max-width: 420px) { .install-qr { flex-direction: column; text-align: center; } }

@@ -11,6 +11,7 @@ import { AUDIENCES, availableDestination, validAudience, matchesAudience, grades
 import { fetchPdfFile } from "./download-manager.js?v=0.14.0-release-2";
 import { renderPdfDocument } from "./pdf-viewer.js?v=0.14.0-release-2";
 import { createOfflineMaterials, formatBytes } from "./offline-materials.js?v=0.14.0-release-5";
+import { installSituation, installPageUrl, openInBrowserUrl } from "./install-guide.js?v=0.14.0-release-5";
 import { createPrintManager } from "./print-manager.js?v=0.14.0-release-2";
 import { shouldUseOriginalPdfPrint, prepareOriginalPdfPrint } from "./original-pdf-print.js?v=0.14.0-release-2";
 import { canActivateAppUpdate, createAppUpdateCoordinator } from "./app-updates.js?v=0.14.0-release-2";
@@ -732,12 +733,24 @@ function moreView() {
 function modalView() {
   if (!state.modal) return "";
   if (state.modal === "install") {
-    const iosSteps = `<ol class="install-steps"><li><span>1</span><div><strong class="install-step-title"><span class="safari-page-menu-symbol">${icon("pageMenu")}</span><span>Seitenmenü öffnen</span></strong><p>Tippe unten links neben der Webadresse auf das Symbol mit drei waagerechten Strichen.</p></div></li><li><span>2</span><div><strong>Teilen und Mehr anzeigen</strong><p>Wähle „Teilen“. Tippe anschließend auf „Mehr anzeigen“, falls „Zum Home-Bildschirm“ noch nicht zu sehen ist.</p></div></li><li><span>3</span><div><strong>App hinzufügen</strong><p>Wähle „Zum Home-Bildschirm“, aktiviere „Als Web-App öffnen“ und tippe auf „Hinzufügen“.</p></div></li></ol>`;
+    const situation = installSituation(navigator);
+    const pageUrl = installPageUrl(location.href);
+    // Eingebaute Browser (z. B. in der YouTube-App) können nicht installieren: ein Knopf öffnet den richtigen Browser.
+    const escapeSteps = device => `<div class="install-escape"><p class="install-lead">Hier im eingebauten Browser lässt sich MO-Ni nicht installieren. Öffne die Seite in ${device === "ios" ? "Safari" : "Chrome"}, dort geht es mit einem Fingertipp weiter.</p><a class="primary-button full-button" href="${escapeHtml(openInBrowserUrl(device, pageUrl))}" data-install-escape>${icon("globe")} In ${device === "ios" ? "Safari" : "Chrome"} öffnen</a><button class="soft-button full-button" type="button" data-action="copy-install-link" data-link="${escapeHtml(pageUrl)}">${icon("share")} Link kopieren</button><p class="install-hint">Öffnet sich nichts? Dann tippe auf „Link kopieren“, öffne ${device === "ios" ? "Safari" : "Chrome"} und füge den Link oben in die Adresszeile ein.</p></div>`;
+    const iosPicture = `<figure class="install-picture" aria-hidden="true"><svg viewBox="0 0 320 96" role="presentation"><rect x="8" y="18" width="304" height="60" rx="30" fill="#f2f4f3" stroke="#c9d6cf"/><g stroke="#176b4d" stroke-width="4" stroke-linecap="round"><path d="M34 38h20M34 48h20M34 58h13"/></g><circle cx="44" cy="48" r="22" fill="none" stroke="#e0583c" stroke-width="4" class="install-picture-ring"/><rect x="82" y="36" width="176" height="24" rx="12" fill="#fff"/><text x="170" y="53" text-anchor="middle" font-size="14" fill="#557066">mo-ni.de</text><g fill="none" stroke="#557066" stroke-width="3" stroke-linecap="round"><path d="M280 48h4M290 48h4M270 48h4"/></g><path d="M44 4v8m0 0l-5-5m5 5l5-5" stroke="#e0583c" stroke-width="3" fill="none" stroke-linecap="round" class="install-picture-arrow"/></svg><figcaption>Dieses Symbol unten links in Safari antippen</figcaption></figure>`;
+    const iosSafariSteps = `<ol class="install-steps"><li><span>1</span><div><strong class="install-step-title"><span class="safari-page-menu-symbol">${icon("pageMenu")}</span><span>Seitenmenü öffnen</span></strong><p>Tippe unten links neben der Webadresse auf das Symbol mit drei waagerechten Strichen.</p>${iosPicture}</div></li><li><span>2</span><div><strong>Teilen und Mehr anzeigen</strong><p>Wähle „Teilen“. Tippe anschließend auf „Mehr anzeigen“, falls „Zum Home-Bildschirm“ noch nicht zu sehen ist.</p></div></li><li><span>3</span><div><strong>App hinzufügen</strong><p>Wähle „Zum Home-Bildschirm“, aktiviere „Als Web-App öffnen“ und tippe auf „Hinzufügen“.</p></div></li></ol><p class="install-hint">Siehst du keine Webadresse, sondern oben nur „Fertig“? Dann tippe unten rechts auf das Safari-Symbol, damit sich die Seite in Safari öffnet.</p>`;
+    const iosChromeSteps = `<ol class="install-steps"><li><span>1</span><div><strong>Teilen antippen</strong><p>Tippe oben rechts in der Adresszeile auf das Teilen-Symbol.</p></div></li><li><span>2</span><div><strong>App hinzufügen</strong><p>Wähle „Zum Home-Bildschirm“ und tippe auf „Hinzufügen“.</p></div></li></ol>`;
+    const iosSteps = situation.device === "ios" && situation.browser === "in-app" ? escapeSteps("ios")
+      : situation.device === "ios" && situation.browser === "chrome" ? iosChromeSteps
+      : iosSafariSteps;
     const directInstall = `<button class="primary-button full-button" type="button" data-action="install">${icon("download")} Jetzt installieren</button>`;
-    const androidSteps = state.deferredInstall
-      ? directInstall
-      : `<ol class="install-steps"><li><span>⋮</span><div><strong>Browser-Menü antippen</strong><p>Tippe oben rechts auf ⋮ und wähle „Installieren und Verknüpfung erstellen“.</p></div></li></ol>`;
+    const androidMenuSteps = `<ol class="install-steps"><li><span>⋮</span><div><strong>Browser-Menü antippen</strong><p>Tippe oben rechts auf ⋮ und wähle „Installieren und Verknüpfung erstellen“ oder „App installieren“.</p></div></li></ol>`;
+    const androidSteps = state.deferredInstall ? directInstall
+      : situation.device === "android" && situation.browser !== "chrome" ? escapeSteps("android")
+      : androidMenuSteps;
+    const phoneCode = `<figure class="install-qr"><img src="./assets/app-qr-code.svg" alt="QR-Code für mo-ni.de/app" width="150" height="150"><figcaption><strong>Auf das Handy holen</strong><span>Öffne die Kamera am Handy und richte sie auf diesen Code. Oder tippe dort mo-ni.de/app ein.</span></figcaption></figure>`;
     const computerSteps = `<div class="computer-install-options">
+      ${phoneCode}
       ${state.deferredInstall ? directInstall : ""}
       <section class="computer-install-section"><h3>Mac</h3><div class="computer-browser-step"><strong>Safari</strong><p>Wähle in der Menüleiste „Ablage“ › „Zum Dock hinzufügen“.</p></div><div class="computer-browser-step"><strong>Chrome</strong><p>Klicke rechts in der Symbolleiste auf <span class="browser-menu-symbol">${icon("moreVertical")}</span> und wähle „Streamen, speichern und teilen“ › „Seite als App installieren…“.</p></div></section>
       <section class="computer-install-section"><h3>Windows-PC</h3><div class="computer-browser-step"><strong>Chrome</strong><p>Klicke rechts oben auf <span class="browser-menu-symbol">${icon("moreVertical")}</span> und wähle „Streamen, speichern und teilen“ › „Seite als App installieren…“.</p></div><div class="computer-browser-step"><strong>Edge</strong><p>Klicke rechts oben auf ⋯ und wähle „Weitere Tools“ › „Apps“ › „Diese Website als App installieren“.</p></div></section>
@@ -745,9 +758,13 @@ function modalView() {
     const iosGuide = state.installed && isIosDevice()
       ? `<a class="install-device install-device-link" href="${escapeHtml(browserInstallUrl())}"><span>iPhone oder iPad</span>${icon("chevron")}</a>`
       : `<details class="install-device" name="install-device" ${isIosDevice() ? "open" : ""}><summary>iPhone oder iPad</summary>${iosSteps}</details>`;
+    // Im eingebauten Browser zählt nur ein Weg: hinaus in Safari bzw. Chrome.
+    const onlyEscape = situation.device !== "computer" && !state.installed && !state.deferredInstall && (situation.browser === "in-app" || (situation.device === "android" && situation.browser !== "chrome"));
     const installationGuides = requestedInstallDevice === "computer"
       ? `<div class="install-guides install-guides-focused">${computerSteps}</div>`
-      : `<div class="install-guides">${iosGuide}<details class="install-device" name="install-device" ${isAndroidDevice() ? "open" : ""}><summary>Android-Handy oder -Tablet</summary>${androidSteps}</details><details class="install-device" name="install-device" ${!isIosDevice() && !isAndroidDevice() ? "open" : ""}><summary>PC oder Mac</summary>${computerSteps}</details></div>`;
+      : onlyEscape
+        ? `<div class="install-guides install-guides-focused">${escapeSteps(situation.device)}</div>`
+        : `<div class="install-guides">${iosGuide}<details class="install-device" name="install-device" ${isAndroidDevice() ? "open" : ""}><summary>Android-Handy oder -Tablet</summary>${androidSteps}</details><details class="install-device" name="install-device" ${!isIosDevice() && !isAndroidDevice() ? "open" : ""}><summary>PC oder Mac</summary>${computerSteps}</details></div>`;
     const installNote = localIphoneTest
       ? `<div class="safety-note">${icon("info")}<span>Für diesen Test müssen Mac und iPhone im selben WLAN bleiben; das Startfenster auf dem Mac muss geöffnet sein.</span></div>`
       : "";
@@ -1222,6 +1239,9 @@ document.addEventListener("click", async event => {
     showToast("Das Blatt ist nicht mehr offline gesichert.");
     render();
 
+  } else if (action === "copy-install-link") {
+    try { await navigator.clipboard.writeText(actionButton.dataset.link); showToast("Link kopiert. Füge ihn jetzt im Browser oben in die Adresszeile ein."); }
+    catch { showToast(`Bitte diese Adresse im Browser eingeben: ${actionButton.dataset.link}`); }
   } else if (action === "install") {
     if (state.installed) {
       showToast("MO-Ni ist auf diesem Gerät bereits installiert.");
