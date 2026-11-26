@@ -20,32 +20,27 @@ die Knobelreise hat keine festen Termine mehr; neue Inhalte entstehen unregelmä
 Freigabe (Andreas, 26.11.2026): Inhalte, die schon öffentlich sind, dürfen automatisch hochgeladen
 werden. Programmdateien (`.js`, `.css`, `.html`, Service Worker) nie automatisch.
 
-## Auftragstext für den geplanten Lauf (Codex in der ChatGPT-App, täglich 7:30 und 17:30)
+## Einrichtung auf dem Mac
+
+Codex (in der ChatGPT-App) darf GitHub nicht erreichen und nur im Ordner work schreiben. Deshalb liegt
+eine Kopie der nötigen Programmteile im Ordner work:
+
+- `work/Werkzeuge/MO-Ni-App-Abgleich/programm/` – Kopie aus diesem Repo (`git archive` von main mit
+  scripts, Serverautomatisierung, data, audience.js, package.json); Stand in `STAND.txt`.
+  **Nach Änderungen an diesen Teilen erneuert Claude die Kopie** (über die Mac-Sitzung).
+- `work/Werkzeuge/MO-Ni-App-Abgleich/abgleich.sh` – ruft den Abgleich mit dem Node von Codex auf
+  (`~/.cache/codex-runtimes/…/node`, pdftotext ebenso), Zwischendateien in `.lokal.nosync/tmp`.
+  `abgleich.sh --rueckpruefen` prüft danach mo-ni.de.
+- `work/Werkzeuge/MO-Ni-App-Abgleich/heute/` – Ergebnis des letzten Laufs mit `bericht.txt`.
+
+## Auftragstext der Codex-Automation „MO-Ni-App: täglicher Abgleich“ (täglich 17:30)
 
 ```
-Täglicher Inhalts-Abgleich der MO-Ni-App. Andreas hat am 26.11.2026 freigegeben, dass bereits
-öffentliche Inhalte automatisch in die veröffentlichte App übernommen werden.
-
-1. Arbeitskopie aktualisieren (nur dieser Ordner, nie ~/Developer/mo-ni-app):
-   Wenn ~/Developer/mo-ni-abgleich fehlt: git clone https://github.com/Sens73/mo-ni-app.git ~/Developer/mo-ni-abgleich
-   Sonst: git -C ~/Developer/mo-ni-abgleich fetch origin main && git -C ~/Developer/mo-ni-abgleich reset --hard origin/main
-2. Abgleich ausführen:
-   NODE=~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node
-   PDFTOTEXT_BIN=~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/poppler/bin/pdftotext
-   $NODE ~/Developer/mo-ni-abgleich/scripts/inhalte-abgleichen.mjs --ausgabe=$HOME/MO-Ni-Abgleich/heute
-3. Lies ~/MO-Ni-Abgleich/heute/bericht.txt.
-   Steht dort „Nichts hochzuladen“ und gibt es keine Abschnitte „Nicht übernommen“ oder „Hinweise“:
-   still beenden (DONT_NOTIFY).
-4. Sonst lade über die angemeldete TYPO3-Oberfläche https://www.mo-ni.de/typo3/ (Modul Dateiliste)
-   genau die Dateien aus bericht.txt in der angegebenen Reihenfolge in die angegebenen Ordner unter
-   fileadmin/grundschule-app-test/ hoch und ersetze dabei die vorhandene Datei. Erlaubt sind nur
-   Dateien unter data/, assets/vorschaubilder/ und MO65-Arbeitsheft-*.pdf. Nichts löschen, nichts
-   anderes hochladen, keine Programmdateien.
-5. Danach: $NODE ~/Developer/mo-ni-abgleich/scripts/inhalte-abgleichen.mjs --rueckpruefen=$HOME/MO-Ni-Abgleich/heute/bericht.json
-   Bei „✓ Rückprüfung“: Andreas kurz melden, was neu in der App ist (Abschnitt „Neu in der App“).
-   Bei „✗“: die betroffenen Dateien einmal erneut hochladen und erneut prüfen; scheitert es wieder,
-   Andreas melden, welche Datei betroffen ist.
-6. Abschnitte „Nicht übernommen“ oder „Hinweise“ Andreas einmal kurz melden (nicht jeden Tag wiederholen).
-7. Ist TYPO3 nicht angemeldet: nichts hochladen, keine Zugangsdaten suchen, Andreas einmal bitten,
-   sich unter https://www.mo-ni.de/typo3/ anzumelden. Der nächste Lauf holt alles nach.
+Täglicher Inhalts-Abgleich der MO-Ni-App (Freigabe Andreas 26.11.2026: bereits öffentliche Inhalte automatisch übernehmen).
+1. Führe aus: bash "Werkzeuge/MO-Ni-App-Abgleich/abgleich.sh"
+2. Lies Werkzeuge/MO-Ni-App-Abgleich/heute/bericht.txt. Steht dort „Nichts hochzuladen“ und gibt es keine Abschnitte „Nicht übernommen“ oder „Hinweise“: still beenden (DONT_NOTIFY).
+3. Sonst lade über die angemeldete TYPO3-Oberfläche https://www.mo-ni.de/typo3/ (Dateiliste) genau die Dateien aus Werkzeuge/MO-Ni-App-Abgleich/heute/ in der Reihenfolge aus bericht.txt in die dort genannten Ordner unter fileadmin/grundschule-app-test/ hoch und ersetze die vorhandene Datei. Erlaubt sind nur Dateien unter data/, assets/vorschaubilder/ und MO65-Arbeitsheft-*.pdf. Nichts löschen, nichts anderes hochladen. Für den Browser dasselbe Werkzeug wie bisher verwenden (cua_repl mit dem ChatGPT-In-App-Browser).
+4. Danach: bash "Werkzeuge/MO-Ni-App-Abgleich/abgleich.sh" --rueckpruefen. Bei „✓“ Andreas kurz melden, was neu ist. Bei „✗“ einmal erneut hochladen und prüfen; scheitert es wieder, Andreas die betroffene Datei melden.
+5. „Nicht übernommen“ oder „Hinweise“ Andreas einmal kurz melden.
+6. Ist TYPO3 nicht angemeldet: nichts hochladen, keine Zugangsdaten suchen, Andreas einmal bitten, sich anzumelden.
 ```
