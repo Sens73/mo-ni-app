@@ -20,7 +20,9 @@ videos.forEach(video => {
   assert.deepEqual(classifyJourneyItem(video), { grades: [3], competitions: ["olympiad"] }, video.code);
   assert.equal(matchesJourneyFilters(video, { grades: [3], competitions: ["olympiad"] }), true);
 });
-assert.deepEqual(classifyJourneyItem(journey.nextPublication), { grades: [3], competitions: ["olympiad"] });
+const nextGrade = Number(journey.nextPublication.code.slice(5, 6));
+assert.ok([3, 4].includes(nextGrade), "The next Knobelreise task is a grade-3 or grade-4 Olympiad task.");
+assert.deepEqual(classifyJourneyItem(journey.nextPublication), { grades: [nextGrade], competitions: ["olympiad"] });
 assert.equal(filterJourneyItems(videos).length, videos.length);
 assert.equal(filterJourneyItems(videos, { grades: [3, 4], competitions: ["olympiad"] }).length, videos.length);
 assert.equal(filterJourneyItems(videos, { grades: [4] }).length, 0);

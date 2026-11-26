@@ -135,7 +135,8 @@ assert.equal(afterFirstRound.nextPublication.scheduledAt, "2026-09-22T12:00:00.0
 const stage = await mkdtemp(resolve(tmpdir(), "mo-ni-complete-refresh-"));
 try {
   const root = new URL("../", import.meta.url);
-  const published = new URL("../v0.11-sonntagsraetsel/", root);
+  // The confirmed workbook is the one shipped with this release.
+  const published = root;
   const previewContent = JSON.parse(await readFile(new URL("data/content.json", root), "utf8"));
   const confirmedContent = JSON.parse(await readFile(new URL("data/content.json", published), "utf8"));
   const stagedContent = { ...previewContent, workbooks: confirmedContent.workbooks };

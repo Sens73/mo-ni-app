@@ -24,9 +24,16 @@ npm start     # Entwicklungsserver auf http://localhost:4214
 npm test      # alle automatischen Prüfungen
 ```
 
-Bekannter Stand beim Import: 4 Testdateien scheitern, weil sie den aktuellen
-Datenbestand statt fester Beispiele prüfen (audience, content, material-presentation,
-journey-filters). `tests/kenken.test.mjs` fehlt noch in `npm test`.
+Bei jedem Entwurf (Pull Request) laufen alle Tests automatisch auf GitHub
+(`.github/workflows/pruefung.yml`). Ein grüner Haken heißt: alles besteht.
+
+## Serverautomatisierung
+
+Der Ordner `Serverautomatisierung/` enthält die Abgleich-Skripte, die auf dem Server
+laufen (Knobelreise, Video-Playlists, Arbeitsheft mit QR-Codes). Er lag bisher neben
+den Versionsordnern in `Werkzeuge/MO-Ni-App/Serverautomatisierung` und gehört jetzt
+zum Repo, weil die Tests ihn brauchen. Zugangsdaten gehören nie hierher: Der
+YouTube-Schlüssel kommt ausschließlich aus der Umgebungsvariablen `YOUTUBE_API_KEY`.
 
 ## Veröffentlichen
 
