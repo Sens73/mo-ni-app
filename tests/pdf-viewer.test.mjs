@@ -15,7 +15,7 @@ function deferred() {
   return { promise, resolve, reject };
 }
 
-function renderer({ pageCount = 2, serializationFails = false } = {}) {
+function renderer({ pageCount = 2, serializationFails = false, pageTexts = [] } = {}) {
   const renders = Array.from({ length: pageCount }, deferred);
   const decodes = Array.from({ length: pageCount }, deferred);
   const canvases = [];
@@ -29,9 +29,12 @@ function renderer({ pageCount = 2, serializationFails = false } = {}) {
   const document = {
     createElement(tag) {
       const element = {
-        tag, children: [], attributes: {},
+        tag, children: [], attributes: {}, style: { properties: {}, setProperty(name, value) { this.properties[name] = value; } },
+        clientWidth: 400, textContent: "", parent: null,
         setAttribute(name, value) { this.attributes[name] = value; },
-        append(child) { this.children.push(child); }
+        removeAttribute(name) { delete this.attributes[name]; },
+        append(child) { this.children.push(child); child.parent = this; },
+        remove() { if (this.parent) this.parent.children = this.parent.children.filter(child => child !== this); }
       };
       if (tag === "canvas") {
         const number = canvases.length;
@@ -53,10 +56,18 @@ function renderer({ pageCount = 2, serializationFails = false } = {}) {
     }
   };
   const pdfjs = {
+    TextLayer: class {
+      constructor({ textContentSource, container, viewport }) {
+        assert.equal(viewport.width, 600, "The text layer uses PDF points and scales with CSS.");
+        Object.assign(this, { textContentSource, container });
+      }
+      async render() { this.container.textContent = await this.textContentSource; }
+    },
     getDocument: () => ({ promise: Promise.resolve({
       numPages: pageCount,
       getPage: async number => ({
         getViewport: ({ scale }) => ({ width: 600 * scale, height: 800 * scale }),
+        streamTextContent: () => Promise.resolve(pageTexts[number - 1] || ""),
         render: ({ canvasContext }) => ({
           promise: renders[number - 1].promise.then(() => {
             canvasContext.canvas.pixels = `complete page ${number}`;
@@ -119,4 +130,23 @@ failedSerialization.renders[0].resolve();
 await serializationRejected;
 assert.equal(failedSerialization.container.children[0].children.length, 1, "A failed PNG does not replace the original canvas.");
 
-console.log("Validated complete PNG preparation before PDF readiness, original canvas retention and image failure propagation.");
+// Text layer: pages with text become readable, the canvas is hidden from screen readers.
+const readable = renderer({ pageCount: 2, pageTexts: ["Quersumme 9: Finde alle Zahlen …", "   "] });
+const readableResult = readable.run();
+for (let index = 0; index < 2; index++) {
+  await flush(); readable.renders[index].resolve(); await flush(); await flush(); readable.decodes[index].resolve(); await flush();
+}
+await readableResult;
+const [textSheet, imageSheet] = readable.container.children;
+assert.equal(textSheet.attributes["aria-label"], "Seite 1 von 2");
+const layer = textSheet.children.find(child => child.className?.includes("textLayer"));
+assert.ok(layer, "A page with text gets a text layer.");
+assert.equal(layer.textContent, "Quersumme 9: Finde alle Zahlen …");
+assert.equal(layer.attributes.lang, "de");
+assert.equal(readable.canvases[0].attributes["aria-hidden"], "true", "The text replaces the picture for screen readers.");
+assert.equal(textSheet.style.properties["--total-scale-factor"], String(400 / 600));
+assert.ok(!imageSheet.children.some(child => child.className?.includes("textLayer")), "A page without text keeps no empty layer.");
+assert.equal(readable.canvases[1].attributes["aria-label"], "Seite 2 von 2", "A page without text keeps its page label.");
+assert.equal(readable.canvases[1].attributes["aria-hidden"], undefined);
+
+console.log("Validated complete PNG preparation before PDF readiness, original canvas retention, image failure propagation and the readable text layer.");
