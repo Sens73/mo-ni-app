@@ -1,0 +1,28 @@
+{
+  "source": "Sonntagsraetsel-06-Deka-Dots-Aufgabenblatt.pdf",
+  "sha256": "123d2227aae16ab2b86f43cd641187aa3c83158936ae73e67195610731531259",
+  "page": 1,
+  "dpi": 200,
+  "crops": {
+    "example": [
+      370,
+      532,
+      670,
+      740
+    ],
+    "solution": [
+      912,
+      532,
+      1212,
+      740
+    ],
+    "card": [
+      146,
+      1479,
+      779,
+      1958
+    ]
+  },
+  "scale": "Beide unverändert aus derselben 200-dpi-Seite, gleiche Abmessungen.",
+  "card": "Originalrätsel 4, drei Reihen und vier Spalten. Auswahlkarte jetzt als deka-dots-card.svg mit schwarzen Konturen und vergrößerten Ziffern nach Nutzerwunsch; voriger PNG-Ausschnitt als Quellenbeleg erhalten. Erklärbeispiel unverändert."
+}

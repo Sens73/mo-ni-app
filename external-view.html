@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#176b4d" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="./assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css?v=0.14.0-release-2" />
+    <link rel="stylesheet" href="./pdf-actions.css?v=0.14.0-release-2" />
+    <title>MO-Ni – Materialansicht</title>
+  </head>
+  <body class="external-body">
+    <main class="external-window">
+      <header class="external-toolbar">
+        <button class="icon-button external-home-button" id="return-to-app" type="button" aria-label="Zurück zur App">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+        </button>
+        <div><small>MO-Ni · Materialansicht</small><strong id="external-title">Material</strong></div>
+        <button class="secondary-button" id="external-print" type="button" hidden>Drucken</button>
+      </header>
+      <p class="pdf-status" id="external-status" role="status" aria-live="polite"></p>
+      <section id="external-content"></section>
+      <footer class="external-footer">
+        <button class="secondary-button" type="button" data-pdf-download id="external-download" hidden>Herunterladen</button>
+      </footer>
+    </main>
+    <script type="module" src="./external-view.js?v=0.14.0-release-2"></script>
+  </body>
+</html>

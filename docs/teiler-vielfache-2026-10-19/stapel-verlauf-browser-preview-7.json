@@ -1,0 +1,110 @@
+[
+  {
+    "count": 40,
+    "gridHeight": 216.21875,
+    "historyBottom": 554,
+    "minCardHeight": 44,
+    "moveBottom": 475.5,
+    "overflow": false,
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "count": 40,
+    "gridHeight": 182.5,
+    "historyBottom": 376,
+    "minCardHeight": 44,
+    "moveBottom": 294.5,
+    "overflow": false,
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "count": 40,
+    "gridHeight": 167.5,
+    "historyBottom": 361,
+    "minCardHeight": 44,
+    "moveBottom": 279.5,
+    "overflow": false,
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 216.21875,
+    "historyBottom": 554,
+    "minCardHeight": 44,
+    "moveBottom": 475.5,
+    "overflow": false,
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 182.5,
+    "historyBottom": 376,
+    "minCardHeight": 44,
+    "moveBottom": 294.5,
+    "overflow": false,
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 167.5,
+    "historyBottom": 361,
+    "minCardHeight": 44,
+    "moveBottom": 279.5,
+    "overflow": false,
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 163.71875,
+    "historyBottom": 554,
+    "minCardHeight": 44,
+    "moveBottom": 475.5,
+    "overflow": false,
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 131,
+    "historyBottom": 376,
+    "minCardHeight": 44,
+    "moveBottom": 294.5,
+    "overflow": false,
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 116,
+    "historyBottom": 361,
+    "minCardHeight": 44,
+    "moveBottom": 279.5,
+    "overflow": false,
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  }
+]

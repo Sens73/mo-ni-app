@@ -1,0 +1,1059 @@
+{
+  "polyominos": [
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 373.5,
+        "height": 270,
+        "right": 241,
+        "width": 162,
+        "x": 79,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.1640625,
+        "height": 52.6640625,
+        "right": 133.6640625,
+        "width": 52.6640625,
+        "x": 81,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 447.5,
+        "height": 64,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 383.5
+      },
+      "title": "Polyomino 1 ★",
+      "tools": {
+        "bottom": 509.4921875,
+        "height": 53.9921875,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 455.5
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 268,
+        "width": 216,
+        "x": 52,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 160,
+        "width": 53,
+        "x": 107,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 393.5,
+        "height": 64,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 329.5
+      },
+      "title": "Polyomino 2 ★",
+      "tools": {
+        "bottom": 455.4921875,
+        "height": 53.9921875,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 401.5
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 268,
+        "width": 216,
+        "x": 52,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 107,
+        "width": 53,
+        "x": 54,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 393.5,
+        "height": 64,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 329.5
+      },
+      "title": "Polyomino 3 ★★",
+      "tools": {
+        "bottom": 455.4921875,
+        "height": 53.9921875,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 401.5
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 361.5,
+        "height": 258,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 156.3046875,
+        "height": 50.8046875,
+        "right": 185.3984375,
+        "width": 50.8046875,
+        "x": 134.59375,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 435.5,
+        "height": 64,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 371.5
+      },
+      "title": "Polyomino 4 ★★★",
+      "tools": {
+        "bottom": 497.4921875,
+        "height": 53.9921875,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 443.5
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 411.4921875,
+        "height": 307.9921875,
+        "right": 262.6640625,
+        "width": 205.328125,
+        "x": 57.3359375,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 155.828125,
+        "height": 50.328125,
+        "right": 210.328125,
+        "width": 50.328125,
+        "x": 160,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 485.4921875,
+        "height": 64,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 421.4921875
+      },
+      "title": "Polyomino 5 ★★★",
+      "tools": {
+        "bottom": 547.484375,
+        "height": 53.9921875,
+        "right": 289,
+        "width": 258,
+        "x": 31,
+        "y": 493.4921875
+      },
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 373.5,
+        "height": 270,
+        "right": 276,
+        "width": 162,
+        "x": 114,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.1640625,
+        "height": 52.6640625,
+        "right": 168.6640625,
+        "width": 52.6640625,
+        "x": 116,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 447.5,
+        "height": 64,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 383.5
+      },
+      "title": "Polyomino 1 ★",
+      "tools": {
+        "bottom": 509.4921875,
+        "height": 53.9921875,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 455.5
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 303,
+        "width": 216,
+        "x": 87,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 195,
+        "width": 53,
+        "x": 142,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 393.5,
+        "height": 64,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 329.5
+      },
+      "title": "Polyomino 2 ★",
+      "tools": {
+        "bottom": 455.4921875,
+        "height": 53.9921875,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 401.5
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 303,
+        "width": 216,
+        "x": 87,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 142,
+        "width": 53,
+        "x": 89,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 393.5,
+        "height": 64,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 329.5
+      },
+      "title": "Polyomino 3 ★★",
+      "tools": {
+        "bottom": 455.4921875,
+        "height": 53.9921875,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 401.5
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 373.5,
+        "height": 270,
+        "right": 330,
+        "width": 270,
+        "x": 60,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.6953125,
+        "height": 53.1953125,
+        "right": 221.59375,
+        "width": 53.1953125,
+        "x": 168.3984375,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 447.5,
+        "height": 64,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 383.5
+      },
+      "title": "Polyomino 4 ★★★",
+      "tools": {
+        "bottom": 509.4921875,
+        "height": 53.9921875,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 455.5
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 427.5,
+        "height": 324,
+        "right": 303,
+        "width": 216,
+        "x": 87,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 248,
+        "width": 53,
+        "x": 195,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 501.5,
+        "height": 64,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 437.5
+      },
+      "title": "Polyomino 5 ★★★",
+      "tools": {
+        "bottom": 563.4921875,
+        "height": 53.9921875,
+        "right": 359,
+        "width": 328,
+        "x": 31,
+        "y": 509.5
+      },
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 373.5,
+        "height": 270,
+        "right": 338.1015625,
+        "width": 162,
+        "x": 176.1015625,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.1640625,
+        "height": 52.6640625,
+        "right": 230.765625,
+        "width": 52.6640625,
+        "x": 178.1015625,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 274.5,
+        "height": 134,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 140.5
+      },
+      "title": "Polyomino 1 ★",
+      "tools": {
+        "bottom": 336.4921875,
+        "height": 53.9921875,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 282.5
+      },
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 365.1015625,
+        "width": 216,
+        "x": 149.1015625,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 257.1015625,
+        "width": 53,
+        "x": 204.1015625,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 247.5,
+        "height": 134,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 113.5
+      },
+      "title": "Polyomino 2 ★",
+      "tools": {
+        "bottom": 309.4921875,
+        "height": 53.9921875,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 255.5
+      },
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 365.1015625,
+        "width": 216,
+        "x": 149.1015625,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 204.1015625,
+        "width": 53,
+        "x": 151.1015625,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 247.5,
+        "height": 134,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 113.5
+      },
+      "title": "Polyomino 3 ★★",
+      "tools": {
+        "bottom": 309.4921875,
+        "height": 53.9921875,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 255.5
+      },
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 373.5,
+        "height": 270,
+        "right": 392.1015625,
+        "width": 270,
+        "x": 122.1015625,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.6953125,
+        "height": 53.1953125,
+        "right": 283.6953125,
+        "width": 53.1953125,
+        "x": 230.5,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 274.5,
+        "height": 134,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 140.5
+      },
+      "title": "Polyomino 4 ★★★",
+      "tools": {
+        "bottom": 336.4921875,
+        "height": 53.9921875,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 282.5
+      },
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 378.4921875,
+        "height": 274.9921875,
+        "right": 348.765625,
+        "width": 183.328125,
+        "x": 165.4375,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 150.328125,
+        "height": 44.828125,
+        "right": 301.9296875,
+        "width": 44.828125,
+        "x": 257.1015625,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 277,
+        "height": 134,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 143
+      },
+      "title": "Polyomino 5 ★★★",
+      "tools": {
+        "bottom": 338.9921875,
+        "height": 53.9921875,
+        "right": 759,
+        "width": 309.796875,
+        "x": 449.203125,
+        "y": 285
+      },
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 363.5,
+        "height": 260,
+        "right": 262,
+        "width": 156,
+        "x": 106,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 156.1640625,
+        "height": 50.6640625,
+        "right": 158.6640625,
+        "width": 50.6640625,
+        "x": 108,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 269.5,
+        "height": 134,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 135.5
+      },
+      "title": "Polyomino 1 ★",
+      "tools": {
+        "bottom": 331.4921875,
+        "height": 53.9921875,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 277.5
+      },
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 292,
+        "width": 216,
+        "x": 76,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 184,
+        "width": 53,
+        "x": 131,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 247.5,
+        "height": 134,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 113.5
+      },
+      "title": "Polyomino 2 ★",
+      "tools": {
+        "bottom": 309.4921875,
+        "height": 53.9921875,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 255.5
+      },
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 319.5,
+        "height": 216,
+        "right": 292,
+        "width": 216,
+        "x": 76,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 158.5,
+        "height": 53,
+        "right": 131,
+        "width": 53,
+        "x": 78,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 247.5,
+        "height": 134,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 113.5
+      },
+      "title": "Polyomino 3 ★★",
+      "tools": {
+        "bottom": 309.4921875,
+        "height": 53.9921875,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 255.5
+      },
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 363.5,
+        "height": 260,
+        "right": 314,
+        "width": 260,
+        "x": 54,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 156.6953125,
+        "height": 51.1953125,
+        "right": 209.59375,
+        "width": 51.1953125,
+        "x": 158.3984375,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 269.5,
+        "height": 134,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 135.5
+      },
+      "title": "Polyomino 4 ★★★",
+      "tools": {
+        "bottom": 331.4921875,
+        "height": 53.9921875,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 277.5
+      },
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 363.4921875,
+        "height": 259.9921875,
+        "right": 270.6640625,
+        "width": 173.328125,
+        "x": 97.3359375,
+        "y": 103.5
+      },
+      "cell": {
+        "bottom": 147.828125,
+        "height": 42.328125,
+        "right": 226.328125,
+        "width": 42.328125,
+        "x": 184,
+        "y": 105.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 269.5,
+        "height": 134,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 135.5
+      },
+      "title": "Polyomino 5 ★★★",
+      "tools": {
+        "bottom": 331.4921875,
+        "height": 53.9921875,
+        "right": 638,
+        "width": 279,
+        "x": 359,
+        "y": 277.5
+      },
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 398.5,
+        "height": 270,
+        "right": 721,
+        "width": 162,
+        "x": 559,
+        "y": 128.5
+      },
+      "cell": {
+        "bottom": 183.1640625,
+        "height": 52.6640625,
+        "right": 613.6640625,
+        "width": 52.6640625,
+        "x": 561,
+        "y": 130.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 472.5,
+        "height": 64,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 408.5
+      },
+      "title": "Polyomino 1 ★",
+      "tools": {
+        "bottom": 534.4921875,
+        "height": 53.9921875,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 480.5
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 344.5,
+        "height": 216,
+        "right": 748,
+        "width": 216,
+        "x": 532,
+        "y": 128.5
+      },
+      "cell": {
+        "bottom": 183.5,
+        "height": 53,
+        "right": 640,
+        "width": 53,
+        "x": 587,
+        "y": 130.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 418.5,
+        "height": 64,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 354.5
+      },
+      "title": "Polyomino 2 ★",
+      "tools": {
+        "bottom": 480.4921875,
+        "height": 53.9921875,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 426.5
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 344.5,
+        "height": 216,
+        "right": 748,
+        "width": 216,
+        "x": 532,
+        "y": 128.5
+      },
+      "cell": {
+        "bottom": 183.5,
+        "height": 53,
+        "right": 587,
+        "width": 53,
+        "x": 534,
+        "y": 130.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 418.5,
+        "height": 64,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 354.5
+      },
+      "title": "Polyomino 3 ★★",
+      "tools": {
+        "bottom": 480.4921875,
+        "height": 53.9921875,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 426.5
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 398.5,
+        "height": 270,
+        "right": 775,
+        "width": 270,
+        "x": 505,
+        "y": 128.5
+      },
+      "cell": {
+        "bottom": 183.6953125,
+        "height": 53.1953125,
+        "right": 666.59375,
+        "width": 53.1953125,
+        "x": 613.3984375,
+        "y": 130.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 472.5,
+        "height": 64,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 408.5
+      },
+      "title": "Polyomino 4 ★★★",
+      "tools": {
+        "bottom": 534.4921875,
+        "height": 53.9921875,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 480.5
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "allVisible": true,
+      "board": {
+        "bottom": 452.5,
+        "height": 324,
+        "right": 748,
+        "width": 216,
+        "x": 532,
+        "y": 128.5
+      },
+      "cell": {
+        "bottom": 183.5,
+        "height": 53,
+        "right": 693,
+        "width": 53,
+        "x": 640,
+        "y": 130.5
+      },
+      "overflow": false,
+      "pieces": {
+        "bottom": 526.5,
+        "height": 64,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 462.5
+      },
+      "title": "Polyomino 5 ★★★",
+      "tools": {
+        "bottom": 588.4921875,
+        "height": 53.9921875,
+        "right": 838,
+        "width": 396,
+        "x": 442,
+        "y": 534.5
+      },
+      "viewport": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "andereRaetsel": [
+    {
+      "backVisible": true,
+      "dock": "none",
+      "header": "none",
+      "overflow": false,
+      "title": "Sumdoku 1 ★"
+    },
+    {
+      "backVisible": true,
+      "dock": "none",
+      "header": "none",
+      "overflow": false,
+      "title": "Zahlenpfad 1 ★"
+    },
+    {
+      "backVisible": true,
+      "dock": "none",
+      "header": "none",
+      "overflow": false,
+      "title": "Zahlenkreuz 1 ★"
+    },
+    {
+      "backVisible": true,
+      "dock": "none",
+      "header": "none",
+      "overflow": false,
+      "title": "Differenzpyramide 1 ★"
+    }
+  ]
+}

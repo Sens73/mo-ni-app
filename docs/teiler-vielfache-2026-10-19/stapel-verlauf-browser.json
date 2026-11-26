@@ -1,0 +1,113 @@
+[
+  {
+    "gridHeight": 177.21875,
+    "historyBottom": 554,
+    "minCardHeight": 44,
+    "moveBottom": 472.5,
+    "overflow": false,
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "gridHeight": 182.5,
+    "historyBottom": 376,
+    "minCardHeight": 44,
+    "moveBottom": 294.5,
+    "overflow": false,
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "gridHeight": 167.5,
+    "historyBottom": 361,
+    "minCardHeight": 44,
+    "moveBottom": 279.5,
+    "overflow": false,
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 177.21875,
+    "historyBottom": 554,
+    "moveBottom": 472.5,
+    "overflow": false,
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 182.5,
+    "historyBottom": 376,
+    "moveBottom": 294.5,
+    "overflow": false,
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "count": 100,
+    "gridHeight": 167.5,
+    "historyBottom": 361,
+    "moveBottom": 279.5,
+    "overflow": false,
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 80,
+    "historyBottom": 575.375,
+    "moveBottom": 430.78125,
+    "notice": "149 ist weder ein Teiler noch ein Vielfaches von 150.",
+    "overflow": false,
+    "sequence": [
+      "150"
+    ],
+    "size": {
+      "height": 568,
+      "width": 320
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 93.453125,
+    "historyBottom": 376,
+    "moveBottom": 256.953125,
+    "notice": "149 ist weder ein Teiler noch ein Vielfaches von 150.",
+    "overflow": false,
+    "sequence": [
+      "150"
+    ],
+    "size": {
+      "height": 390,
+      "width": 844
+    }
+  },
+  {
+    "count": 150,
+    "gridHeight": 80,
+    "historyBottom": 362.546875,
+    "moveBottom": 243.5,
+    "notice": "149 ist weder ein Teiler noch ein Vielfaches von 150.",
+    "overflow": false,
+    "sequence": [
+      "150"
+    ],
+    "size": {
+      "height": 375,
+      "width": 667
+    }
+  }
+]

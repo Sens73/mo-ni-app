@@ -1,0 +1,153 @@
+[
+  {
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 97,
+      "task": 1,
+      "stars": 1
+    },
+    "rank": 10,
+    "cells": 10,
+    "solution": [
+      4,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24
+    ]
+  },
+  {
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 98,
+      "task": 5,
+      "stars": 2
+    },
+    "rank": 14,
+    "cells": 14,
+    "solution": [
+      7,
+      10,
+      12,
+      14,
+      16,
+      18,
+      21,
+      28,
+      24,
+      20,
+      16,
+      35,
+      42,
+      49
+    ]
+  },
+  {
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 100,
+      "task": 13,
+      "stars": 2
+    },
+    "rank": 13,
+    "cells": 13,
+    "solution": [
+      24,
+      15,
+      20,
+      25,
+      30,
+      24,
+      30,
+      36,
+      28,
+      35,
+      42,
+      49,
+      32
+    ]
+  },
+  {
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 102,
+      "task": 21,
+      "stars": 3
+    },
+    "rank": 22,
+    "cells": 22,
+    "solution": [
+      18,
+      22,
+      24,
+      27,
+      30,
+      33,
+      36,
+      44,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      52,
+      63,
+      54,
+      60,
+      66,
+      72,
+      56,
+      69
+    ]
+  },
+  {
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 105,
+      "task": 27,
+      "stars": 4
+    },
+    "rank": 32,
+    "cells": 32,
+    "solution": [
+      46,
+      44,
+      42,
+      40,
+      48,
+      48,
+      50,
+      56,
+      49,
+      42,
+      35,
+      48,
+      52,
+      56,
+      60,
+      64,
+      40,
+      54,
+      72,
+      45,
+      60,
+      80,
+      70,
+      60,
+      50,
+      66,
+      88,
+      72,
+      78,
+      84,
+      90,
+      96
+    ]
+  }
+]

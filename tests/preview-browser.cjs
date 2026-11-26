@@ -1,0 +1,24 @@
+const {chromium}=require(process.env.HOME + '/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const assert=require('node:assert/strict');const fs=require('fs');const path=require('path');
+(async()=>{const browser=await chromium.launch({headless:true,channel:'chrome'});const context=await browser.newContext({viewport:{width:390,height:844}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://localhost:4212/?view=home&audience=34');await page.locator('.audience-picker').waitFor();
+assert.match(await page.locator('.date-card').innerText(),/117/);
+await page.getByRole('button',{name:'Klasse 5–6',exact:true}).click();assert.match(await page.locator('h1').innerText(),/Reise geht weiter/);assert.equal(await page.locator('.date-card').count(),0);
+await page.reload();await page.locator('.audience-picker').waitFor();assert.equal(await page.getByRole('button',{name:'Klasse 5–6',exact:true}).getAttribute('aria-pressed'),'true');
+await page.goto('http://localhost:4212/?view=home');await page.locator('.audience-picker').waitFor();assert.equal(await page.getByRole('button',{name:'Klasse 5–6',exact:true}).getAttribute('aria-pressed'),'true');
+await page.locator('.quick-card[data-tab="mathe-ag"]').click();assert.equal(await page.locator('.resource-card').count(),0);
+await page.getByRole('button',{name:'Klasse 3–4',exact:true}).click();assert.equal(await page.locator('.resource-card').count(),117);
+await page.locator('[data-role="resource-search"]').fill('Eriks Zahl');const searchCount=await page.locator('.resource-card').count();assert.ok(searchCount>=1);assert.match(await page.locator('.resource-card').first().innerText(),/117/);
+await page.locator('[data-open-resource][data-viewer-type="video"]').first().click();assert.equal(await page.locator('iframe').count(),1);await page.locator('[data-action="close-viewer"]').click();assert.equal(await page.locator('.resource-card').count(),searchCount);assert.equal(await page.locator('[data-role="resource-search"]').inputValue(),'Eriks Zahl');
+await page.goto('http://localhost:4212/?view=journey&audience=56');await page.locator('.journey-filters').waitFor();assert.equal(await page.locator('.journey-video-card').count(),1);assert.match(await page.locator('.journey-video-card').innerText(),/Sonntagsrätsel/);
+await page.locator('[data-journey-filter="season"]').selectOption('66');assert.equal(await page.locator('.journey-video-card').count(),0);
+await page.getByRole('button',{name:'Klasse 3–4',exact:true}).click();assert.equal(await page.locator('.journey-video-card').count(),7);
+await page.locator('[data-journey-filter="season"]').selectOption('65');assert.equal(await page.locator('.journey-video-card').count(),6);
+await page.getByRole('button',{name:'Klasse 5–6',exact:true}).click();assert.equal(await page.locator('[data-journey-filter="season"]').inputValue(),'all');
+fs.mkdirSync('docs/pruefbilder',{recursive:true});
+for(const width of [320,390,768,1280]){await page.setViewportSize({width,height:900});for(const [view,audience] of [['home','34'],['home','56'],['training','56'],['journey','56'],['dates','56']]){await page.goto(`http://localhost:4212/?view=${view}&audience=${audience}`);await page.locator('#main-content').waitFor();const dimensions=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:innerWidth}));assert.ok(dimensions.scroll<=dimensions.width,`Overflow ${width}/${view}/${audience}: ${dimensions.scroll}`);if(width===390 || (width===1280&&view==='home'))await page.screenshot({path:`docs/pruefbilder/${width}-${view}-${audience}.png`,fullPage:view!=='training'});}}
+// Static deployment fallback behaves like the local API.
+await page.route('**/api/content',route=>route.abort());await page.goto('http://localhost:4212/?view=training&audience=34');await page.locator('.resource-card').first().waitFor();assert.equal(await page.locator('.resource-card').count(),117);await page.unroute('**/api/content');
+// Installed shell can reopen offline, including the new selection module.
+await page.goto('http://localhost:4212/?view=home&audience=56');await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await page.locator('.audience-picker').waitFor();await context.setOffline(true);await page.reload();await page.locator('.audience-picker').waitFor({timeout:15000});assert.match(await page.locator('h1').innerText(),/Reise geht weiter/);await context.setOffline(false);
+assert.deepEqual(errors,[]);console.log('PASS: remembered audience, legacy archive/search/video return, journey class/season filters, four widths, static fallback and offline shell; no uncaught browser errors.');await browser.close();})().catch(e=>{console.error(e);process.exit(1)});

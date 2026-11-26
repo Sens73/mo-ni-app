@@ -1,0 +1,1059 @@
+{
+  "version": "0.12.0",
+  "collections": [
+    {
+      "key": "kangaroo34",
+      "title": "Mathe mit dem Känguru",
+      "description": "Knoble an Känguru-Aufgaben und entdecke im Video einen Lösungsweg.",
+      "sources": [
+        {
+          "id": "PLc0Dd9HS2oXORXLY5c8h0CMbuwMNLV-H_",
+          "title": "🦘 Mathe mit dem Känguru 🦘 (Klasse 3 und 4)",
+          "grades": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "key": "olympiad56",
+      "title": "Mathematik-Olympiade",
+      "description": "Olympiade-Aufgaben zum Knobeln – entdecke im Video einen Lösungsweg.",
+      "sources": [
+        {
+          "id": "PLc0Dd9HS2oXNVpOQbZk54xwTMlJ_5dFxF",
+          "title": "Mathematik - Olympiade (Klasse 5)",
+          "grades": [
+            5
+          ]
+        },
+        {
+          "id": null,
+          "title": "Mathematik-Olympiade (Klasse 6)",
+          "grades": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kangaroo56",
+      "title": "Mathe mit dem Känguru",
+      "description": "Knoble an Känguru-Aufgaben und entdecke im Video einen Lösungsweg.",
+      "sources": [
+        {
+          "id": "PLc0Dd9HS2oXOqMfGFE4Cq7Hpt-wBdajw8",
+          "title": "Mathe mit dem Känguru (Klasse 5 und 6)",
+          "grades": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "key": "olympiad713",
+      "title": "Mathe-Olympiade",
+      "description": "Olympiade-Aufgaben zum Knobeln – entdecke im Video einen Lösungsweg.",
+      "sources": [
+        {
+          "id": null,
+          "title": "Mathe-Olympiade (Klasse 7–13)",
+          "grades": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "emptyMessage": "Für Klasse 7–13 gibt es hier aktuell noch keine Videos zur Mathe-Olympiade."
+    },
+    {
+      "key": "kangaroo713",
+      "title": "Mathe mit dem Känguru",
+      "description": "Knoble an Känguru-Aufgaben und entdecke im Video einen Lösungsweg.",
+      "sources": [
+        {
+          "id": "PLc0Dd9HS2oXM6HXs9xcsTx53PVfwGdt6v",
+          "title": "🦘 Mathe mit dem Känguru 🦘 (Klasse 7 und 8)",
+          "grades": [
+            7,
+            8
+          ]
+        },
+        {
+          "id": "PLc0Dd9HS2oXNteuQs190-85xB8fHDQVvY",
+          "title": "🦘 Mathe mit dem Känguru 🦘 (Klasse 9 und 10)",
+          "grades": [
+            9,
+            10
+          ]
+        },
+        {
+          "id": "PLc0Dd9HS2oXMdiqKaRw_dtYG9JGoFeYg4",
+          "title": "🦘 Mathe mit dem Känguru 🦘 (Klasse 11 bis 13)",
+          "grades": [
+            11,
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fit713",
+      "title": "Bist du fit",
+      "description": "Trainiere deine Mathekenntnisse und entdecke unterschiedliche Lösungswege.",
+      "sources": [
+        {
+          "id": "PLc0Dd9HS2oXMrJCewNuSx5GSqBT-5Yjpg",
+          "title": "Terme und Gleichungen (Algebra)",
+          "grades": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "BmcwxFgkLe4": {
+      "displayTitle": "Figuren von oben"
+    },
+    "ZdK5w2qAKds": {
+      "displayTitle": "Würfel bauen"
+    },
+    "1-6S6wp5Cys": {
+      "displayTitle": "Die Uhr steht Kopf"
+    },
+    "5DIaJF2S244": {
+      "displayTitle": "Unmögliche Kombinationen"
+    },
+    "lxxOXxuGmoQ": {
+      "displayTitle": "Zahlen im Kreis"
+    },
+    "UIc-anT8VoQ": {
+      "displayTitle": "Drei Wege im Vergleich"
+    },
+    "Ix6H3Mq10AI": {
+      "displayTitle": "Tiere im Safaripark"
+    },
+    "0pCvSONVxZ0": {
+      "displayTitle": "Glasbehälter von oben"
+    },
+    "IKr-CYVl6_w": {
+      "displayTitle": "Elf und Troll"
+    },
+    "CDeC0HtMZZw": {
+      "displayTitle": "Schachpartien zählen"
+    },
+    "UnpWbv5Jfh8": {
+      "displayTitle": "Zahlen auf Sechsecken",
+      "year": "2021",
+      "task": "B3"
+    },
+    "aEjS0BcmRgI": {
+      "displayTitle": "Ein Achtel der Fläche",
+      "year": "2021",
+      "task": "A8"
+    },
+    "Y1id5C0jtSc": {
+      "displayTitle": "Waffeln backen",
+      "year": "2021",
+      "task": "C3"
+    },
+    "X8KA8ZfJIt0": {
+      "displayTitle": "Bilderrätsel"
+    },
+    "AnjNJzWbYsk": {
+      "displayTitle": "Das kleinste Ergebnis"
+    },
+    "Nre75WcD71w": {
+      "displayTitle": "Verdeckte Ziffern"
+    },
+    "rYCG0PkngP4": {
+      "displayTitle": "Tillas Spinnenmahlzeit"
+    },
+    "rAxWuROWm5o": {
+      "displayTitle": "Schwarze Flächen vergleichen"
+    },
+    "B44wd2defvE": {
+      "displayTitle": "Figuren aus einem Zollstock",
+      "task": "B4"
+    },
+    "hdlrhIpI9WE": {
+      "displayTitle": "Der Umfang des Dreiecks"
+    },
+    "U_KKt_epZIY": {
+      "displayTitle": "Wahre und falsche Aussagen"
+    },
+    "Fl4RyPyC6wk": {
+      "displayTitle": "Ein Turm aus Bausteinen"
+    },
+    "AZEylhtu6so": {
+      "displayTitle": "Teilbarkeit in der Rechenkette",
+      "task": "C5"
+    },
+    "r_44otzSWeA": {
+      "displayTitle": "Brüche kürzen"
+    },
+    "Mpshil1Vzwk": {
+      "displayTitle": "Durch eine Kommazahl teilen"
+    },
+    "b7eF8jfGLcs": {
+      "displayTitle": "Das Produkt der Ziffern"
+    },
+    "yHNevDjLGPg": {
+      "displayTitle": "Eine Zahl zwischen zwei Grenzen"
+    },
+    "NZuNrgADd3M": {
+      "displayTitle": "Das Gewicht der Melone"
+    },
+    "S2Jtnh7zL6g": {
+      "displayTitle": "Magische Quadrate"
+    },
+    "aeXYgoOUBhY": {
+      "displayTitle": "Bilder zusammensetzen"
+    },
+    "QCRn9LfkmwE": {
+      "displayTitle": "Gegen den Uhrzeigersinn"
+    },
+    "XfuMaj3INjE": {
+      "displayTitle": "Terme berechnen"
+    },
+    "H_iD23tGkvk": {
+      "displayTitle": "Mindestens oder mehr?"
+    },
+    "MDVLfNUgBOc": {
+      "displayTitle": "Geschickt umordnen"
+    },
+    "1TrKByjAl00": {
+      "displayTitle": "Das Zahlenrätsel"
+    },
+    "DGy3XKMGp28": {
+      "displayTitle": "Würfelgebäude zählen"
+    },
+    "hXRZS72woZY": {
+      "displayTitle": "Eine Raupe faltet sich zusammen"
+    },
+    "L-2Ob-xYMB0": {
+      "displayTitle": "Die Zahl hinter dem Fragezeichen"
+    },
+    "3v_82WBGRPw": {
+      "displayTitle": "Papier falten"
+    },
+    "ScrWSKoQRCI": {
+      "displayTitle": "Muster fortsetzen"
+    },
+    "dAcWXOCd6Ds": {
+      "displayTitle": "Welche Zahl entsteht?"
+    },
+    "PGdtD6_onHk": {
+      "displayTitle": "Die Summe der grauen Kreise"
+    },
+    "hpokE0NJ8Cw": {
+      "displayTitle": "Möglichkeiten zählen"
+    },
+    "yLz0t4A3iHs": {
+      "displayTitle": "Ein Stapel aus Schüsseln"
+    },
+    "4-h8DVFCQrA": {
+      "displayTitle": "Gewichte vergleichen"
+    },
+    "JGMB4DG15uA": {
+      "displayTitle": "Den Code knacken"
+    },
+    "2cGLugMGLQI": {
+      "displayTitle": "Die graue Fläche"
+    },
+    "QMEwpszeejw": {
+      "displayTitle": "Wie viele Würfel passen hinein?"
+    },
+    "ZDG367yarHY": {
+      "displayTitle": "Zahlen mit bestimmten Ziffern"
+    },
+    "oMbU6FRIZMc": {
+      "displayTitle": "Wie hoch steht das Wasser?"
+    },
+    "lnuROCbGO9Q": {
+      "displayTitle": "Würfelnetze vergleichen"
+    },
+    "mb8rfulMIw8": {
+      "displayTitle": "Punkte und ihre Abstände"
+    },
+    "lKMAop2fYag": {
+      "displayTitle": "Die Ja-Schöpfe"
+    },
+    "W9NzmhLbRlo": {
+      "displayTitle": "Teilbarkeitsregeln entdecken"
+    },
+    "EUNwHdR21ak": {
+      "displayTitle": "Verschiedene Möglichkeiten"
+    },
+    "m3F4bOodNZA": {
+      "displayTitle": "Eine Summe mit Gauß"
+    },
+    "zPEoe1C1DrM": {
+      "displayTitle": "Das Gewicht eines Apfels"
+    },
+    "bsMAxxB9q6I": {
+      "displayTitle": "Flächen vergleichen"
+    },
+    "T0K8ZTU7xxU": {
+      "displayTitle": "Zahlen zwischen zwei Grenzen"
+    },
+    "gWuJZNOpwyM": {
+      "displayTitle": "Dreiecke zählen"
+    },
+    "FbxvbYazmKM": {
+      "displayTitle": "Möglichkeiten kombinieren"
+    },
+    "EWdHwolAWUg": {
+      "displayTitle": "Wer besitzt welches Haustier?",
+      "task": "630511",
+      "year": "2023"
+    },
+    "iXBpWruEVh0": {
+      "displayTitle": "Kannst du diese Summe berechnen?"
+    },
+    "EQEuIbrryi0": {
+      "displayTitle": "Findest du die größte Zahl?"
+    },
+    "zcIutiKIQ34": {
+      "displayTitle": "Findest du den Wert für x/y?"
+    },
+    "V8Cpz5SoMG4": {
+      "displayTitle": "Terme mit Brüche berechnen"
+    },
+    "H_E1fgAazjo": {
+      "displayTitle": "Anstieg einer Geraden berechnen"
+    },
+    "vHCTjiqUlhg": {
+      "displayTitle": "Wie groß ist x mal y?"
+    },
+    "-57LTp-bH-E": {
+      "displayTitle": "Wie viel Prozent sind überdeckt?"
+    },
+    "PDO9YNgv1SM": {
+      "displayTitle": "Abstand zwischen zwei Punkten berechnen"
+    },
+    "8NJrVdLx-9o": {
+      "displayTitle": "Wie groß ist der graue Flächeninhalt?"
+    },
+    "07bp07Lj-d4": {
+      "displayTitle": "Flächeninhalte vergleichen"
+    },
+    "MXSgbKDEzro": {
+      "displayTitle": "Lösen von Ungleichungen"
+    },
+    "2VECeGBObg0": {
+      "displayTitle": "Rechnen mit Restklassen"
+    },
+    "akNFttbx88Q": {
+      "displayTitle": "Seitenverhältnisse berechnen"
+    },
+    "-pIXGmJrr9o": {
+      "displayTitle": "Palindromzahlen, Quersumme, Teilbarkeitsregeln"
+    },
+    "FA_PUOrZL1Y": {
+      "displayTitle": "Wie groß ist die graue Fläche?"
+    },
+    "gAjLQ5oRyO4": {
+      "displayTitle": "Größtes Verhältnis von Sprunghöhe zur Körpergröße gesucht!"
+    },
+    "ofJv_SFS3Dc": {
+      "displayTitle": "Wie groß ist das Verhältnis schwarz zu weiß?"
+    },
+    "PpsanCTQD58": {
+      "displayTitle": "Findest du alle Lösungen?"
+    },
+    "_HEwhHxYFWs": {
+      "displayTitle": "Wie groß ist das Produkt?"
+    },
+    "BzBXVNhi_JQ": {
+      "displayTitle": "Wie groß ist der Flächeninhalt des Rechtecks ABCD?"
+    },
+    "BsGRZO5Y7mU": {
+      "displayTitle": "Wie groß ist die Quersumme?"
+    },
+    "1XvXdtpRJho": {
+      "displayTitle": "Wie groß ist die Quersumme?"
+    },
+    "ejKSgWoLqpI": {
+      "displayTitle": "Wie lang ist die Strecke OR?"
+    },
+    "XuGG3L1r540": {
+      "displayTitle": "Wie groß ist der Flächeninhalt des Sechsecks?"
+    },
+    "wIZFmGkCmo0": {
+      "displayTitle": "Wie viele Lösungen besitzt die Gleichung?"
+    },
+    "rHoHamsc40Y": {
+      "displayTitle": "Funktionswert für eine unbekannte Funktion berechnen"
+    },
+    "DNvhNh2vbZQ": {
+      "displayTitle": "Kannst du die Aufgabe ohne Hilfsmittel lösen?"
+    },
+    "_UpL4ZPyEsM": {
+      "displayTitle": "Wurzelterme vereinfachen"
+    },
+    "SPYsLRF7-UY": {
+      "displayTitle": "Lasst uns unsere Lösungsideen austauschen!"
+    },
+    "mAwrApkcmyY": {
+      "displayTitle": "Wie lang ist die Strecke AP?"
+    },
+    "Gxfln52buK8": {
+      "displayTitle": "Findest du die richtige Zahl?"
+    },
+    "rBncaE3pmAI": {
+      "displayTitle": "Welches Gewürz ändert seine Position nicht?"
+    },
+    "9INuNWR8omM": {
+      "displayTitle": "Kannst du die Summe berechnen?"
+    },
+    "xk9L_ISVNGI": {
+      "displayTitle": "Wie lang ist die Kante AC?"
+    },
+    "XDh3DEHisE8": {
+      "displayTitle": "Wie viele Liegestütze schafft Lucy?"
+    },
+    "3_2cGs-_ZSk": {
+      "displayTitle": "Wie groß ist die schwarze Fläche?"
+    },
+    "7F-N89Cd-zQ": {
+      "displayTitle": "Eine Gleichung mit Fakultäten lösen."
+    },
+    "iYFCCzEN6K8": {
+      "displayTitle": "Kennst du die Einerstelle?"
+    },
+    "KMdRlIkkiPA": {
+      "displayTitle": "Wie lang ist die sechste Sechseckseite?"
+    },
+    "d57KfqcLe1c": {
+      "displayTitle": "Wie viele Möglichkeiten gibt es?"
+    },
+    "cdCXUOlGvGI": {
+      "displayTitle": "Findest du alle Lösungen?"
+    },
+    "5LtidFT_Y5o": {
+      "displayTitle": "Findest du den richtigen Bruch?"
+    },
+    "0ojF6RFIFp4": {
+      "displayTitle": "Wie lautet die drittgrößte Zahl?"
+    },
+    "lnC7ig0B274": {
+      "displayTitle": "Wie groß ist der Abstand?"
+    },
+    "-PTg1N_3YOk": {
+      "displayTitle": "Wie groß ist der Oberflächeninhalt?"
+    },
+    "w2RSHs9k9uo": {
+      "displayTitle": "größter gemeinsamer Teiler für große Zahlen"
+    },
+    "8562irJqX4E": {
+      "displayTitle": "Wie groß ist der Flächeninhalt des Quadrats?"
+    },
+    "bWRbsNK2Yfg": {
+      "displayTitle": "Welcher Kreisbogen stimmt mit dem Umfang des Kreises überein?"
+    },
+    "Wc9KHts10-Q": {
+      "displayTitle": "Welche Zahl steht in der Mitte?"
+    },
+    "wkd5jOXfmwU": {
+      "displayTitle": "Quersumme einer 10-stelligen gesucht? Wirst du sie finden?"
+    },
+    "OwlCXJXgjj8": {
+      "displayTitle": "Wie viele Lösungen besitzt diese Gleichung?"
+    },
+    "fqJT65tLx8k": {
+      "displayTitle": "Wie groß ist der Umfang der grauen Fläche?"
+    },
+    "XEs6XFKaK-w": {
+      "displayTitle": "Welche Zahl kann nicht in dem grauen Feld stehen?"
+    },
+    "lyTdvUsdGFY": {
+      "displayTitle": "Welche Seitenlänge hat das große graue Dreieck?"
+    },
+    "OmQdR3iiEKE": {
+      "displayTitle": "Welchen Flächeninhalt hat die graue Fläche?"
+    },
+    "Dq3K4c7fKr4": {
+      "displayTitle": "Welche Zahl gehört in die Mitte?"
+    },
+    "vnkPdXssbhc": {
+      "displayTitle": "Känguru 2022 B2"
+    },
+    "9S6Cfbiny9c": {
+      "displayTitle": "Welche Zahl gehört in das graue Kästchen?"
+    },
+    "cE48botRTmg": {
+      "displayTitle": "Wie alt ist der älteste Bruder"
+    },
+    "xv-mfd0vSJM": {
+      "displayTitle": "Welchen Flächeninhalt hat die graue Fläche?"
+    },
+    "QuiXPHHvWsM": {
+      "displayTitle": "Wie viel Prozent des Mondes liegen außerhalb des Sterns?"
+    },
+    "lOc9DqOGvXY": {
+      "displayTitle": "Wie lang ist die Seite AB?"
+    },
+    "JfpNsh7_TwU": {
+      "displayTitle": "Welchen Teil der Strecke ist sie mit dem Fahrrad gefahren?"
+    },
+    "LulhZIjA134": {
+      "displayTitle": "Wie viele Punkte waren zu Beginn auf der Geraden?"
+    },
+    "b5g7lTmS544": {
+      "displayTitle": "Welchen Oberflächeninhalt hat ein einzelner Baustein?"
+    },
+    "YQAOu9BvNtg": {
+      "displayTitle": "Kleinste Anzahl von Kästchen?"
+    },
+    "Xy5PkwM14hg": {
+      "displayTitle": "Wie groß ist der Innenwinkel bei A?"
+    },
+    "_6_4wesAiXU": {
+      "displayTitle": "Wie viele Alpenveilchen sind es insgesamt?"
+    },
+    "wI3h4yztglM": {
+      "displayTitle": "Wie viele Schüsseln passen in ein 30 cm hohes Fach?"
+    },
+    "WkBrK0qLbL4": {
+      "displayTitle": "Kannst du den Terme x/y herausfinden?"
+    },
+    "-USkOtWxkA8": {
+      "displayTitle": "Rest einer Summe von Fakultäten"
+    },
+    "rxbueFKbdLU": {
+      "displayTitle": "Wie alt ist die Großmutter?"
+    },
+    "BWAzCFFENtM": {
+      "displayTitle": "Terme mit Brüche berechnen"
+    },
+    "batmS_jaCDU": {
+      "displayTitle": "Kannst du dieses magische Quadrat lösen?"
+    },
+    "5QUsTDPZLE0": {
+      "displayTitle": "Kannst du diesen Doppelbruch lösen?"
+    },
+    "SVNpBO5o65g": {
+      "displayTitle": "Brüche vervielfachen"
+    },
+    "FIvNtUk6DiM": {
+      "displayTitle": "Wie groß ist die graue Fläche?"
+    },
+    "Kpt-9b-2kf0": {
+      "displayTitle": "Wie groß ist die größte Zahl maximal?"
+    },
+    "gb0ElzJRQT4": {
+      "displayTitle": "Welche Aufgabe hat das größte Ergebnis?"
+    },
+    "k5jP0KPWNUs": {
+      "displayTitle": "Brüche addieren ungleicher Nenner"
+    },
+    "9o4zvpc3CRw": {
+      "displayTitle": "Wie viele Teiler hat eine Zahl?"
+    },
+    "QX8SjiB4-iY": {
+      "displayTitle": "Kannst du diese Differenz berechnen?"
+    },
+    "q3mzGEtqdV4": {
+      "displayTitle": "Wie groß ist der graue Flächeninhalt?"
+    },
+    "fKl0D3yX5hk": {
+      "displayTitle": "Wie viele Lösungen hat die Gleichung?"
+    },
+    "ElfQHbadmJs": {
+      "displayTitle": "Wie viele Teiler hat die Zahl 1111?"
+    },
+    "lPHA7b8k2nY": {
+      "displayTitle": "Welche der Zahlen kann nicht für x stehen?"
+    },
+    "ulDxtbzbpGU": {
+      "displayTitle": "alle Aufgaben, alle Lösungen"
+    },
+    "pbP-dJFIe0Y": {
+      "displayTitle": "Wie groß ist die graue Fläche?"
+    },
+    "CLa1Osf5oA4": {
+      "displayTitle": "alle Aufgaben, alle Lösungen"
+    },
+    "9U5fil6n3RE": {
+      "displayTitle": "Wie groß ist der Winkel mit dem Fragezeichen?"
+    },
+    "n5a1StDnISw": {
+      "displayTitle": "Division von Brüchen"
+    },
+    "Yo2ZvT0onKQ": {
+      "displayTitle": "Diese drei Tipps zur Prozentrechnung werden dir helfen."
+    },
+    "BKqzno5w6T4": {
+      "displayTitle": "Termberechnungen"
+    },
+    "1eKTTstjpG4": {
+      "displayTitle": "Findest du für diese verschachtelten Wurzeln die richtige Lösung?"
+    },
+    "MFCmjy_SFx8": {
+      "displayTitle": "n te Wurzeln"
+    },
+    "27Yk1vGlpDw": {
+      "displayTitle": "Potenzen von Brüchen, Dezimalzahlen, gemischten Zahlen und ganzen Zahlen"
+    },
+    "73ED4IJj4d8": {
+      "displayTitle": "Positiv oder negativ, dass ist hier die Frage"
+    },
+    "c31R7auku2I": {
+      "displayTitle": "Was ist 0 hoch 0"
+    },
+    "zy7tOEMnaBI": {
+      "displayTitle": "Potenzen"
+    },
+    "I0wcVj1VXQM": {
+      "displayTitle": "Rechnen mit Fakultäten"
+    },
+    "AyFLiEdeD1o": {
+      "displayTitle": "Einfach und schnell im Kopf berechnen!"
+    },
+    "ocenXQoFmkg": {
+      "displayTitle": "Finde die Lösungen!"
+    },
+    "01C98bZLsPY": {
+      "displayTitle": "Wurzel aus einem Prozentsatz"
+    },
+    "psOkac_8mg8": {
+      "displayTitle": "Kann man diese Aufgabe im Kopf berechnen?"
+    },
+    "bT1CS2FKfEU": {
+      "displayTitle": "Finde alle Lösungen dieser Doppelungleichung!"
+    },
+    "9G3P4tF7hj4": {
+      "displayTitle": "Wie groß ist das Produkt der Zahlen a, b und c?"
+    },
+    "Pfq56zAbDO8": {
+      "displayTitle": "Zahlenreihe fortsetzen"
+    },
+    "IK46cXlPxqU": {
+      "displayTitle": "Wurzel aus einer periodischen Dezimalzahl, periodische Dezimalzahlen umwandeln"
+    },
+    "AvYI77mzZK4": {
+      "displayTitle": "Seitenlängen von einem Viereck berechnen"
+    },
+    "e-R59bbKrKY": {
+      "displayTitle": "Wir Lösen eine Bruchgleichung"
+    },
+    "pdf0O-dmX9A": {
+      "displayTitle": "Terme mit Quadratwurzeln vergleichen"
+    },
+    "KQs3MSi-m70": {
+      "displayTitle": "Kann das stimmen?"
+    },
+    "vahQTYl3Xfk": {
+      "displayTitle": "Wir lösen eine Exponentialgleichung"
+    },
+    "cEE9_UUekMY": {
+      "displayTitle": "Kopfrechnen Tricks"
+    },
+    "IBLLF-gVJ00": {
+      "displayTitle": "Geschickt mit Wurzeln rechnen"
+    },
+    "FcljQFG4_uk": {
+      "displayTitle": "Term vereinfachen"
+    },
+    "_JmwmpulvWc": {
+      "displayTitle": "5te Wurzel berechnen"
+    },
+    "FoE7Q6AJ_08": {
+      "displayTitle": "periodische Dezimalzahlen in Brüche umwandeln"
+    },
+    "9-j62VPmcqE": {
+      "displayTitle": "Wahr oder Falsch?"
+    },
+    "SIXgbN9MDSY": {
+      "displayTitle": "periodische Dezimalzahlen"
+    },
+    "V82aECcZK_I": {
+      "displayTitle": "Fakultäten"
+    },
+    "dvek6cc78Yk": {
+      "displayTitle": "Berechne x!"
+    },
+    "fAOWnJsGqHU": {
+      "displayTitle": "periodische Dezimalzahlen in Brüche umwandeln"
+    },
+    "EDyLr2xdJ9I": {
+      "displayTitle": "Kannst du diese 3. Wurzel aus einem Prozentsatz berechnen?"
+    },
+    "euIKHbFLxLM": {
+      "displayTitle": "Zahlenreihen lösen"
+    },
+    "sPEY2oXY6pk": {
+      "displayTitle": "Kannst du diese Quadratwurzel im Kopf berechnen?"
+    },
+    "3O3XCOmP5LE": {
+      "displayTitle": "Setze die Zahlen 3, 4, 7 und 8 ein!"
+    },
+    "k66KViwRt2Y": {
+      "displayTitle": "Welcher Prozentsatz kommt heraus?"
+    },
+    "pen9Q2b9n_g": {
+      "displayTitle": "Im Kopf in weniger als 3 Sekunden?"
+    },
+    "A0Jd_b6K4Zg": {
+      "displayTitle": "Löse die Gleichung!"
+    },
+    "CrGIUBxAYjs": {
+      "displayTitle": "Ergebnis in weniger als 3 Sekunden im Kopf berechnen"
+    },
+    "nLcTOfKm3dw": {
+      "displayTitle": "Löse die Zahlenmauer der Addition Brüche!"
+    },
+    "EEt2GHvA7hg": {
+      "displayTitle": "Löse die Zahlenmauer der Addition!"
+    },
+    "xzkFRP8wByo": {
+      "displayTitle": "Gleichungen mit Fakultät lösen"
+    },
+    "KR2mFk-WrF0": {
+      "displayTitle": "Wurzel berechnen ohne Taschenrechner"
+    },
+    "2AOYiActzrg": {
+      "displayTitle": "Löse die Gleichung!"
+    },
+    "g324WEwsKnk": {
+      "displayTitle": "Komplexe Zahlen"
+    },
+    "ff7-5-6ryEs": {
+      "displayTitle": "Potenzgesetze - Exponentenvergleich - quadratische Gleichung"
+    },
+    "Clu6ZfLY5Kg": {
+      "displayTitle": "Ich habe 4 Potenzgesetze benötigt und du?"
+    },
+    "Wd1wg2G5L4o": {
+      "displayTitle": "Löse das nichtlineare Gleichungssystem"
+    },
+    "huIR_-7OZl0": {
+      "displayTitle": "Ich habe 5 Potenzgesetze benötigt und du?"
+    },
+    "zoJPofBPw50": {
+      "displayTitle": "Teste dich: Nichtlineares Gleichungssystem mit 3 Unbekannten"
+    },
+    "a4_ArZtFR3I": {
+      "displayTitle": "Exponentialgleichung durch Substitution lösen"
+    },
+    "glH7VYQ8E5w": {
+      "displayTitle": "Lineare Gleichung mit Wurzeln lösen"
+    },
+    "dag_saDREH8": {
+      "displayTitle": "Bruch Potenzen mit negativen Exponenten berechnen"
+    },
+    "yKuB3FTzRsQ": {
+      "displayTitle": "Wurzelgleichung mithilfe einer Substitution lösen"
+    },
+    "68LBjJSkTlE": {
+      "displayTitle": "Wie löse ich eine Wurzelgleichung?"
+    },
+    "wTR2vPUW8xg": {
+      "displayTitle": "Hier hilft eine binomische Formel weiter ..."
+    },
+    "zv0cGH39rvE": {
+      "displayTitle": "Löse die Gleichung!"
+    },
+    "2gxigY2VDDc": {
+      "displayTitle": "Ist es möglich diese Potenz (orange) zu berechnen?"
+    },
+    "fA_70IpzXuM": {
+      "displayTitle": "Exponentialgleichung durch Logarithmieren lösen"
+    },
+    "Vgw1fsU69cw": {
+      "displayTitle": "Unbekannte Seitenlänge x berechnen"
+    },
+    "BuwLqkAPtjs": {
+      "displayTitle": "Kannst du diese Quadratwurzel ohne Taschenrechner berechnen?"
+    },
+    "3ARK5DKXL4o": {
+      "displayTitle": "Wurzelgleichung mit zwei Wurzeln und ungeraden Wurzelexponenten lösen."
+    },
+    "8eRbgmGcfOg": {
+      "displayTitle": "Findest du alle Lösungen für dieses Gleichungssystem?"
+    },
+    "MzFTlY7lB34": {
+      "displayTitle": "Quadratwurzel in weniger als 2s im Kopf berechnen"
+    },
+    "olusJJRQpMM": {
+      "displayTitle": "4 Lösungen, findest du alle?"
+    },
+    "dNo1otw0bHw": {
+      "displayTitle": "nichtlineares Gleichungssystem mit dem Einsetzungsverfahren lösen"
+    },
+    "QpzNHM9Vzkc": {
+      "displayTitle": "Satz des Pythagoras zwei Unbekannte"
+    },
+    "jzQMCglOuww": {
+      "displayTitle": "Welche Lösungen besitzt diese kubische Gleichung?"
+    },
+    "DGXaNNh9el4": {
+      "displayTitle": "Berechne ohne Taschenrechner!"
+    },
+    "hm00YxiwPKc": {
+      "displayTitle": "HILFE - Wer kann diese Gleichung lösen?"
+    },
+    "wjpqypkQjmo": {
+      "displayTitle": "Wie lang ist die Dreiecksseite x ?"
+    },
+    "vLz_UH9q4gY": {
+      "displayTitle": "Kannst du diese Exponentialgleichung lösen?"
+    },
+    "sGt2O-VWDmY": {
+      "displayTitle": "Kannst du diese Aufgabe in weniger als 3 Sekunden lösen?"
+    },
+    "zMiH6rpA3Ss": {
+      "displayTitle": "Gleichungen mit FAKULTÄT lösen!"
+    },
+    "qhTQWnI7R8U": {
+      "displayTitle": "Findest du alle Lösungen für diese Diophantische Gleichung?"
+    },
+    "aHL7f91Cows": {
+      "displayTitle": "Interessante Gleichung - wie können wir sie lösen?"
+    },
+    "3IcLR12qz3I": {
+      "displayTitle": "Löse das nichtlineare Gleichungssystem"
+    },
+    "RSJz6eGUrQk": {
+      "displayTitle": "Wurzelgleichungen lösen"
+    },
+    "7d4cLoy-7xE": {
+      "displayTitle": "Bestimme den Grenzwert!"
+    },
+    "3thALwYDGDA": {
+      "displayTitle": "Gleichung mit negativen Exponenten lösen"
+    },
+    "FeQB7J6UYEs": {
+      "displayTitle": "Wurzelgleichungen lösen"
+    },
+    "DyO34lQHotI": {
+      "displayTitle": "Wurzelgleichungen lösen"
+    },
+    "0gXTuYiRTI4": {
+      "displayTitle": "Löse diese Gleichung 3. Grades!"
+    },
+    "2KSU9VnJ2m4": {
+      "displayTitle": "Finde alle Lösungspaare für diese Gleichung!"
+    },
+    "mhtQSJV4NkE": {
+      "displayTitle": "Wurzelgleichungen lösen"
+    },
+    "CEPq4i6NbjA": {
+      "displayTitle": "nichtlineares Gleichungssystem lösen"
+    },
+    "SU_Z8liE2Ts": {
+      "displayTitle": "Lineare Funktionen Senkrechte Geraden berechnen"
+    },
+    "AWY7xAR5f2E": {
+      "displayTitle": "Löse die Gleichung!"
+    },
+    "YYBmiv1el74": {
+      "displayTitle": "Löse diese Gleichung 4. Grades!"
+    },
+    "hnXrl9oTb4A": {
+      "displayTitle": "Löse das Gleichungssystem mit drei Unbekannten!"
+    },
+    "7U3jCrSQXxc": {
+      "displayTitle": "Biquadratische Gleichung"
+    },
+    "Ou1Wfc3LunI": {
+      "displayTitle": "Term ohne Hilfsmittel berechnen"
+    },
+    "0b1lMC-cVDo": {
+      "displayTitle": "Löse die Ungleichung!"
+    },
+    "0pLiNsenFT0": {
+      "displayTitle": "Wie groß ist x + y?"
+    },
+    "484Fnsn3Lu8": {
+      "displayTitle": "Kannst du den Term berechnen?"
+    },
+    "RUwwH7vWoXs": {
+      "displayTitle": "Kannst du diesen Term berechnen?"
+    },
+    "q5MDxcQtFSk": {
+      "displayTitle": "Wie groß ist der grüne Flächeninhalt?"
+    },
+    "x1R_Ue5s5gE": {
+      "displayTitle": "Exponentialgleichungen mithilfe einer geschickten Substitution lösen"
+    },
+    "-B9aoLhz_Ck": {
+      "displayTitle": "Exponentialgleichungen lösen ohne Logarithmus"
+    },
+    "u7W-4jy3mG4": {
+      "displayTitle": "Gleichungen mit einer Fakultät lösen"
+    },
+    "gXIqA6pjQes": {
+      "displayTitle": "Gleichung 4. Grades lösen"
+    },
+    "bGDJ2iP7fBs": {
+      "displayTitle": "Lasst uns Lösungsideen austauschen"
+    },
+    "5uTF045cio0": {
+      "displayTitle": "Kannst du diese Gleichung ohne Ausklammern lösen?"
+    },
+    "4UyBZ-w2ZaM": {
+      "displayTitle": "Kannst du diese Gleichung lösen?"
+    },
+    "VgGT3ONn0X4": {
+      "task": "Alle Aufgaben"
+    },
+    "bohwwe5dd7g": {
+      "task": "Alle Aufgaben"
+    },
+    "yJtdosbW9jg": {
+      "task": "Alle Aufgaben"
+    },
+    "J1CC8dDyeX0": {
+      "task": "Alle Aufgaben"
+    },
+    "6-qMxSW_ado": {
+      "year": "2021",
+      "task": "B8"
+    },
+    "qqSSsbDgw-k": {
+      "year": "2021",
+      "task": "B7"
+    },
+    "9Z0bY56adbg": {
+      "year": "2021",
+      "task": "B6"
+    },
+    "EQ-j95EYnFo": {
+      "year": "2021",
+      "task": "B4"
+    },
+    "7kUOJ5R-jHU": {
+      "year": "2021",
+      "task": "B3"
+    },
+    "QqUwex8vdVI": {
+      "year": "2021",
+      "task": "B2"
+    },
+    "7Q8WA3c002o": {
+      "year": "2021",
+      "task": "B1"
+    },
+    "v4Lj6kAh1UE": {
+      "year": "2021",
+      "task": "C8"
+    },
+    "E1Tkm04KKMI": {
+      "year": "2021",
+      "task": "C7"
+    },
+    "6bRs1SNtJkI": {
+      "year": "2021",
+      "task": "C6"
+    },
+    "2Llz7NE6DYM": {
+      "year": "2021",
+      "task": "C5"
+    },
+    "-mzIGY8yru8": {
+      "year": "2021",
+      "task": "A8"
+    },
+    "PcPvHDfXBrU": {
+      "year": "2021",
+      "task": "A6"
+    },
+    "Qwz6bSdypoM": {
+      "year": "2021",
+      "task": "A4"
+    },
+    "AIdJlYzlr5k": {
+      "year": "2021",
+      "task": "A3"
+    },
+    "ZVBX70u9F6Y": {
+      "year": "2021",
+      "task": "C4"
+    },
+    "4uj3vJ7EpTA": {
+      "year": "2021",
+      "task": "C3"
+    },
+    "cWbFzdAowrA": {
+      "year": "2021",
+      "task": "C2"
+    },
+    "en-huvIdTfo": {
+      "task": "C1"
+    },
+    "ceJW9kAplVY": {
+      "year": "2017",
+      "task": "C8"
+    },
+    "x3KvRKhLFpc": {
+      "year": "2017",
+      "task": "C7"
+    },
+    "kdVvdadjqYE": {
+      "year": "2017",
+      "task": "C6"
+    },
+    "Pl0FeDaKJrI": {
+      "year": "2017",
+      "task": "C5"
+    },
+    "3JlgVKNs1gY": {
+      "year": "2017",
+      "task": "C2"
+    },
+    "m6ai1otYT90": {
+      "year": "2017",
+      "task": "C1"
+    },
+    "A50i7jbAlxw": {
+      "year": "2026",
+      "task": "B1",
+      "displayTitle": "Welche Känguru-Ecke passt?",
+      "thumbnail": "https://i.ytimg.com/vi/A50i7jbAlxw/hqdefault.jpg?v=20261011-kaenguru-66-r2"
+    },
+    "eeVYGZHXy7M": {
+      "year": "2026",
+      "task": "A7",
+      "displayTitle": "Wie viele Becher kann Frau Roth füllen?",
+      "thumbnail": "https://i.ytimg.com/vi/eeVYGZHXy7M/hqdefault.jpg?v=20261011-kaenguru-66-r2"
+    },
+    "ERcdCO1cemI": {
+      "year": "2026",
+      "task": "A5",
+      "displayTitle": "Welcher Buntstift ist blau?",
+      "thumbnail": "https://i.ytimg.com/vi/ERcdCO1cemI/hqdefault.jpg?v=20261011-kaenguru-66-r2"
+    },
+    "g4c33Dzt1nI": {
+      "displayTitle": "Maschen und Wolle",
+      "task": "660512",
+      "year": "2026"
+    },
+    "dc8scNKkf3Y": {
+      "displayTitle": "Zählstrategien – Produktregel",
+      "task": "660513",
+      "year": "2026"
+    },
+    "hs4j_vnnlGw": {
+      "displayTitle": "Sierpinski-Dreieck",
+      "task": "660514",
+      "year": "2026"
+    }
+  }
+}

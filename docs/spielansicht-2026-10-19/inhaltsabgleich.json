@@ -1,0 +1,382 @@
+[
+  {
+    "file": "data/content.json",
+    "sha256": "83e2c83d4c32d419d54ad225504d60c6fe8672469bc4e290c12f5933156b695c",
+    "identical": true
+  },
+  {
+    "file": "data/mathe-ag-56.json",
+    "sha256": "9be15646b2c89e1a88f0ca412eba0822d9b81389dd3cb3ce4c860969c9315b45",
+    "identical": true
+  },
+  {
+    "file": "data/video-playlists.json",
+    "sha256": "6267734ab0424ee239814812f0ee5cdefcee597351bdd1bdafcf6e03d89f6c94",
+    "identical": true
+  },
+  {
+    "file": "data/matheplus.json",
+    "sha256": "de2ed78120695db665614e96a58bf6508b0364ee6f437e57a0e6d0317df5eb6f",
+    "identical": true
+  },
+  {
+    "file": "data/mathe-ag.json",
+    "sha256": "3e153fc511f9498660d1692e9ae88b16979489d0bdef9a165b9e5a7e922e1cc0",
+    "identical": true
+  },
+  {
+    "file": "data/journey.json",
+    "sha256": "95c7e931f277ca3e0446aba6edadbd8b865cdfb0f640e7bc8011aca0f8e1d495",
+    "identical": true
+  },
+  {
+    "file": "data/olympiade.json",
+    "sha256": "fd1d01235366c77d0744e744b706247a6f3452386ec0f3232925a738d0a570c5",
+    "identical": true
+  },
+  {
+    "file": "data/editorial.json",
+    "sha256": "bf5699a8ae98f20db943123af6625ae0a5fc5c8a0f124a134ef0dc24ae15dfb6",
+    "identical": true
+  },
+  {
+    "file": "data/sunday.json",
+    "sha256": "dc785d9abf1c9c05d33d39e811a4b7aa622b3c8e21a89aa140abe1f6669c2be3",
+    "identical": true
+  },
+  {
+    "file": "data/sunday-publications.json",
+    "sha256": "a53fb405dfb4e2eceefcd3a401b410b0a1503277b1d5c65f455fc55fbe2ca24f",
+    "identical": true
+  },
+  {
+    "file": "data/video-sources.json",
+    "sha256": "b896f3807184e0b7343e589dfacbc380bcc215e2142d17889c4290a442d3c2b0",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-reise.png",
+    "sha256": "55e73917c61a213c89d7bfa2fc48afa2cecac03fc769169b6cda2928b1668f2d",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-arbeitsheft.png",
+    "sha256": "3503938e77e4787bb8eee93e47791cdb85574aaf90e4182d32f9b64de5f169bf",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-56-entwurf.png",
+    "sha256": "80665c40a9134b0171f5e1928339b8a68b09c56219f566046a6070df67aed5a1",
+    "identical": true
+  },
+  {
+    "file": "assets/curio1.png",
+    "sha256": "38a547a84dcce50e039ef239c2abe83b5541078dde0ec1438412290d34eb4f0e",
+    "identical": true
+  },
+  {
+    "file": "assets/sonntagsraetsel-02-zahlenpfade.png",
+    "sha256": "568ad6d3d6c3b5d9ab2f1b77024707a6ef99b7078e9ea983448ed191b1635d9c",
+    "identical": true
+  },
+  {
+    "file": "assets/curio2.png",
+    "sha256": "21baeb221b530788a2c3f692c31a5d2585316e763a897f4d08e726fa40194552",
+    "identical": true
+  },
+  {
+    "file": "assets/sonntagsraetsel-05-differenzpyramiden.png",
+    "sha256": "90ee8f02080b3955f9904098b57c087eb015c21447a86dcbfc30e74581398376",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-geometrie-56.png",
+    "sha256": "467569229a5a5744f7f1e1da76adff340244f07a6ea91dc4b745c36be4f742fe",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-reise-56.png",
+    "sha256": "18de3acc886e052b9125c3d28c230e1ca25ee77d16342ebb70fbe79854fa3dba",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-mathe-713.png",
+    "sha256": "3bdc39f6c57f8aa4ac106d0103fc74cc4acfb19ac5c157f98b12e86f67e29a94",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-mathe-713-v3.png",
+    "sha256": "1567d0c057b2132105c5dabffef02c71f7f51cda48c07f465e240e4f6aa69a51",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-mathe-713-v2.png",
+    "sha256": "07de5a1fd31f40d9b35d4c6427f98e885960d14567aa9210bf3aa373d07dbf58",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-kanallogo.png",
+    "sha256": "1e4f62184ecb7a18f7cfa99133cb12d6c94ab0157e480120b7ee961d88d4662a",
+    "identical": true
+  },
+  {
+    "file": "assets/sonntagsraetsel-04-polyominos.png",
+    "sha256": "e908b24e20deb5c7b4657b4d277563e7c94df54668efafc6743b93be782e137f",
+    "identical": true
+  },
+  {
+    "file": "assets/mo-ni-kanallogo-56.png",
+    "sha256": "a771da00fa5fea43bd67d82b7d25c462244956eeb4568f54b9618fc980c33565",
+    "identical": true
+  },
+  {
+    "file": "assets/sonntagsraetsel-03-zahlenkreuze.png",
+    "sha256": "d57082d9fc4c4cadbcde36d0c35789611373ff6817c4351e5c8d0d6d2d7e8113",
+    "identical": true
+  },
+  {
+    "file": "assets/moni-logo.png",
+    "sha256": "bb622863d8f04c6858ec8a61a15a533ecee3512d2826fd69420b198da68cb015",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-34.png",
+    "sha256": "ca71a3e518ed775524504e34b31bf160929ab0e8837ee257c0ec3a3b38551c6c",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/olympiade-34.png",
+    "sha256": "8abd3b5bf22143a81ab660fa7f186d6afe698ccf04f62a8e9c59a28011937bf2",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/matheplus-56.png",
+    "sha256": "3543b0d79de5f6a09eb3f380d9061e6f44e1974cbe30207ba09697741e278275",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/olympiade-713.png",
+    "sha256": "bf6781b75926aad0887f1942a71a92b52ee624fb06f1e78fa750e6f996fa60bb",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/olympiade-56.png",
+    "sha256": "1b9df0201af015594d8f61806fce642e3289e6046aa9b0da689de8c7cdbb2a0b",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-56.png",
+    "sha256": "8647d8ef92f4e01bf0f018e6bac3fd58d0805dd5b65af4be8655bd831b9f373c",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/olympiade-713-v2.png",
+    "sha256": "d1bdc3858bb991ca41b1f0dbfaefee2b9fb40ecc4de3b803193d2b8175d3c5e7",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/matheplus-34.png",
+    "sha256": "a447089dcd63a31fa69d02927fc65a454cdf6eabce2a4b15951fb4df7c29dd38",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-713.png",
+    "sha256": "9267bf0733309ab68b34dd4aa0cfea6a950dd2a8eef8accd16ff9ee6a5b66c94",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/mathefit-713-v2.png",
+    "sha256": "f788bb06007032f91840246c77414e93ec5ec607c0fdf41ab91120dea9155659",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/mathefit-713-v3.png",
+    "sha256": "1c6bef3f095e857d3a297fc57e042dc9f13c98058346b6af8976281d4ce5ee48",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/sonntagsraetsel-56.png",
+    "sha256": "8b5ea65fb1cf3cc62da77115c461ef44ef0f2647837b0b2bb7ae82b4746e9cd4",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-713-v5.png",
+    "sha256": "dc76bd9347b98664a712fc7adca25cf4a66ea1f93192f42111787243b04d5347",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-713-v4.png",
+    "sha256": "363da248d02315039989a4eaef12734a03cce06b54fba4fd921d893e9e89589f",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-713-v3.png",
+    "sha256": "bee0ba223926a92cde2e7ad5999cd14dcd7b51c6de75a1b6987ecf6efbdcd05c",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/kaenguru-713-v2.png",
+    "sha256": "eaf0a750a30f3978d34e8cd1736919abb7dc6fd350241f2072d473a7a6c97869",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/sonntagsraetsel-34.png",
+    "sha256": "272277f5644776e2d91837ae9e6f4374d025b24add93d40b773de463eab60165",
+    "identical": true
+  },
+  {
+    "file": "assets/offers/mathe-ag-34.png",
+    "sha256": "d78e41040b24c8f9288b206bae6788c2f147d330625d927d7d2775ce90b5dde5",
+    "identical": true
+  },
+  {
+    "file": "assets/celebration/mo-ni-jubelfilm-poster.png",
+    "sha256": "f65f7536ec11a2ddb738b0fe9f297be5497f81051700a1f311bef645691b06b5",
+    "identical": true
+  },
+  {
+    "file": "assets/celebration/mo-ni-jubelfilm.mp4",
+    "sha256": "11202a049fcdc94577217b239dfdb96cf21e94255085c093b5e524870696b607",
+    "identical": true
+  },
+  {
+    "file": "assets/icons/apple-touch-icon-180.png",
+    "sha256": "5e0ab5ae4040ce152aef95555c0f3e1a30476dc55b3bf6b93759795e848507d9",
+    "identical": true
+  },
+  {
+    "file": "assets/icons/icon-192.png",
+    "sha256": "0e13cfe8195d47a35b072d3effd517f23f40ed90458d741f2f0d74982efaea08",
+    "identical": true
+  },
+  {
+    "file": "assets/icons/icon-maskable-512.png",
+    "sha256": "1e4f62184ecb7a18f7cfa99133cb12d6c94ab0157e480120b7ee961d88d4662a",
+    "identical": true
+  },
+  {
+    "file": "assets/icons/icon-512.png",
+    "sha256": "1e4f62184ecb7a18f7cfa99133cb12d6c94ab0157e480120b7ee961d88d4662a",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/differenzpyramiden-solution.png",
+    "sha256": "dfc3b6021d45ebe65e8be350ab8e0e49485b9035fe31a821c88207e4825a0106",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/zahlenpfade-example.png",
+    "sha256": "9fe2a5d9c5f8106623e78813cfd2a8140b4cb1f091e942c514e35f8f9f0ddf87",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/polyominos-example.png",
+    "sha256": "6fa5855bb113680d4a432b36566ae94efdfa2cdfb6eb1deac9bfcf66cd2f311d",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/sumdoku-example.png",
+    "sha256": "711be6e357ad980cd8b2bf769ec99e765816cc0e0aef598fd06527603ce78f37",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/polyominos-solution.png",
+    "sha256": "183f9a8d5dfc2becbc5fc42a6058bc23c033cb30d76837bea15bc384bd204201",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/sumdoku-solution.png",
+    "sha256": "3426863b73adf978df9fe0504f3781f7cd3f50a5676087af00d5e9aac2aaf926",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/zahlenpfade-solution.png",
+    "sha256": "ff32890b72144efb2cf5c8bc7fb9611011dc86a31bf27148bae755358958ae22",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/zahlenkreuze-solution.png",
+    "sha256": "001b2d3ac83c5573faeddf78b6c7e8ba45d55723a2525c3b462523e181f0e3de",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/differenzpyramiden-example.png",
+    "sha256": "c31c5542d90a5b8d8c89425833308f6ee7287a150c7b7a9eb8456f60baa1e773",
+    "identical": true
+  },
+  {
+    "file": "assets/puzzles/zahlenkreuze-example.png",
+    "sha256": "299000903636aedf243d5c3f3502bf1971ae83b8436e62ff99e7dd3e4262cf90",
+    "identical": true
+  },
+  {
+    "file": "assets/games/rechen-rallye.png",
+    "sha256": "ff8d13f1feb65152e79cd957c6f756102c66ea8f495534787ce74d25f7b2fbe1",
+    "identical": true
+  },
+  {
+    "file": "assets/games/raetsel.png",
+    "sha256": "143be70340bd30c5589fc437778cda88e2c43ff2903e9a5196bdf9b25411fd3c",
+    "identical": true
+  },
+  {
+    "file": "assets/games/zahlenwirbel.png",
+    "sha256": "f618d22ea0dd95ea3000160da6821bd51992505d09401eb846566ae520cf15ee",
+    "identical": true
+  },
+  {
+    "file": "assets/vendor/pdfjs/pdf.worker.min.js",
+    "sha256": "aa863d3e0f1d07e5d18a371596e4879e433d3c06153b8a6ddf0af38d79c52f8d",
+    "identical": true
+  },
+  {
+    "file": "assets/vendor/pdfjs/pdf.min.js",
+    "sha256": "2221020ea508479dcc1221f36f2731656339230097c69ba1f78802832c0ad685",
+    "identical": true
+  },
+  {
+    "file": "MO65-Arbeitsheft-8ce5b62d59926bd6cd2f.pdf",
+    "sha256": "0d4842b1c59fff40e3659f9c22eb66368ad22970a43568c55b0390a3e921be0c",
+    "identical": true
+  },
+  {
+    "file": "Sonntagsraetsel-02-Zahlenpfade.pdf",
+    "sha256": "44a1368143c117c7fa2b9f881d55759d6fcde98ed0921180dcbadc97dc291bb1",
+    "identical": true
+  },
+  {
+    "file": "Sonntagsraetsel-05-Differenzpyramiden-Aufgabenblatt.pdf",
+    "sha256": "c4a18423e19fd4f4cc313834a64cdf8483853785eff7f4fa81315207dd4c3e36",
+    "identical": true
+  },
+  {
+    "file": "MO65-Arbeitsheft.pdf",
+    "sha256": "dc83b433f91c444293544ecaead4981cb6c544b98e8b32e646c7d7ac855c17a4",
+    "identical": true
+  },
+  {
+    "file": "Sonntagsraetsel-04-Polyominos-Aufgabenblatt.pdf",
+    "sha256": "680036bc11ae9621ddd884e0b62d05f88d88d8c23496ed018c4aa269ec16cfa3",
+    "identical": true
+  },
+  {
+    "file": "Sonntagsraetsel-03-Zahlenkreuze-Aufgabenblatt.pdf",
+    "sha256": "d0db750910e27b01c049ceef6a64651efd99ab087dd44713d75ae67a4b7f4136",
+    "identical": true
+  },
+  {
+    "file": "MO65-Arbeitsheft-57b98401f16742b1fffd.pdf",
+    "sha256": "4d1e47d1d96c1e7b77112d0bbab44bced47770b4b29005ec4111bc90480cd6c8",
+    "identical": true
+  },
+  {
+    "file": "Sonntagsraetsel-01-Sumdoku.pdf",
+    "sha256": "293db8f64f1885300baa91b4b09655db30ca3431343277735db1ff5c423c4fab",
+    "identical": true
+  },
+  {
+    "file": "MO65-Arbeitsheft-74bc4f4d74871ac58106.pdf",
+    "sha256": "00716c43e5bc4ff7ea2ee69631214ef97ca9dc00e71ae7c570deed11dd40243a",
+    "identical": true
+  }
+]

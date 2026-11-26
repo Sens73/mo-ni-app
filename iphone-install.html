@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MO-Ni auf dem iPhone öffnen</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", system-ui, sans-serif;
+        color: #143a2d;
+        background: #f3faf6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 32px 20px;
+        background:
+          radial-gradient(circle at 15% 10%, #dff3e8 0, transparent 34%),
+          linear-gradient(145deg, #f7fbf8, #eaf6ef);
+      }
+
+      main {
+        width: min(100%, 760px);
+        padding: clamp(28px, 5vw, 52px);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.94);
+        border: 2px solid #c7e6d6;
+        border-radius: 32px;
+        box-shadow: 0 22px 60px rgba(20, 58, 45, 0.12);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        color: #176b4d;
+        font-size: 1.15rem;
+        font-weight: 800;
+      }
+
+      .brand img {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+
+      h1 {
+        margin: 22px 0 10px;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 1.05;
+      }
+
+      .intro {
+        margin: 0 auto 24px;
+        max-width: 570px;
+        color: #557066;
+        font-size: 1.15rem;
+        line-height: 1.55;
+      }
+
+      .qr-frame {
+        display: inline-grid;
+        place-items: center;
+        width: min(100%, 460px);
+        min-height: 360px;
+        padding: 16px;
+        background: #fff;
+        border: 2px solid #dcece4;
+        border-radius: 24px;
+      }
+
+      #qr-code {
+        display: block;
+        width: min(100%, 420px);
+        height: auto;
+      }
+
+      ol {
+        max-width: 570px;
+        margin: 28px auto 0;
+        padding-left: 1.6em;
+        text-align: left;
+        color: #294d40;
+        font-size: 1.08rem;
+        line-height: 1.65;
+      }
+
+      code {
+        display: block;
+        margin-top: 24px;
+        padding: 14px 16px;
+        overflow-wrap: anywhere;
+        color: #176b4d;
+        background: #e5f4ec;
+        border-radius: 14px;
+        font-family: ui-monospace, "SFMono-Regular", monospace;
+        font-size: 0.9rem;
+      }
+
+      .notice {
+        margin: 18px 0 0;
+        color: #688078;
+        font-size: 0.95rem;
+      }
+
+      .error {
+        color: #8c2f23;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <img src="assets/mo-ni-kanallogo.png" alt="MO und Ni" />
+        <span>MO-Ni · iPhone-Test</span>
+      </div>
+      <h1>Einfach mit der Kamera scannen</h1>
+      <p class="intro">Der QR-Code öffnet die aktuelle MO-Ni-Version direkt auf deinem iPhone. Eine gemeinsame Zwischenablage wird nicht benötigt.</p>
+
+      <div class="qr-frame">
+        <img id="qr-code" alt="QR-Code zur MO-Ni-App" />
+      </div>
+
+      <ol>
+        <li>Öffne die Kamera auf dem iPhone und richte sie auf den QR-Code.</li>
+        <li>Tippe auf die eingeblendete Internetadresse.</li>
+        <li>Tippe in Safari auf <strong>Teilen</strong> und dann auf <strong>Zum Home-Bildschirm</strong>.</li>
+        <li>Aktiviere <strong>Als Web-App öffnen</strong> und bestätige mit <strong>Hinzufügen</strong>.</li>
+      </ol>
+
+      <code id="target-url" aria-label="iPhone-Adresse"></code>
+      <p class="notice">Mac und iPhone müssen im selben WLAN sein. Das MO-Ni-Terminalfenster bleibt während des Tests geöffnet.</p>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const requestedTarget = params.get("target") || "";
+      const qrImage = document.querySelector("#qr-code");
+      const targetLabel = document.querySelector("#target-url");
+      const intro = document.querySelector(".intro");
+
+      function isPrivateNetworkAddress(hostname) {
+        const parts = hostname.split(".").map(Number);
+        if (parts.length !== 4 || parts.some(part => !Number.isInteger(part) || part < 0 || part > 255)) return false;
+        return parts[0] === 10
+          || (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31)
+          || (parts[0] === 192 && parts[1] === 168);
+      }
+
+      try {
+        const target = new URL(requestedTarget);
+        if (target.protocol !== "http:" || !isPrivateNetworkAddress(target.hostname)) throw new Error("Ungültige lokale Adresse");
+
+        const qrUrl = new URL("https://quickchart.io/qr");
+        qrUrl.searchParams.set("text", target.href);
+        qrUrl.searchParams.set("size", "420");
+        qrUrl.searchParams.set("margin", "2");
+        qrUrl.searchParams.set("dark", "176b4d");
+        qrUrl.searchParams.set("light", "ffffff");
+        qrUrl.searchParams.set("ecLevel", "M");
+        qrImage.src = qrUrl.href;
+        targetLabel.textContent = target.href;
+      } catch (error) {
+        qrImage.hidden = true;
+        targetLabel.textContent = "Die lokale iPhone-Adresse konnte nicht erzeugt werden.";
+        intro.textContent = "Bitte schließe dieses Fenster und starte „Start-iPhone-Test.command“ erneut.";
+        intro.classList.add("error");
+      }
+    </script>
+  </body>
+</html>

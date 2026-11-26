@@ -1,0 +1,33 @@
+{
+  "time": "2026-10-24T15:31:00.674149+00:00",
+  "checks": 98,
+  "testExit": 0,
+  "cacheModuleClosureMissing": [],
+  "previousTasks": "25 unverändert, nur Quellenhash von #05 auf aktuellen TeX-Stand nachgezogen",
+  "browser": "Alle fünf Deka Dots in separater lokaler Sitzung gelöst, insgesamt 100 Goldtaler; Fehler/Reload/Notiz 0/PDF-Rückweg bestätigt. Geometrie bei 320/390/844 Pixeln geprüft.",
+  "userPreviewCorrection": {
+    "cause": "Browserprüfung hinterließ eigene fünf Lösungen in localhost:4218. Kein vorbefüllter Auslieferungsstand.",
+    "preview": "http://127.0.0.1:4218/index.html?view=games&audience=34&game=puzzles",
+    "state": "0 Goldtaler, 0 gelöste Rätsel; alle fünf Karten ungelöst, Aufgabe 1 mit Originalvorgaben und leerem Eingabefeld geprüft.",
+    "card": "Originalrätsel 4 (3 × 4), aus demselben Aufgabenblatt; kleines Erklärbeispiel unverändert.",
+    "checks": "Sonntagsrätsel und Deka-Dots-Prüfungen sowie 6 Syntax-/Rätsel-/PWA-Nachprüfungen bestanden.",
+    "public": "Keine Veröffentlichung."
+  },
+  "selectionSymbols": {
+    "request": "Zahlenkreuze, Differenzpyramiden und Deka Dots: schwarze Rahmen; Deka-Dots-Vorgaben größer, ähnlich Differenzpyramiden.",
+    "assets": [
+      "assets/puzzles/zahlenkreuze-card.svg",
+      "assets/puzzles/differenzpyramiden-card.svg",
+      "assets/puzzles/deka-dots-card.svg"
+    ],
+    "sources": [
+      "Sonntagsrätsel 03 – Zahlenkreuze.tex: Originalbeispiel",
+      "Sonntagsrätsel 05 – Differenzpyramiden.tex: Originalbeispiel",
+      "Sonntagsrätsel 06 – Deka Dots.tex: Originalrätsel 4"
+    ],
+    "method": "SVG-Zeichnungen mit gleicher Geometrie und Vorgaben; schwarze Rahmen, Deka-Ziffern vergrößert. Nur Auswahlkarten.",
+    "checks": "SVG-Wohlgeformtheit, schwarze Konturen, fünf Deka-Vorgaben und 4 Syntax-/PWA-/Sonntagsrätsel-Prüfungen bestanden.",
+    "published": false,
+    "visual": "Endfassung im Codex-Browser in Standardbreite und 320 px geprüft: alle drei Konturen schwarz, Deka-Ziffern größer und vollständig in ihren Feldern. Screenshots Auswahlsymbole-schwarz.png und Auswahlsymbole-schwarz-320.png. Testvorschau weiterhin 0 gelöste Rätsel."
+  }
+}

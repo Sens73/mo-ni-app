@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 308">
+  <title>Deka Dots</title>
+  <desc>Originalrätsel 4 aus Sonntagsrätsel 06: drei Reihen, vier Spalten, ein breites mittleres Feld. Schwarze Rahmen und größere Vorgabeziffern.</desc>
+  <rect x="4" y="4" width="400" height="300" fill="white" stroke="#000" stroke-width="3"></rect>
+  <path d="M4 104h400 M4 204h400 M104 4v300 M304 4v300 M204 4v100 M204 204v100" fill="none" stroke="#000" stroke-width="3"></path>
+  <g fill="#fd6b29">
+    <circle cx="104" cy="104" r="7.6"></circle>
+    <circle cx="204" cy="104" r="7.6"></circle>
+    <circle cx="304" cy="104" r="7.6"></circle>
+    <circle cx="104" cy="204" r="7.6"></circle>
+    <circle cx="204" cy="204" r="7.6"></circle>
+    <circle cx="304" cy="204" r="7.6"></circle>
+  </g>
+  <g fill="#fd6b29" font-family="'Times New Roman',serif" font-size="48" text-anchor="middle">
+    <text x="154" y="70.8">3</text>
+    <text x="354" y="70.8">2</text>
+    <text x="204" y="170.8">2</text>
+    <text x="54" y="270.8">1</text>
+    <text x="354" y="270.8">2</text>
+  </g>
+</svg>

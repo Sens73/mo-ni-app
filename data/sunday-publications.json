@@ -1,0 +1,43 @@
+{
+  "confirmed": [
+    "5prZEh2zlXY",
+    "O_awfu81ofc",
+    "7o0KxLDxKDA",
+    "eva0IxU6xqw",
+    "FYH2rrTcN14",
+    "Sirf6UbyREw",
+    "QugmHXn1roM"
+  ],
+  "checkedAt": "2026-11-07T09:43:53.975004+00:00",
+  "source": "Öffentliche YouTube-oEmbed-Antworten für #01–#04; #04 am 12.10.2026 frisch bestätigt. Original-Aufgabenblatt #04 bytegenau öffentlich geprüft. #05 am 24.10.2026 über öffentliche YouTube-oEmbed-Antwort bestätigt. #06 am 26.10.2026 anhand öffentlicher YouTube-oEmbed-Metadaten und des Kanalfeeds bestätigt. #07 am 07.11.2026 anhand öffentlicher YouTube-oEmbed-Metadaten bestätigt.",
+  "worksheets": [
+    {
+      "id": "sonntagsraetsel-04-polyominos",
+      "pdf": "./Sonntagsraetsel-04-Polyominos-Aufgabenblatt.pdf?v=20261003",
+      "sha256": "680036bc11ae9621ddd884e0b62d05f88d88d8c23496ed018c4aa269ec16cfa3",
+      "checkedAt": "2026-10-10T10:06:48.319786+00:00",
+      "source": "https://www.mo-ni.de/fileadmin/grundschule-app-test/Sonntagsraetsel-04-Polyominos-Aufgabenblatt.pdf?v=20261003"
+    },
+    {
+      "id": "sonntagsraetsel-05-differenzpyramiden",
+      "pdf": "./Sonntagsraetsel-05-Differenzpyramiden-Aufgabenblatt.pdf?v=20261017b",
+      "sha256": "c4a18423e19fd4f4cc313834a64cdf8483853785eff7f4fa81315207dd4c3e36",
+      "approvedAt": "2026-10-17T11:35:23.741897+00:00",
+      "source": "Veröffentlichung von V0.13 und Aufgabenblatt #05 ausdrücklich von Andreas am 17.10.2026 beauftragt."
+    },
+    {
+      "id": "sonntagsraetsel-06-deka-dots",
+      "pdf": "./Sonntagsraetsel-06-Deka-Dots-Aufgabenblatt.pdf?v=20261024",
+      "sha256": "123d2227aae16ab2b86f43cd641187aa3c83158936ae73e67195610731531259",
+      "checkedAt": "2026-10-24T08:43:05.060773+00:00",
+      "source": "https://www.mo-ni.de/fileadmin/grundschule-app-test/Sonntagsraetsel-06-Deka-Dots-Aufgabenblatt.pdf?v=20261024"
+    },
+    {
+      "id": "sonntagsraetsel-07-kenkens",
+      "pdf": "./Sonntagsraetsel-07-KenKens-Aufgabenblatt.pdf?v=20261031",
+      "sha256": "2b285e0560961f5a757527743141d743d259840c4a8d29e91eae1376e4eaa915",
+      "checkedAt": "2026-10-31",
+      "source": "Öffentliches PDF am 31.10.2026 gelesen und bytegleich geprüft; Sonntagsrätsel-07-KenKens-2026-10-31/README.md"
+    }
+  ]
+}

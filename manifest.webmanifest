@@ -1,0 +1,123 @@
+{
+  "id": "./",
+  "name": "MO-Ni – Unterwegs mit MO und Ni",
+  "short_name": "MO-Ni Mathe",
+  "description": "Mathe-Angebote für Klasse 3–4, 5–6 und 7–13 mit MO und Ni.",
+  "lang": "de-DE",
+  "dir": "ltr",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f8f5",
+  "theme_color": "#176b4d",
+  "categories": [
+    "education"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Termine",
+      "short_name": "Termine",
+      "description": "Alle Termine des Schuljahres öffnen",
+      "url": "./index.html?view=dates&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Mathe-AG",
+      "short_name": "Mathe-AG",
+      "description": "Aufgabenblätter und Videos der Mathe-AG öffnen",
+      "url": "./index.html?view=training&tab=mathe-ag&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Mathe-Olympiade",
+      "short_name": "Mathe-Olympiade",
+      "description": "Klausurblätter und Lösungsvideos der Mathe-Olympiade öffnen",
+      "url": "./index.html?view=training&tab=olympiade&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "MathePlus",
+      "short_name": "MathePlus",
+      "description": "Aufgabenblätter der MathePlus-Serien öffnen",
+      "url": "./index.html?view=training&tab=matheplus&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Knobelreise",
+      "short_name": "Knobelreise",
+      "description": "Die aktuelle Video-Knobelreise ab NI650311 öffnen",
+      "url": "./index.html?view=journey&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Sonntagsrätsel",
+      "short_name": "Sonntagsrätsel",
+      "description": "Aufgabenblätter und Videos der Sonntagsrätsel öffnen",
+      "url": "./index.html?view=sunday&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Bist du fit",
+      "short_name": "Bist du fit",
+      "description": "Terme und Gleichungen für Klasse 7–13 öffnen",
+      "url": "./index.html?audience=713&view=training&tab=bist-du-fit&source=shortcut",
+      "icons": [
+        {
+          "src": "./assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

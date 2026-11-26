@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+coverage/
+dist/
+build/
+.dart_tool/
+.flutter-plugins*
+android/.gradle/
+android/local.properties
+ios/Pods/
+ios/Flutter/ephemeral/
+

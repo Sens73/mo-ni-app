@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#176b4d" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="./assets/icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css?v=0.14.0-release-2" />
+  <link rel="stylesheet" href="./workbook-view.css?v=0.14.0-release-2" />
+  <link rel="stylesheet" href="./pdf-actions.css?v=0.14.0-release-2" />
+  <title>Arbeitsheft MO65 – MO-Ni</title>
+</head>
+<body class="workbook-reader">
+  <header class="reader-toolbar">
+    <strong id="reader-title">Arbeitsheft MO65</strong>
+    <div class="viewer-actions reader-actions">
+      <button class="soft-button viewer-print-action" id="reader-print" type="button" disabled><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg> Drucken</button>
+      <a class="soft-button reader-back" href="./index.html?view=workbooks"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg> Zurück zur App</a>
+      <button class="soft-button" type="button" data-pdf-download id="reader-download" hidden><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg> Herunterladen</button>
+    </div>
+    <nav class="reader-pagination" aria-label="Seiten des Arbeitshefts">
+      <button class="soft-button" id="reader-previous" type="button" aria-label="Vorherige Seite" disabled>←</button>
+      <form id="reader-page-form">
+        <label for="reader-page">Seite</label>
+        <input id="reader-page" type="number" inputmode="numeric" min="1" value="1" aria-label="Seitennummer" disabled />
+        <span id="reader-count">von …</span>
+      </form>
+      <button class="soft-button" id="reader-next" type="button" aria-label="Nächste Seite" disabled>→</button>
+    </nav>
+  </header>
+  <main class="reader-main">
+    <p id="reader-status" role="status" aria-live="polite">Arbeitsheft wird geladen …</p>
+    <div id="reader-sheet"><canvas id="reader-canvas" role="img" aria-label="Arbeitsheft" hidden></canvas><div id="reader-links"></div></div>
+  </main>
+  <script type="module" src="./workbook-view.js?v=0.14.0-release-2"></script>
+</body>
+</html>

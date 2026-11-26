@@ -1,0 +1,516 @@
+{
+  "layout": [
+    {
+      "card": {
+        "bottom": 176.5,
+        "height": 44,
+        "right": 69.3984375,
+        "width": 52.3984375,
+        "x": 17,
+        "y": 132.5
+      },
+      "cards": 40,
+      "dock": "none",
+      "grid": {
+        "bottom": 432,
+        "height": 304.5,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 127.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 502,
+        "height": 62,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 440
+      },
+      "overflow": false,
+      "pageHeight": 568,
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt6",
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "card": {
+        "bottom": 184.8203125,
+        "height": 52.3203125,
+        "right": 83.3984375,
+        "width": 66.3984375,
+        "x": 17,
+        "y": 132.5
+      },
+      "cards": 40,
+      "dock": "none",
+      "grid": {
+        "bottom": 708,
+        "height": 580.5,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 127.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 778,
+        "height": 62,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 716
+      },
+      "overflow": false,
+      "pageHeight": 844,
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt6",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "card": {
+        "bottom": 160.5,
+        "height": 44,
+        "right": 92.59375,
+        "width": 75.59375,
+        "x": 17,
+        "y": 116.5
+      },
+      "cards": 40,
+      "dock": "none",
+      "grid": {
+        "bottom": 270,
+        "height": 158.5,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 111.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 328,
+        "height": 54,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 274
+      },
+      "overflow": false,
+      "pageHeight": 390,
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt6",
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "card": {
+        "bottom": 210.328125,
+        "height": 44.6328125,
+        "right": 508,
+        "width": 80,
+        "x": 428,
+        "y": 165.6953125
+      },
+      "cards": 40,
+      "dock": "none",
+      "grid": {
+        "bottom": 559,
+        "height": 398.3046875,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 160.6953125
+      },
+      "header": "none",
+      "move": {
+        "bottom": 629,
+        "height": 62,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 567
+      },
+      "overflow": false,
+      "pageHeight": 720,
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt6",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "card": {
+        "bottom": 176.5,
+        "height": 44,
+        "right": 69.3984375,
+        "width": 52.3984375,
+        "x": 17,
+        "y": 132.5
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 432,
+        "height": 304.5,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 127.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 502,
+        "height": 62,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 440
+      },
+      "overflow": false,
+      "pageHeight": 568,
+      "status": "Spieler B ist dranZahlen von 1 bis 100Zuletzt gelegt6",
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "card": {
+        "bottom": 184.8203125,
+        "height": 52.3203125,
+        "right": 83.3984375,
+        "width": 66.3984375,
+        "x": 17,
+        "y": 132.5
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 708,
+        "height": 580.5,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 127.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 778,
+        "height": 62,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 716
+      },
+      "overflow": false,
+      "pageHeight": 844,
+      "status": "Spieler B ist dranZahlen von 1 bis 100Zuletzt gelegt6",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "card": {
+        "bottom": 160.5,
+        "height": 44,
+        "right": 92.59375,
+        "width": 75.59375,
+        "x": 17,
+        "y": 116.5
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 270,
+        "height": 158.5,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 111.5
+      },
+      "header": "none",
+      "move": {
+        "bottom": 328,
+        "height": 54,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 274
+      },
+      "overflow": false,
+      "pageHeight": 390,
+      "status": "Spieler B ist dranZahlen von 1 bis 100Zuletzt gelegt6",
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "card": {
+        "bottom": 210.328125,
+        "height": 44.6328125,
+        "right": 508,
+        "width": 80,
+        "x": 428,
+        "y": 165.6953125
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 559,
+        "height": 398.3046875,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 160.6953125
+      },
+      "header": "none",
+      "move": {
+        "bottom": 629,
+        "height": 62,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 567
+      },
+      "overflow": false,
+      "pageHeight": 720,
+      "status": "Spieler B ist dranZahlen von 1 bis 100Zuletzt gelegt6",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "card": {
+        "bottom": 232,
+        "height": 44,
+        "right": 69.3984375,
+        "width": 52.3984375,
+        "x": 17,
+        "y": 188
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 432,
+        "height": 249,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 183
+      },
+      "header": "none",
+      "move": {
+        "bottom": 502,
+        "height": 62,
+        "right": 308,
+        "width": 296,
+        "x": 12,
+        "y": 440
+      },
+      "overflow": false,
+      "pageHeight": 568,
+      "status": "Spieler B ist dranZahlen von 1 bis 101Zuletzt gelegt6",
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "card": {
+        "bottom": 240.3203125,
+        "height": 52.3203125,
+        "right": 83.3984375,
+        "width": 66.3984375,
+        "x": 17,
+        "y": 188
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 708,
+        "height": 525,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 183
+      },
+      "header": "none",
+      "move": {
+        "bottom": 778,
+        "height": 62,
+        "right": 378,
+        "width": 366,
+        "x": 12,
+        "y": 716
+      },
+      "overflow": false,
+      "pageHeight": 844,
+      "status": "Spieler B ist dranZahlen von 1 bis 101Zuletzt gelegt6",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "card": {
+        "bottom": 212,
+        "height": 44,
+        "right": 92.59375,
+        "width": 75.59375,
+        "x": 17,
+        "y": 168
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 270,
+        "height": 107,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 163
+      },
+      "header": "none",
+      "move": {
+        "bottom": 328,
+        "height": 54,
+        "right": 832,
+        "width": 820,
+        "x": 12,
+        "y": 274
+      },
+      "overflow": false,
+      "pageHeight": 390,
+      "status": "Spieler B ist dranZahlen von 1 bis 101Zuletzt gelegt6",
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "card": {
+        "bottom": 265.828125,
+        "height": 44.6328125,
+        "right": 508,
+        "width": 80,
+        "x": 428,
+        "y": 221.1953125
+      },
+      "cards": 100,
+      "dock": "none",
+      "grid": {
+        "bottom": 559,
+        "height": 342.8046875,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 216.1953125
+      },
+      "header": "none",
+      "move": {
+        "bottom": 629,
+        "height": 62,
+        "right": 857,
+        "width": 434,
+        "x": 423,
+        "y": 567
+      },
+      "overflow": false,
+      "pageHeight": 720,
+      "status": "Spieler B ist dranZahlen von 1 bis 101Zuletzt gelegt6",
+      "viewport": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "bedienung": [
+    {
+      "case": "Ungültiger Zug nach 36",
+      "notice": "7 ist weder ein Teiler noch ein Vielfaches von 36.",
+      "status": "Spieler A ist dranZahlen von 1 bis 40Zuletzt gelegt36",
+      "used": 2
+    },
+    {
+      "case": "Neuladen",
+      "selected": "Karte 7",
+      "status": "Spieler A ist dranZahlen von 1 bis 40Zuletzt gelegt36",
+      "used": 2
+    },
+    {
+      "case": "Endspiel",
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt38",
+      "used": 1
+    },
+    {
+      "case": "Endspiel",
+      "status": "Spieler A ist dranZahlen von 1 bis 40Zuletzt gelegt19",
+      "used": 2
+    },
+    {
+      "case": "Endspiel",
+      "status": "Spieler B ist dranZahlen von 1 bis 40Zuletzt gelegt1",
+      "used": 3
+    },
+    {
+      "case": "Endspiel",
+      "status": "‹ SpieleStart ›✓Spieler B gewinnt!Spieler A kann keine Karte mehr legen.Letzte Karte37Ihr habt 4 von 40 Karten gelegt.Noch eine PartieZahlenbereich ändernSpielverlauf · 4 KartenSpieler A38Spieler B19Spieler A1Spieler B37",
+      "used": 0
+    },
+    {
+      "case": "Eigene Kartenzahl 100.5",
+      "notice": "Bitte gib eine ganze Kartenzahl über 100 ein."
+    },
+    {
+      "case": "10.000 Karten",
+      "notice": "",
+      "overflow": false,
+      "page": "9.901–10.000von 10.000",
+      "rendered": 100,
+      "status": "Spieler B ist dranZahlen von 1 bis 10.000Zuletzt gelegt10.000"
+    },
+    {
+      "case": "101 unzulässig nach 6",
+      "notice": "101 ist weder ein Teiler noch ein Vielfaches von 6.",
+      "status": "Spieler B ist dranZahlen von 1 bis 101Zuletzt gelegt6"
+    },
+    {
+      "actionsBottom": 497.09375,
+      "case": "Rechen-Rallye mit vier Spielen",
+      "chooserHeight": 54,
+      "overflow": false,
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "actionsBottom": 541,
+      "case": "Zahlenregen mit vier Spielen",
+      "overflow": false,
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "case": "Polyomino 5 erhalten",
+      "chooser": "none",
+      "overflow": false,
+      "toolsBottom": 547.484375,
+      "viewport": [
+        320,
+        568
+      ]
+    }
+  ]
+}

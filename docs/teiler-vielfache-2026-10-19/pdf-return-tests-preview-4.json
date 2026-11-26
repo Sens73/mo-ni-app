@@ -1,0 +1,477 @@
+{
+  "release": "0.14.0-preview-4",
+  "passed": 94,
+  "total": 94,
+  "results": [
+    {
+      "step": "node --check app.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check material-presentation.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check material-links.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check journey-filters.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check download-manager.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check workbook-print.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check workbook-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check service-worker.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check print-manager.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check pdf-viewer.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check external-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check audience.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/sync-video-playlists.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/dev-server.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/update-knobelreise.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/update-mathe-ag-56-archive.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/update-matheplus-archive.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/print-manager.test.mjs",
+      "status": 0,
+      "output": "Validated native/iPhone routes, synchronous printing with live canvas isolation, nonblocking dialog lifetime beyond confirmation, restoration after close/failure and untouched workbook route."
+    },
+    {
+      "step": "node tests/download-manager.test.mjs",
+      "status": 0,
+      "output": "Validated file sharing without navigation, cancellation, and guarded browser downloads."
+    },
+    {
+      "step": "node tests/journey-updater.test.mjs",
+      "status": 0,
+      "output": "Validated NI schedules and the complete preview refresh: new QR-linked PDF, preserved 3/4 and 5/6 content, unchanged repeats and failure recovery."
+    },
+    {
+      "step": "node tests/content.test.mjs",
+      "status": 0,
+      "output": "Validated version 0.12.0, 118 primary-school Mathe-AGs, the complete 55-part grade-5/6 library with labelled enrichment, 49 Olympiad exams, 10 current MathePlus worksheets and quiet routed system printing."
+    },
+    {
+      "step": "node tests/infrastructure.test.mjs",
+      "status": 0,
+      "output": "Validated the content service, all five PDF routes and the automatic YouTube journey updater."
+    },
+    {
+      "step": "node tests/pwa.test.mjs",
+      "status": 0,
+      "output": "Validated installable PWA metadata, icons, offline shell, update flow and tracking-free pilot mode."
+    },
+    {
+      "step": "node tests/audience.test.mjs",
+      "status": 0,
+      "output": "Audience selection, metadata precedence, all 118 primary-school episodes, the complete 55-part grade-5/6 library, date selection, mixed-grade import and completed schedule verified."
+    },
+    {
+      "step": "node tests/video-content.test.mjs",
+      "status": 0,
+      "output": "Video sync: duplicates, pagination, private filtering, failure retention, dry run and lock verified. 15 holiday-safe AG dates; existing grade-7 MathePlus exception retained; 90 Känguru and 107 algebra videos for 7–13 verified."
+    },
+    {
+      "step": "node tests/material-presentation.test.mjs",
+      "status": 0,
+      "output": "Material presentation: 118 AG and 49 Olympiad cards, all 223 video URLs, multiple videos, task link and future-only dates and their expiry in winter/summer time verified."
+    },
+    {
+      "step": "node tests/material-links.test.mjs",
+      "status": 0,
+      "output": "Material links: all 14 current task/website references, six Känguru worksheets, concrete labels and rejected malformed/foreign URLs verified."
+    },
+    {
+      "step": "node tests/journey-filters.test.mjs",
+      "status": 0,
+      "output": "Journey filters: 13 actual sources, honest zero counts, safe classifications, OR/AND multiple selection, reset and immutable sources verified."
+    },
+    {
+      "step": "node --check app-updates.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check content-updates.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check video-content.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/app-updates.test.mjs",
+      "status": 0,
+      "output": "App updates: video, dialog, focused inputs and contact drafts protected; busy-to-safe activation and one message per worker verified."
+    },
+    {
+      "step": "node tests/content-updates.test.mjs",
+      "status": 0,
+      "output": "Actual app integration: startup, scheduled and deferred refresh, chronological date expiry, safe app updates and original-PDF load cancellation, synchronous printing and viewer return verified.\nActual app content and code updates wait for a running or paused game.\nActual restored puzzle protects content/code updates; leaving it safely applies updates without losing notes.\nAll 15 offer routes: shared introduction, distinct topic pictures, empty archive, search order and offline assets verified.\nPrimary Kangaroo direct link, 123/61/90 distinct videos, visible video buttons, audience switching and separate Knobelreise verified.\nSame four dock destinations, real navigation/direct links in 3–4/5–6/7–13, distinct start offers and preserved active puzzle verified.\nPuzzle game/dock returns reset to the catalogue; direct Sunday links and delayed saved notes remain intact.\nBoth card PDF viewers return to the Teiler-Vielfache-Spiel with settings and moves intact."
+    },
+    {
+      "step": "node tests/pdf-viewer.test.mjs",
+      "status": 0,
+      "output": "Validated complete PNG preparation before PDF readiness, original canvas retention and image failure propagation."
+    },
+    {
+      "step": "node --check original-pdf-print.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/original-pdf-print.test.mjs",
+      "status": 0,
+      "output": "Validated Safari-only routing, original PDF frame readiness, explicit lifetime, load/timeout errors and cancellation before and after load."
+    },
+    {
+      "step": "node tests/workbook-print.test.mjs",
+      "status": 0,
+      "output": "Validated original workbook pages, repeated native print, explicit lifetime, cancellation and readiness errors."
+    },
+    {
+      "step": "node --check mental-math.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check mental-math-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/mental-math.test.mjs",
+      "status": 0,
+      "output": "Rechen-Rallye: correct and wrong feedback both last 700 ms, including practice, pause/resume and the final timed answer.\nMental math: 12000 independent arithmetic checks, answer uniqueness, selected ranges/operations, deadline, double/stale clicks, feedback, pause, practice, score grouping and update safety verified."
+    },
+    {
+      "step": "node --check number-whirl.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check number-whirl-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check game-celebration.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/number-whirl.test.mjs",
+      "status": 0,
+      "output": "Zahlenwirbel: 43200 independent value checks, 109440 bounded/non-overlapping layouts at all three speeds; head-on/glancing/corner/chain reflections, no invisible collected obstacle, kinetic energy and frame independence; time-dependent group rewards, error-free-only bonus, tier boundaries, renewed group eligibility and scoring record separation; sorting, ties, deadlines, stale/double clicks, escape, pause and practice verified.\nRain: monotone downward motion, exact first-visible-stone floor contact in both round modes, no invisible collected deadline, count-based rewards with four equal quarters for five stones at all speeds, and isolated previous records verified."
+    },
+    {
+      "step": "node --check puzzles/puzzle-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/registry.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/progress.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sumdoku.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sumdoku-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sumdoku-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/sumdoku-difficulty.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-sumdoku-pack.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/puzzles.test.mjs",
+      "status": 0,
+      "output": "Validated 16 original unique Sumdokus; 8/4/4 verified strategy bands and old progress preservation with independent solver; 6768 candidate checks; notes/undo/reload/one-time rewards; free/sequential progression and 25-type registry."
+    },
+    {
+      "step": "node --check puzzles/number-logic.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/number-logic-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/logic-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/geometry-logic.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/geometry-logic-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/geometry-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/logic-puzzles.test.mjs",
+      "status": 0,
+      "output": "54 Beast Academy variants and 3 own pyramids independently unique, including all 12 geometry boards; difficulty, numbering, notes, restore and one-time gold checked."
+    },
+    {
+      "step": "node tests/pyramid-input.test.mjs",
+      "status": 0,
+      "output": "Pyramid tokens: repeated numbers, depletion, replacement, swap, return, givens and saved boards passed."
+    },
+    {
+      "step": "node --check scripts/logic-layouts.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-logic-packs.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/logic-oracle.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-geometry-packs.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/beast-number-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/beast-geometry-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/beast-geometry-audit.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/check-beast-templates.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-beast-packs.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/pyramid-enumeration.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-own-pyramids.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/own-pyramid-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/own-pyramids.test.mjs",
+      "status": 0,
+      "output": "Three own five-stage pyramids unique in two independent algorithms; minimal clues, reflection, reasoning tiers and 500 zero/repeated-number cross-checks passed."
+    },
+    {
+      "step": "node --check puzzles/extension-library.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sunday-presentation.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sunday-types.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check puzzles/sunday-levels.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/sunday-publications.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/sunday-sumdoku-oracle.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/build-sunday-puzzles.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/sunday-puzzles.test.mjs",
+      "status": 0,
+      "output": "25 original worksheet puzzles independently unique; 20 released worksheet tasks completed; separate worksheet/video gates, repeated episodes, paper numbers, stock archive and progress checked.\nLocal #05 opt-in, 25 visible tasks, five pyramid completions, preserved rewards and separate public/video gates verified."
+    },
+    {
+      "step": "node --check puzzles/solution-presentation.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/solution-presentation.test.mjs",
+      "status": 0,
+      "output": "All five source paths: order, continuity, colour/width and 350ms steps; 3s holds, frozen boards, one reward, pause/remount/restore and cancelled stale callbacks verified.\nCompact puzzle inputs: notes/erase, all five automatic completions, incorrect-full-grid feedback after entry/reload/reopen, and one-time rewards verified.\nAll five Sumdokus: native numeric inputs, layout order, overwrite, candidates, erasure, fixed clues, navigation, invalid input and automatic completion verified.\nSaved Sumdoku clues: readonly field rendering and fixed values preserved through native input and Delete.\nAll numeric source puzzles: digit-by-digit native entry, zero, multi-digit candidates without provisional leftovers, invalid values, pyramid token input and automatic completion verified."
+    },
+    {
+      "step": "node tests/game-celebration.test.mjs",
+      "status": 0,
+      "output": "Film playback, hide/resume, native pause, replay, no loop, reduced motion, rejected autoplay zero/positive round results and offline byte ranges verified."
+    },
+    {
+      "step": "node --check usage-statistics.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check video-statistics.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check statistics-config.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check statistics-exclusion.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check scripts/configure-statistics.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/usage-statistics.test.mjs",
+      "status": 0,
+      "output": "Validated five events, audience/content labels, preview/local/owner exclusions, no personal query data, failure isolation and single playback counting."
+    },
+    {
+      "step": "node --check divisor-game.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node --check divisor-game-view.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "step": "node tests/divisor-game.test.mjs",
+      "status": 0,
+      "output": "Teiler-Vielfache-Spiel: parameters, turns, illegal moves, restoration, wins, large counts and 25481 independent end-state checks passed."
+    }
+  ]
+}

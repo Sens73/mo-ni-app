@@ -1,0 +1,241 @@
+[
+  {
+    "size": 3,
+    "givens": {},
+    "cages": [
+      {
+        "cells": [
+          0,
+          1,
+          2,
+          4,
+          7
+        ],
+        "sum": null
+      },
+      {
+        "cells": [
+          3
+        ],
+        "sum": 2
+      },
+      {
+        "cells": [
+          5,
+          8
+        ],
+        "sum": 4
+      },
+      {
+        "cells": [
+          6
+        ],
+        "sum": 3
+      }
+    ],
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 1,
+      "stars": 1,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631"
+    }
+  },
+  {
+    "size": 3,
+    "givens": {},
+    "cages": [
+      {
+        "cells": [
+          0,
+          1
+        ],
+        "sum": 5
+      },
+      {
+        "cells": [
+          2,
+          4,
+          5
+        ],
+        "sum": 5
+      },
+      {
+        "cells": [
+          3,
+          6,
+          7,
+          8
+        ],
+        "sum": null
+      }
+    ],
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 2,
+      "stars": 2,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631"
+    }
+  },
+  {
+    "size": 3,
+    "givens": {},
+    "cages": [
+      {
+        "cells": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "sum": 10
+      },
+      {
+        "cells": [
+          4,
+          7,
+          8
+        ],
+        "sum": 7
+      },
+      {
+        "cells": [
+          6
+        ],
+        "sum": null
+      }
+    ],
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 3,
+      "stars": 3,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631"
+    }
+  },
+  {
+    "size": 4,
+    "givens": {},
+    "cages": [
+      {
+        "cells": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          12,
+          13,
+          14
+        ],
+        "sum": null
+      },
+      {
+        "cells": [
+          3,
+          7
+        ],
+        "sum": 7
+      },
+      {
+        "cells": [
+          5
+        ],
+        "sum": 2
+      },
+      {
+        "cells": [
+          6,
+          10
+        ],
+        "sum": 6
+      },
+      {
+        "cells": [
+          9
+        ],
+        "sum": 3
+      },
+      {
+        "cells": [
+          11,
+          15
+        ],
+        "sum": 3
+      }
+    ],
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 4,
+      "stars": 4,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631"
+    }
+  },
+  {
+    "size": 4,
+    "givens": {},
+    "cages": [
+      {
+        "cells": [
+          0,
+          4,
+          5
+        ],
+        "sum": 7
+      },
+      {
+        "cells": [
+          1
+        ],
+        "sum": null
+      },
+      {
+        "cells": [
+          2,
+          6,
+          7
+        ],
+        "sum": 10
+      },
+      {
+        "cells": [
+          3
+        ],
+        "sum": null
+      },
+      {
+        "cells": [
+          8,
+          9
+        ],
+        "sum": 6
+      },
+      {
+        "cells": [
+          10,
+          11,
+          15
+        ],
+        "sum": 7
+      },
+      {
+        "cells": [
+          12
+        ],
+        "sum": null
+      },
+      {
+        "cells": [
+          13,
+          14
+        ],
+        "sum": 5
+      }
+    ],
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 5,
+      "stars": 5,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631"
+    }
+  }
+]

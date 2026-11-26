@@ -1,0 +1,41 @@
+.workbook-reader { min-height: 100vh; padding: 0; }
+.reader-toolbar { position: sticky; top: 0; z-index: 10; padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left)); background: #f3faf6; border-bottom: 1px solid var(--action-border); }
+.reader-topline { max-width: 1000px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.reader-back { white-space: nowrap; }
+.reader-pagination { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 10px; }
+.reader-pagination button { min-width: 44px; min-height: 44px; font-size: 20px; }
+.reader-pagination button:disabled { opacity: .4; cursor: default; }
+#reader-page-form { display: flex; align-items: center; gap: 8px; }
+#reader-page { width: 64px; min-height: 44px; padding: 5px; text-align: center; border: 1px solid var(--action-border); border-radius: 10px; background: white; color: var(--text); font: inherit; }
+.reader-main { max-width: 1000px; margin: auto; padding: 14px max(12px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+#reader-status { margin: 0 0 12px; }
+#reader-status:empty { display: none; }
+#reader-sheet { position: relative; width: 100%; margin: 0 auto; background: white; box-shadow: 0 3px 18px #174b3320; }
+#reader-canvas { display: block; width: 100%; height: auto; }
+#reader-canvas[hidden] { display: none; }
+#reader-links { position: absolute; inset: 0; pointer-events: none; }
+#reader-links a { position: absolute; display: block; pointer-events: auto; }
+#reader-links a:focus-visible { outline: 3px solid #d65f43; background: #d65f4330; }
+@media (max-width: 500px) {
+  #reader-title { flex-basis: 100%; order: 3; text-align: center; font-size: 14px; }
+  .reader-topline { gap: 8px; }
+  .reader-topline a { padding: 10px 12px; font-size: 12px; }
+}
+
+#reader-title { display: block; max-width: 1000px; margin: 0 auto 10px; text-align: center; }
+.reader-actions { max-width: 1000px; margin: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reader-actions .viewer-print-action { grid-column: 1 / -1; }
+.reader-actions button:disabled { opacity: .45; }
+.workbook-print-surface { display: none; }
+@media print {
+  @page workbook-portrait { size: A4 portrait; margin: 0; }
+  @page workbook-landscape { size: A4 landscape; margin: 0; }
+  html:has(.workbook-print-surface), body.workbook-reader { width: auto !important; height: auto !important; margin: 0 !important; padding: 0 !important; }
+  body.workbook-reader > :not(.workbook-print-surface) { display: none !important; }
+  .workbook-print-surface, .workbook-print-surface * { visibility: visible !important; }
+  .workbook-print-surface { display: block !important; margin: 0 !important; padding: 0 !important; }
+  .reader-print-page { page: workbook-portrait; width: 210mm; height: 297mm; margin: 0; padding: 0; break-after: page; overflow: hidden; }
+  .reader-print-page.landscape { page: workbook-landscape; width: 297mm; height: 210mm; }
+  .reader-print-page:last-child { break-after: auto; }
+  .reader-print-page img { display: block; width: 100%; height: 100%; object-fit: contain; }
+}

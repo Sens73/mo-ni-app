@@ -1,0 +1,567 @@
+[
+  {
+    "id": "sunday-01-task-1",
+    "episode": "sonntagsraetsel-01-sumdoku",
+    "number": 1,
+    "typeId": "sumdoku",
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 1,
+      "stars": 1,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 35
+  },
+  {
+    "id": "sunday-01-task-2",
+    "episode": "sonntagsraetsel-01-sumdoku",
+    "number": 2,
+    "typeId": "sumdoku",
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 2,
+      "stars": 2,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 21
+  },
+  {
+    "id": "sunday-01-task-3",
+    "episode": "sonntagsraetsel-01-sumdoku",
+    "number": 3,
+    "typeId": "sumdoku",
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 3,
+      "stars": 3,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 57
+  },
+  {
+    "id": "sunday-01-task-4",
+    "episode": "sonntagsraetsel-01-sumdoku",
+    "number": 4,
+    "typeId": "sumdoku",
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 4,
+      "stars": 4,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 161
+  },
+  {
+    "id": "sunday-01-task-5",
+    "episode": "sonntagsraetsel-01-sumdoku",
+    "number": 5,
+    "typeId": "sumdoku",
+    "source": {
+      "worksheet": "Sonntagsrätsel 01 – Sumdoku.tex",
+      "worksheetTask": 5,
+      "stars": 5,
+      "sourceSha256": "6f60c2376acd19bbac90f4ec93227a66ffb1d7af21252218d425cd203c8f5631",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 185
+  },
+  {
+    "id": "sunday-02-task-1",
+    "episode": "sonntagsraetsel-02-zahlenpfade",
+    "number": 1,
+    "typeId": "zahlenpfade",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 7,
+      "task": 1,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 02 – Zahlenpfade.tex",
+      "worksheetTask": 1,
+      "sourceSha256": "00c119816499de59ab4c713722e73b88b5dbac371ed019ce77708e14d4a2ac4b",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 26
+  },
+  {
+    "id": "sunday-02-task-2",
+    "episode": "sonntagsraetsel-02-zahlenpfade",
+    "number": 2,
+    "typeId": "zahlenpfade",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 8,
+      "task": 7,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 02 – Zahlenpfade.tex",
+      "worksheetTask": 2,
+      "sourceSha256": "00c119816499de59ab4c713722e73b88b5dbac371ed019ce77708e14d4a2ac4b",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 28
+  },
+  {
+    "id": "sunday-02-task-3",
+    "episode": "sonntagsraetsel-02-zahlenpfade",
+    "number": 3,
+    "typeId": "zahlenpfade",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 12,
+      "task": 31,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 02 – Zahlenpfade.tex",
+      "worksheetTask": 3,
+      "sourceSha256": "00c119816499de59ab4c713722e73b88b5dbac371ed019ce77708e14d4a2ac4b",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 48
+  },
+  {
+    "id": "sunday-02-task-4",
+    "episode": "sonntagsraetsel-02-zahlenpfade",
+    "number": 4,
+    "typeId": "zahlenpfade",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 14,
+      "task": 41,
+      "stars": 4,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 02 – Zahlenpfade.tex",
+      "worksheetTask": 4,
+      "sourceSha256": "00c119816499de59ab4c713722e73b88b5dbac371ed019ce77708e14d4a2ac4b",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 270
+  },
+  {
+    "id": "sunday-02-task-5",
+    "episode": "sonntagsraetsel-02-zahlenpfade",
+    "number": 5,
+    "typeId": "zahlenpfade",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 15,
+      "task": 45,
+      "stars": 5,
+      "bookStars": 4,
+      "worksheet": "Sonntagsrätsel 02 – Zahlenpfade.tex",
+      "worksheetTask": 5,
+      "sourceSha256": "00c119816499de59ab4c713722e73b88b5dbac371ed019ce77708e14d4a2ac4b",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 5051
+  },
+  {
+    "id": "sunday-03-task-1",
+    "episode": "sonntagsraetsel-03-zahlenkreuze",
+    "number": 1,
+    "typeId": "zahlenkreuze",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 97,
+      "task": 1,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 03 – Zahlenkreuze.tex",
+      "worksheetTask": 1,
+      "sourceSha256": "1c3faebd6d43511408816caca8a7dd052ef2325ed9da472291d563ae8d77af12",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1,
+    "rank": 10,
+    "cells": 10,
+    "rangeIndependent": true
+  },
+  {
+    "id": "sunday-03-task-2",
+    "episode": "sonntagsraetsel-03-zahlenkreuze",
+    "number": 2,
+    "typeId": "zahlenkreuze",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 98,
+      "task": 5,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 03 – Zahlenkreuze.tex",
+      "worksheetTask": 2,
+      "sourceSha256": "1c3faebd6d43511408816caca8a7dd052ef2325ed9da472291d563ae8d77af12",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1,
+    "rank": 14,
+    "cells": 14,
+    "rangeIndependent": true
+  },
+  {
+    "id": "sunday-03-task-3",
+    "episode": "sonntagsraetsel-03-zahlenkreuze",
+    "number": 3,
+    "typeId": "zahlenkreuze",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 100,
+      "task": 13,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 03 – Zahlenkreuze.tex",
+      "worksheetTask": 3,
+      "sourceSha256": "1c3faebd6d43511408816caca8a7dd052ef2325ed9da472291d563ae8d77af12",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1,
+    "rank": 13,
+    "cells": 13,
+    "rangeIndependent": true
+  },
+  {
+    "id": "sunday-03-task-4",
+    "episode": "sonntagsraetsel-03-zahlenkreuze",
+    "number": 4,
+    "typeId": "zahlenkreuze",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 102,
+      "task": 21,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 03 – Zahlenkreuze.tex",
+      "worksheetTask": 4,
+      "sourceSha256": "1c3faebd6d43511408816caca8a7dd052ef2325ed9da472291d563ae8d77af12",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1,
+    "rank": 22,
+    "cells": 22,
+    "rangeIndependent": true
+  },
+  {
+    "id": "sunday-03-task-5",
+    "episode": "sonntagsraetsel-03-zahlenkreuze",
+    "number": 5,
+    "typeId": "zahlenkreuze",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 105,
+      "task": 27,
+      "stars": 4,
+      "bookStars": 4,
+      "worksheet": "Sonntagsrätsel 03 – Zahlenkreuze.tex",
+      "worksheetTask": 5,
+      "sourceSha256": "1c3faebd6d43511408816caca8a7dd052ef2325ed9da472291d563ae8d77af12",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1,
+    "rank": 32,
+    "cells": 32,
+    "rangeIndependent": true
+  },
+  {
+    "id": "sunday-04-task-1",
+    "episode": "sonntagsraetsel-04-polyominos",
+    "number": 1,
+    "typeId": "polyominos",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 21,
+      "task": 1,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 04 – Polyominos.tex",
+      "worksheetTask": 1,
+      "sourceSha256": "e82d13392bcd48d4b8c93208e6f06ec1739fc942c6e79fb223d8df72bdbbad6e",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 6
+  },
+  {
+    "id": "sunday-04-task-2",
+    "episode": "sonntagsraetsel-04-polyominos",
+    "number": 2,
+    "typeId": "polyominos",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 22,
+      "task": 5,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 04 – Polyominos.tex",
+      "worksheetTask": 2,
+      "sourceSha256": "e82d13392bcd48d4b8c93208e6f06ec1739fc942c6e79fb223d8df72bdbbad6e",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 8
+  },
+  {
+    "id": "sunday-04-task-3",
+    "episode": "sonntagsraetsel-04-polyominos",
+    "number": 3,
+    "typeId": "polyominos",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 24,
+      "task": 13,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 04 – Polyominos.tex",
+      "worksheetTask": 3,
+      "sourceSha256": "e82d13392bcd48d4b8c93208e6f06ec1739fc942c6e79fb223d8df72bdbbad6e",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 5
+  },
+  {
+    "id": "sunday-04-task-4",
+    "episode": "sonntagsraetsel-04-polyominos",
+    "number": 4,
+    "typeId": "polyominos",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 26,
+      "task": 21,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 04 – Polyominos.tex",
+      "worksheetTask": 4,
+      "sourceSha256": "e82d13392bcd48d4b8c93208e6f06ec1739fc942c6e79fb223d8df72bdbbad6e",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 10
+  },
+  {
+    "id": "sunday-04-task-5",
+    "episode": "sonntagsraetsel-04-polyominos",
+    "number": 5,
+    "typeId": "polyominos",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 28,
+      "task": 29,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 04 – Polyominos.tex",
+      "worksheetTask": 5,
+      "sourceSha256": "e82d13392bcd48d4b8c93208e6f06ec1739fc942c6e79fb223d8df72bdbbad6e",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 8
+  },
+  {
+    "id": "sunday-05-task-1",
+    "episode": "sonntagsraetsel-05-differenzpyramiden",
+    "number": 1,
+    "typeId": "differenzpyramiden",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 63,
+      "task": 1,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 05 – Differenzpyramiden.tex",
+      "worksheetTask": 1,
+      "sourceSha256": "54239df49f37e4b2666a118b0d6f0b169c3ba141ac7b30d3761e7dcc3b48b51d",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-05-task-2",
+    "episode": "sonntagsraetsel-05-differenzpyramiden",
+    "number": 2,
+    "typeId": "differenzpyramiden",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 64,
+      "task": 7,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 05 – Differenzpyramiden.tex",
+      "worksheetTask": 2,
+      "sourceSha256": "54239df49f37e4b2666a118b0d6f0b169c3ba141ac7b30d3761e7dcc3b48b51d",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-05-task-3",
+    "episode": "sonntagsraetsel-05-differenzpyramiden",
+    "number": 3,
+    "typeId": "differenzpyramiden",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 66,
+      "task": 19,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 05 – Differenzpyramiden.tex",
+      "worksheetTask": 3,
+      "sourceSha256": "54239df49f37e4b2666a118b0d6f0b169c3ba141ac7b30d3761e7dcc3b48b51d",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-05-task-4",
+    "episode": "sonntagsraetsel-05-differenzpyramiden",
+    "number": 4,
+    "typeId": "differenzpyramiden",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 68,
+      "task": 31,
+      "stars": 4,
+      "bookStars": 4,
+      "worksheet": "Sonntagsrätsel 05 – Differenzpyramiden.tex",
+      "worksheetTask": 4,
+      "sourceSha256": "54239df49f37e4b2666a118b0d6f0b169c3ba141ac7b30d3761e7dcc3b48b51d",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-05-task-5",
+    "episode": "sonntagsraetsel-05-differenzpyramiden",
+    "number": 5,
+    "typeId": "differenzpyramiden",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 69,
+      "task": 37,
+      "stars": 5,
+      "bookStars": 5,
+      "worksheet": "Sonntagsrätsel 05 – Differenzpyramiden.tex",
+      "worksheetTask": 5,
+      "sourceSha256": "54239df49f37e4b2666a118b0d6f0b169c3ba141ac7b30d3761e7dcc3b48b51d",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-06-task-1",
+    "episode": "sonntagsraetsel-06-deka-dots",
+    "number": 1,
+    "typeId": "deka-dots",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 49,
+      "task": 1,
+      "stars": 1,
+      "bookStars": 1,
+      "worksheet": "Sonntagsrätsel 06 – Deka Dots.tex",
+      "worksheetTask": 1,
+      "sourceSha256": "3eae969f221118a24dce56bfd7f11a975f9567324ce8f48316ba28f185addf9a",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-06-task-2",
+    "episode": "sonntagsraetsel-06-deka-dots",
+    "number": 2,
+    "typeId": "deka-dots",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 50,
+      "task": 9,
+      "stars": 2,
+      "bookStars": 2,
+      "worksheet": "Sonntagsrätsel 06 – Deka Dots.tex",
+      "worksheetTask": 2,
+      "sourceSha256": "3eae969f221118a24dce56bfd7f11a975f9567324ce8f48316ba28f185addf9a",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-06-task-3",
+    "episode": "sonntagsraetsel-06-deka-dots",
+    "number": 3,
+    "typeId": "deka-dots",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 54,
+      "task": 35,
+      "stars": 3,
+      "bookStars": 3,
+      "worksheet": "Sonntagsrätsel 06 – Deka Dots.tex",
+      "worksheetTask": 3,
+      "sourceSha256": "3eae969f221118a24dce56bfd7f11a975f9567324ce8f48316ba28f185addf9a",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 3
+  },
+  {
+    "id": "sunday-06-task-4",
+    "episode": "sonntagsraetsel-06-deka-dots",
+    "number": 4,
+    "typeId": "deka-dots",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 56,
+      "task": 47,
+      "stars": 4,
+      "bookStars": 4,
+      "worksheet": "Sonntagsrätsel 06 – Deka Dots.tex",
+      "worksheetTask": 4,
+      "sourceSha256": "3eae969f221118a24dce56bfd7f11a975f9567324ce8f48316ba28f185addf9a",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  },
+  {
+    "id": "sunday-06-task-5",
+    "episode": "sonntagsraetsel-06-deka-dots",
+    "number": 5,
+    "typeId": "deka-dots",
+    "source": {
+      "book": "Beast Academy Puzzles 1",
+      "page": 57,
+      "task": 53,
+      "stars": 5,
+      "bookStars": 5,
+      "worksheet": "Sonntagsrätsel 06 – Deka Dots.tex",
+      "worksheetTask": 5,
+      "sourceSha256": "3eae969f221118a24dce56bfd7f11a975f9567324ce8f48316ba28f185addf9a",
+      "transformation": "Keine; unveränderte Blattaufgabe"
+    },
+    "solutions": 1,
+    "nodes": 1
+  }
+]

@@ -1,0 +1,57 @@
+import {pyramidTokens,pyramidModel} from './pyramid-input.js?v=0.14.0-release-2';
+import {numberLogicModel} from './number-logic.js?v=0.14.0-release-2';
+import {logicPacks} from './logic-levels.js?v=0.14.0-release-2';
+import {beastLogicPacks} from './beast-number-levels.js?v=0.14.0-release-2';
+import {ownPyramidLevels} from './own-pyramid-levels.js?v=0.14.0-release-2';
+import {numberPathGeometry,PATH_COLOR} from './solution-presentation.js?v=0.14.0-release-2';
+const own=(o,i)=>Object.hasOwn(o||{},i);
+const labels={cross:['zahlenkreuze','Zahlenkreuze','✚','Finde die Zählschritte in den waagerechten und senkrechten Reihen.'], 'number-path':['zahlenpfade','Zahlenpfade','↝','Verbinde die Zahlen zu einem lückenlosen Pfad.'],pyramid:['differenzpyramiden','Differenzpyramiden','△','Baue eine Pyramide aus den Abständen benachbarter Zahlen.'],deka:['deka-dots','Deka Dots','●','Rund um jeden Punkt entsteht die Summe zehn.'],magic:['magische-summen','Magische Summen','✧','Aus einzelnen Ziffern werden Zahlen und passende Summen.'],digit:['zifferndifferenzen','Zifferndifferenzen','−','Entdecke die Abstände zwischen zweistelligen Zahlen.'],sudoku:['mehr-als-ein-sudoku','Mehr als ein Sudoku','≶','Kombiniere Sudoku mit Größer- und Kleinerzeichen.']};
+const rules={
+ cross:l=>`<p>In jeder durchgehenden waagerechten und senkrechten Reihe bleibt der <strong>Zählschritt gleich</strong>. Verschiedene Reihen dürfen verschiedene Schritte haben. Die Zahlen können steigen oder fallen. Sperrfelder trennen die Reihen.</p><p>Trage ganze Zahlen von <strong>0 bis ${l.maxNumber??40}</strong> ein.</p>`,
+ 'number-path':l=>`<p>Trage die Zahlen <strong>1 bis ${l.fields.length}</strong> jeweils genau einmal ein. Aufeinanderfolgende Zahlen müssen sich an einer <strong>Seite berühren</strong>. Diagonale Schritte sind nicht erlaubt.</p>`,
+ pyramid:()=>'<p>Der obere Stein zeigt immer den <strong>Abstand der beiden Zahlen darunter</strong>: 8 und 3 ergeben 5. Gleiche Zahlen ergeben 0.</p><p>Nutze jede Zahl aus dem Vorrat genau so oft, wie sie dort steht. Vorgegebene schwarze Zahlen gehören nicht zum Vorrat.</p>',
+ deka:()=>'<p>Trage Ziffern von <strong>0 bis 9</strong> ein. Alle Kästchen, die einen orangefarbenen Punkt berühren, ergeben zusammen <strong>10</strong>. Ein großes Kästchen zählt dabei nur einmal.</p><p>Kästchen mit gemeinsamer Seite brauchen verschiedene Ziffern. Diagonal dürfen gleiche Ziffern stehen.</p>',
+ magic:l=>`<p>Jede Ziffer von <strong>1 bis ${l.digits??l.cols-1}</strong> kommt in jeder Zeile und Spalte genau einmal vor. Benachbarte Ziffern bilden eine mehrstellige Zahl: 1 neben 3 wird zu <strong>13</strong>. Sperrfelder trennen Zahlen.</p><p>Addiere die Zahlen einer Zeile von links nach rechts oder einer Spalte von oben nach unten. An den markierten Rändern muss die angegebene Summe entstehen.</p>`,
+ digit:()=>'<p>Vier Felder um einen Kreis bilden zwei zweistellige Zahlen: oben von links nach rechts, unten ebenso. Der Kreis nennt ihren <strong>Abstand</strong>. Zum Beispiel: 65 und 47 haben den Abstand 18.</p><p>Die erste Ziffer einer zweistelligen Zahl darf keine 0 sein. Als zweite Ziffer ist 0 erlaubt.</p>',
+ sudoku:()=>'<p>Trage <strong>1, 2, 3 und 4</strong> in jede Zeile, jede Spalte und jeden dick umrandeten <strong>Viererblock</strong> jeweils genau einmal ein.</p><p>Die offene Seite eines Vergleichszeichens zeigt immer zur <strong>größeren Zahl</strong>. Das gilt auch für Zeichen zwischen zwei Zeilen.</p>'
+};
+function overlay(l){let parts=[];
+ if(l.dots)parts=l.dots.map(d=>`<circle cx="${d.x*100}" cy="${d.y*100}" r="10" fill="#cf702c" stroke="white" stroke-width="3"/>`);
+ if(l.circles)parts=l.circles.map(d=>`<g><circle cx="${d.x*100}" cy="${d.y*100}" r="23" fill="#fff2dd" stroke="#c17731" stroke-width="2"/><text x="${d.x*100}" y="${d.y*100+10}" text-anchor="middle" font-size="30" fill="#784519">${d.target}</text></g>`);
+ if(l.comparisons)parts=l.comparisons.map(c=>{const a=l.fields[c.small],b=l.fields[c.large],dx=b.x-a.x,dy=b.y-a.y,x=(a.x+b.x+1)*50,y=(a.y+b.y+1)*50;return `<path d="M ${x+13*dx-13*dy} ${y+13*dy+13*dx} L ${x-10*dx} ${y-10*dy} L ${x+13*dx+13*dy} ${y+13*dy-13*dx}" fill="none" stroke="#905821" stroke-width="5" stroke-linecap="round"/>`;});
+ return `<svg class="logic-overlay" viewBox="0 0 ${l.cols*100} ${l.rows*100}" aria-hidden="true">${parts.join('')}</svg>`;
+}
+function renderBoard({level:l,board,selected,mode='value',conflicts=[],hinted=[],solutionElapsed=null}){
+ const cells=l.fields.map((f,i)=>{const v=board.values[i],fixed=own(l.givens,i),status=v===null?board.notes[i].length?`Möglichkeiten ${board.notes[i].join(', ')}`:'leer':`${fixed?'Vorgegeben':'Dein Eintrag'} ${v}`;
+ const blocks=l.kind==='sudoku'?`border-right-width:${f.x%2===1?3:1}px;border-bottom-width:${f.y%2===1?3:1}px;`:'';
+ if(l.kind==='pyramid')return `<button type="button" class="logic-cell pyramid-stone ${fixed?'given':''} ${conflicts.includes(i)?'conflict':''}" style="grid-column:${f.x+1}/span ${f.w};grid-row:${f.y+1}/span ${f.h}" data-puzzle-cell="${i}" data-pyramid-cell="${i}" ${v!==null?'data-filled':''} ${fixed||solutionElapsed!==null?'disabled':''} aria-label="Zeile ${f.y+1}, Spalte ${f.x+1}, ${v===null?'leer':status}" aria-pressed="false">${v??''}</button>`;
+ const length=String(Math.max(...l.domains[i])).length;
+ return `<div class="logic-cell ${fixed?'given':''} ${selected===i?'selected':''} ${conflicts.includes(i)?'conflict':''} ${hinted.includes(i)?'hinted':''}" style="grid-column:${f.x+1}/span ${f.w};grid-row:${f.y+1}/span ${f.h};${blocks}"><input class="logic-cell-entry ${String(v??'').length>=3?'wide-value':''}" type="text" inputmode="numeric" enterkeyhint="done" maxlength="${length}" pattern="[0-9]*" autocomplete="off" spellcheck="false" data-puzzle-cell="${i}" data-puzzle-cell-input value="${fixed||mode==='value'?v??'':''}" ${fixed?'readonly':''} ${solutionElapsed!==null?'disabled':''} aria-label="Zeile ${f.y+1}, Spalte ${f.x+1}, ${status}"/><span class="logic-notes" aria-hidden="true">${v===null?board.notes[i].join(' · '):''}</span>${v!==null&&mode==='note'&&!fixed?`<span class="logic-value ${String(v).length>=3?'wide-value':''}" aria-hidden="true">${v}</span>`:''}${conflicts.includes(i)?'<span class="sumdoku-alert" aria-hidden="true">!</span>':''}</div>`;}).join('');
+ const sums=(l.sums||[]).map(s=>`<span class="logic-sum ${s.vertical?'vertical':'horizontal'}" style="${s.vertical?`left:${(s.line+.5)/l.cols*100}%`:`top:${(s.line+.5)/l.rows*100}%`}" aria-label="${s.vertical?'Spalte':'Zeile'} ${s.line+1}, Summe ${s.target}">${s.target}</span>`).join('');
+ const sourceBlocks=(l.sourceBlocks||[]).map(f=>`<span class="logic-source-block" role="img" aria-label="Grünes Sperrfeld" style="grid-column:${f.x+1};grid-row:${f.y+1};"></span>`).join('');
+ const route=solutionElapsed===null?null:numberPathGeometry(l,board);
+ const path=route?`<svg class="logic-overlay solved-number-path" viewBox="0 0 ${l.cols*100} ${l.rows*100}" aria-hidden="true"><path d="${route.d}" fill="none" stroke="${PATH_COLOR}" stroke-width="${route.width}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="${solutionElapsed<route.duration?'drawing':''}" style="--path-duration:${route.duration}ms;--path-delay:-${Math.min(solutionElapsed,route.duration)}ms;"/></svg>`:'';
+ return `<div class="logic-board-wrap ${l.kind==='magic'?'with-sums':''}"><div class="logic-board ${l.kind} ${l.origin==='sunday'?'sunday':''} ${l.cols>=8&&l.kind!=='pyramid'?'dense-grid':''}" role="group" aria-label="${labels[l.kind][1]} ${l.rows} mal ${l.cols}" style="--logic-cols:${l.cols};--logic-rows:${l.rows};aspect-ratio:${l.cols}/${l.rows}">${sourceBlocks}${cells}${overlay(l)}${path}${sums}</div></div>`;
+}
+function renderInput({level:l,board,selected,mode}){
+ if(l.kind==='pyramid')return `<div class="logic-bank pyramid-bank" data-pyramid-bank role="group" aria-label="Zahlenvorrat, Zahlen hierhin zurücklegen">${pyramidTokens(l,board).map(t=>`<button type="button" class="pyramid-token" data-pyramid-token="${t.index}" aria-label="Zahl ${t.value}" aria-pressed="false">${t.value}</button>`).join('')}</div><p class="puzzle-mode-help">Ziehe die Zahlen in die freien Steine. Du kannst sie später verschieben oder zurück in den Vorrat ziehen.</p>`;
+ const bank=l.bank?`<div class="logic-bank" aria-label="Übriger Zahlenvorrat">${[...new Set(l.bank)].sort((a,b)=>a-b).map(v=>{const remaining=l.bank.filter(x=>x===v).length-board.values.filter((x,i)=>!own(l.givens,i)&&x===v).length;return `<span class="${remaining<0?'overused':''}">${v} <small>× ${remaining}</small></span>`;}).join('')}</div>`:'';
+ return `${bank}<div class="puzzle-modes" role="group" aria-label="Wie möchtest du eintragen?"><button type="button" class="puzzle-pen" data-puzzle-mode="value" aria-pressed="${mode==='value'}">✓ Ich bin sicher</button><button type="button" data-puzzle-mode="note" aria-pressed="${mode==='note'}">✎ Möglichkeiten</button></div>`;
+}
+const activeLevels=kind=>kind==='pyramid'?['Entdecker','Tüftler','Knobelmeister'].flatMap(band=>[...beastLogicPacks[kind].filter(l=>l.band===band),...ownPyramidLevels.filter(l=>l.band===band)]):beastLogicPacks[kind];
+export const numberLogicTypes=Object.entries(labels).map(([kind,[id,title,symbol,description]])=>({id,title,symbol,description,levels:activeLevels(kind),retiredLevels:logicPacks[kind],model:kind==='pyramid'?pyramidModel:numberLogicModel,renderBoard,renderInput,
+ cellInput:kind==='pyramid'?null:({text,mode,level,selected})=>text===''?{kind:'erase'}:/^\d+$/.test(text)&&level.domains[selected].includes(Number(text))?{kind:mode,value:Number(text)}:/^\d+$/.test(text)&&level.domains[selected].some(value=>String(value).startsWith(text))?{kind:'pending'}:null,
+ initialCell:l=>Math.max(0,l.fields.findIndex((_,i)=>!own(l.givens,i))),validCell:(l,i)=>Number.isInteger(i)&&!!l.fields[i],isFixed:(l,i)=>own(l.givens,i),
+ cellLabel:(l,i)=>`Zeile ${l.fields[i].y+1}, Spalte ${l.fields[i].x+1}${own(l.givens,i)?' · vorgegeben':''}`,
+ cardDetail:l=>kind==='pyramid'?`${l.height} Steinreihen${l.origin==='own'?' · Eigene Aufgabe':''}`:`${l.rows} × ${l.cols}`,levelDetail:l=>kind==='pyramid'?`${l.height} Steinreihen · ${l.origin==='own'?'Eigene Aufgabe · ':''}Zahlenvorrat`:`${l.rows} × ${l.cols}`,
+ rules:l=>rules[kind](l)+'<p>Schwarze Zahlen sind vorgegeben. Grüne Einträge zeigen deine Entscheidung; erst die Prüfung bestätigt die Lösung.</p>',
+ bandDescriptions:kind==='cross'?{'Entdecker':'Erste Zählschritte finden und ein Zahlenkreuz ergänzen.','Tüftler':'Unterschiedliche Zählschritte über mehrere Kreuzungen verbinden.','Knobelmeister':'Ein ganzes Netz aus Zahlenfolgen Schritt für Schritt entschlüsseln.'}:{'Entdecker':'Mit ersten Rätseln die Regeln kennenlernen.','Tüftler':'Mehrere Bedingungen und Möglichkeiten verknüpfen.','Knobelmeister':'Anspruchsvolle Rätsel mit sorgfältigem Vorausdenken lösen.'},
+
+ keyInput:({key,level:l,selected,mode})=>{
+  if(['Backspace','Delete'].includes(key))return {input:{kind:'erase'}};
+  if(kind!=='pyramid'&&key.toLowerCase()==='n')return {mode:mode==='value'?'note':'value'};
+  if(kind!=='pyramid'&&/^\d$/.test(key)&&Math.max(...l.domains[selected])<10)return {input:{kind:mode,value:Number(key)}};
+  const dx=key==='ArrowRight'?1:key==='ArrowLeft'?-1:0,dy=key==='ArrowDown'?1:key==='ArrowUp'?-1:0;if(!dx&&!dy)return null;
+  const f=l.fields[selected],next=l.fields.map((g,i)=>({i,d:Math.abs(g.x-f.x)+Math.abs(g.y-f.y),g})).filter(({g})=>dx?(g.x-f.x)*dx>0:(g.y-f.y)*dy>0).sort((a,b)=>a.d-b.d||a.i-b.i)[0];return next?{cell:next.i}:null;
+ }
+}));

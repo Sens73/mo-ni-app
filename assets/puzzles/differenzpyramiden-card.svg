@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222 267">
+  <title>Differenzpyramiden</title>
+  <desc>Originalbeispiel aus Sonntagsrätsel 05 mit schwarzen Rechteckrahmen.</desc>
+  <text x="111" y="30" text-anchor="middle" font-family="'Times New Roman',serif" font-size="32">
+    <tspan fill="#000" font-weight="bold">Nutze:</tspan>
+    <tspan fill="#006b18"> 2, 5, 9</tspan>
+  </text>
+  <g fill="white" stroke="#000" stroke-width="2">
+    <path d="M75 48h71v71H75z M39.5 119h71v71h-71z M110.5 119h71v71h-71z M4 190h71v71H4z M75 190h71v71H75z M146 190h71v71h-71z"></path>
+  </g>
+  <g fill="#fd6b29" font-family="'Times New Roman',serif" font-size="32" text-anchor="middle">
+    <text x="75" y="165.7">4</text>
+    <text x="146" y="165.7">6</text>
+    <text x="181.5" y="236.7">3</text>
+  </g>
+</svg>

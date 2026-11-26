@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { savePreparedPdf, canSaveWithShare } from '../download-manager.js';
+const file=new File(['%PDF-test'],'MO65-Arbeitsheft.pdf',{type:'application/pdf'});
+const apple={userAgent:'iPhone',canShare:({files})=>files[0]===file};
+let shared;apple.share=data=>{shared=data;return Promise.resolve()};
+const started=savePreparedPdf(file,{navigator:apple});
+assert.equal(shared.files[0],file,'File sharing must start directly in the click event.');assert.equal(shared.url,undefined);assert.equal(await started,'shared');
+let fallback=false;
+await assert.rejects(savePreparedPdf(file,{navigator:{...apple,share:()=>Promise.reject(new DOMException('Cancelled','AbortError'))},document:{createElement(){fallback=true}}}),{name:'AbortError'});assert.equal(fallback,false);
+assert.equal(canSaveWithShare(file,{userAgent:'Desktop',canShare:()=>true,share(){}}),false);
+const nodes=[];let clicked,blob,cleanup;
+const doc={body:{append(...v){nodes.push(...v)}},createElement(type){return {type,setAttribute(){},click(){clicked=this},remove(){this.removed=true}}}};
+assert.equal(await savePreparedPdf(file,{navigator:{userAgent:'Chrome'},document:doc,urlApi:{createObjectURL(v){blob=v;return 'blob:test'},revokeObjectURL(){}},schedule(fn){cleanup=fn}}),'download-started');
+assert.equal(clicked.download,file.name);assert.equal(clicked.target,nodes[0].name);assert.equal(nodes[0].type,'iframe');assert.equal(blob.type,'application/octet-stream');assert.equal(await blob.text(),'%PDF-test');cleanup();assert.equal(nodes[0].removed,true);
+console.log('Validated file sharing without navigation, cancellation, and guarded browser downloads.');

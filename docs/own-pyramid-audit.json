@@ -1,0 +1,1871 @@
+[
+  {
+    "id": "own-pyramid-20261007-easy",
+    "band": "Entdecker",
+    "height": 5,
+    "bottom": [
+      21,
+      13,
+      6,
+      15,
+      32
+    ],
+    "fullRowsBottomUp": [
+      [
+        21,
+        13,
+        6,
+        15,
+        32
+      ],
+      [
+        8,
+        7,
+        9,
+        17
+      ],
+      [
+        1,
+        2,
+        8
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        5
+      ]
+    ],
+    "givens": {
+      "0": 21,
+      "1": 13,
+      "2": 6,
+      "3": 15,
+      "4": 32
+    },
+    "bank": [
+      8,
+      7,
+      9,
+      17,
+      1,
+      2,
+      8,
+      1,
+      6,
+      5
+    ],
+    "independentEnumeration": {
+      "solutions": 1,
+      "exhaustive": true,
+      "nodes": 5
+    },
+    "secondConstraintOracle": {
+      "solutions": 1,
+      "nodes": 1
+    },
+    "strategies": {
+      "basicFilled": 15,
+      "combinedFilled": 15,
+      "total": 15,
+      "search": {
+        "nodes": 1,
+        "branches": 0,
+        "depth": 0
+      },
+      "basicTrace": [
+        {
+          "cell": 5,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            8
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 6,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            7
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 7,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            9
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 8,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            17
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            1
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 10,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            2
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 11,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            8
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            1
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 13,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            6
+          ],
+          "method": "Direkt ergänzen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            5
+          ],
+          "method": "Direkt ergänzen"
+        }
+      ],
+      "combinedTrace": [
+        {
+          "cell": 5,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            8
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 6,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            7
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 7,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            9
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 8,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            17
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            1
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 10,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            2
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 11,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            8
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            1
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 13,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            6
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17
+          ],
+          "after": [
+            5
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        }
+      ]
+    },
+    "minimality": {
+      "minimumGivens": 1,
+      "scope": "Diese konkrete Pyramide mit vollständigem Zahlenvorrat der jeweils entfernten Felder; alle Mengen mit weniger Vorgaben und sämtliche Einzelpositionen geprüft.",
+      "withoutGivens": {
+        "solutions": 2,
+        "exhaustive": true,
+        "nodes": 397
+      },
+      "singlePositionChecks": [
+        {
+          "cell": 0,
+          "value": 21,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 29
+        },
+        {
+          "cell": 1,
+          "value": 13,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 45
+        },
+        {
+          "cell": 2,
+          "value": 6,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 119
+        },
+        {
+          "cell": 3,
+          "value": 15,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 182
+        },
+        {
+          "cell": 4,
+          "value": 32,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 376
+        },
+        {
+          "cell": 5,
+          "value": 8,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 76
+        },
+        {
+          "cell": 6,
+          "value": 7,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 126
+        },
+        {
+          "cell": 7,
+          "value": 9,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 201
+        },
+        {
+          "cell": 8,
+          "value": 17,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 304
+        },
+        {
+          "cell": 9,
+          "value": 1,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 161
+        },
+        {
+          "cell": 10,
+          "value": 2,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 131
+        },
+        {
+          "cell": 11,
+          "value": 8,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 349
+        },
+        {
+          "cell": 12,
+          "value": 1,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 307
+        },
+        {
+          "cell": 13,
+          "value": 6,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 355
+        },
+        {
+          "cell": 14,
+          "value": 5,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 240
+        }
+      ],
+      "removeOneGivenChecks": [
+        {
+          "removedCell": 0,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 20
+        },
+        {
+          "removedCell": 1,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 6
+        },
+        {
+          "removedCell": 2,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 6
+        },
+        {
+          "removedCell": 3,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 5
+        },
+        {
+          "removedCell": 4,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 5
+        }
+      ]
+    }
+  },
+  {
+    "id": "own-pyramid-20261007-medium",
+    "band": "Tüftler",
+    "height": 5,
+    "bottom": [
+      22,
+      11,
+      5,
+      6,
+      32
+    ],
+    "fullRowsBottomUp": [
+      [
+        22,
+        11,
+        5,
+        6,
+        32
+      ],
+      [
+        11,
+        6,
+        1,
+        26
+      ],
+      [
+        5,
+        5,
+        25
+      ],
+      [
+        0,
+        20
+      ],
+      [
+        20
+      ]
+    ],
+    "givens": {
+      "7": 1
+    },
+    "bank": [
+      22,
+      11,
+      5,
+      6,
+      32,
+      11,
+      6,
+      26,
+      5,
+      5,
+      25,
+      0,
+      20,
+      20
+    ],
+    "independentEnumeration": {
+      "solutions": 1,
+      "exhaustive": true,
+      "nodes": 81
+    },
+    "secondConstraintOracle": {
+      "solutions": 1,
+      "nodes": 3
+    },
+    "strategies": {
+      "basicFilled": 1,
+      "combinedFilled": 15,
+      "total": 15,
+      "search": {
+        "nodes": 1,
+        "branches": 0,
+        "depth": 0
+      },
+      "basicTrace": [],
+      "combinedTrace": [
+        {
+          "cell": 2,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            5,
+            6,
+            25,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 3,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            5,
+            6,
+            25,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 4,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            25,
+            26,
+            32
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 8,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            5,
+            6,
+            20,
+            25,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 6,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            6,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 10,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            5,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 8,
+          "before": [
+            0,
+            5,
+            6,
+            20,
+            25,
+            26
+          ],
+          "after": [
+            6,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 11,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            5,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            5,
+            11,
+            20,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            5,
+            6,
+            20,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 13,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            5,
+            6,
+            20,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 1,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            11,
+            20,
+            32
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 2,
+          "before": [
+            5,
+            6,
+            25,
+            26
+          ],
+          "after": [
+            5,
+            6,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 3,
+          "before": [
+            5,
+            6,
+            25,
+            26
+          ],
+          "after": [
+            5,
+            6,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 3,
+          "before": [
+            5,
+            6,
+            25
+          ],
+          "after": [
+            5,
+            6
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 4,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            0,
+            11,
+            32
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 5,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            6,
+            11,
+            26
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            0,
+            5,
+            11,
+            20,
+            25
+          ],
+          "after": [
+            0,
+            5,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            0,
+            5,
+            6,
+            20,
+            25
+          ],
+          "after": [
+            0,
+            5,
+            20,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            0,
+            5,
+            6,
+            20,
+            25
+          ],
+          "after": [
+            0,
+            5,
+            20,
+            25
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 0,
+          "before": [
+            0,
+            5,
+            6,
+            11,
+            20,
+            22,
+            25,
+            26,
+            32
+          ],
+          "after": [
+            22
+          ],
+          "method": "Zahlenvorrat vergleichen"
+        },
+        {
+          "cell": 1,
+          "before": [
+            0,
+            11,
+            20,
+            32
+          ],
+          "after": [
+            11
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 5,
+          "before": [
+            6,
+            11,
+            26
+          ],
+          "after": [
+            11
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 2,
+          "before": [
+            5,
+            6,
+            26
+          ],
+          "after": [
+            5
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 6,
+          "before": [
+            6,
+            26
+          ],
+          "after": [
+            6
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 3,
+          "before": [
+            5,
+            6
+          ],
+          "after": [
+            6
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 4,
+          "before": [
+            0,
+            11,
+            32
+          ],
+          "after": [
+            0,
+            32
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            0,
+            5,
+            20
+          ],
+          "after": [
+            5
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 10,
+          "before": [
+            5,
+            25
+          ],
+          "after": [
+            5
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            0,
+            5,
+            20,
+            25
+          ],
+          "after": [
+            0
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            0,
+            5,
+            20,
+            25
+          ],
+          "after": [
+            0,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 11,
+          "before": [
+            5,
+            25
+          ],
+          "after": [
+            25
+          ],
+          "method": "Zahlenvorrat"
+        },
+        {
+          "cell": 8,
+          "before": [
+            6,
+            26
+          ],
+          "after": [
+            26
+          ],
+          "method": "Zahlenvorrat"
+        },
+        {
+          "cell": 4,
+          "before": [
+            0,
+            32
+          ],
+          "after": [
+            32
+          ],
+          "method": "Zahlenvorrat vergleichen"
+        },
+        {
+          "cell": 13,
+          "before": [
+            0,
+            20
+          ],
+          "after": [
+            20
+          ],
+          "method": "Zahlenvorrat"
+        },
+        {
+          "cell": 14,
+          "before": [
+            0,
+            20
+          ],
+          "after": [
+            20
+          ],
+          "method": "Zahlenvorrat"
+        }
+      ]
+    },
+    "minimality": {
+      "minimumGivens": 1,
+      "scope": "Diese konkrete Pyramide mit vollständigem Zahlenvorrat der jeweils entfernten Felder; alle Mengen mit weniger Vorgaben und sämtliche Einzelpositionen geprüft.",
+      "withoutGivens": {
+        "solutions": 2,
+        "exhaustive": true,
+        "nodes": 128
+      },
+      "singlePositionChecks": [
+        {
+          "cell": 0,
+          "value": 22,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 7
+        },
+        {
+          "cell": 1,
+          "value": 11,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 34
+        },
+        {
+          "cell": 2,
+          "value": 5,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 63
+        },
+        {
+          "cell": 3,
+          "value": 6,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 78
+        },
+        {
+          "cell": 4,
+          "value": 32,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 113
+        },
+        {
+          "cell": 5,
+          "value": 11,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 23
+        },
+        {
+          "cell": 6,
+          "value": 6,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 71
+        },
+        {
+          "cell": 7,
+          "value": 1,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 81
+        },
+        {
+          "cell": 8,
+          "value": 26,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 87
+        },
+        {
+          "cell": 9,
+          "value": 5,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 78
+        },
+        {
+          "cell": 10,
+          "value": 5,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 120
+        },
+        {
+          "cell": 11,
+          "value": 25,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 95
+        },
+        {
+          "cell": 12,
+          "value": 0,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 58
+        },
+        {
+          "cell": 13,
+          "value": 20,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 109
+        },
+        {
+          "cell": 14,
+          "value": 20,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 106
+        }
+      ],
+      "removeOneGivenChecks": [
+        {
+          "removedCell": 7,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 125
+        }
+      ]
+    }
+  },
+  {
+    "id": "own-pyramid-20261007-hard",
+    "band": "Knobelmeister",
+    "height": 5,
+    "bottom": [
+      30,
+      6,
+      4,
+      24,
+      12
+    ],
+    "fullRowsBottomUp": [
+      [
+        30,
+        6,
+        4,
+        24,
+        12
+      ],
+      [
+        24,
+        2,
+        20,
+        12
+      ],
+      [
+        22,
+        18,
+        8
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        6
+      ]
+    ],
+    "givens": {
+      "0": 30
+    },
+    "bank": [
+      6,
+      4,
+      24,
+      12,
+      24,
+      2,
+      20,
+      12,
+      22,
+      18,
+      8,
+      4,
+      10,
+      6
+    ],
+    "independentEnumeration": {
+      "solutions": 1,
+      "exhaustive": true,
+      "nodes": 99
+    },
+    "secondConstraintOracle": {
+      "solutions": 1,
+      "nodes": 76
+    },
+    "strategies": {
+      "basicFilled": 1,
+      "combinedFilled": 1,
+      "total": 15,
+      "search": {
+        "nodes": 70,
+        "branches": 69,
+        "depth": 4
+      },
+      "basicTrace": [],
+      "combinedTrace": [
+        {
+          "cell": 1,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 5,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 6,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 7,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 8,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 9,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 10,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 11,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 12,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 13,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        },
+        {
+          "cell": 14,
+          "before": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18,
+            20,
+            22,
+            24
+          ],
+          "after": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            18
+          ],
+          "method": "Möglichkeiten verknüpfen"
+        }
+      ]
+    },
+    "minimality": {
+      "minimumGivens": 1,
+      "scope": "Diese konkrete Pyramide mit vollständigem Zahlenvorrat der jeweils entfernten Felder; alle Mengen mit weniger Vorgaben und sämtliche Einzelpositionen geprüft.",
+      "withoutGivens": {
+        "solutions": 2,
+        "exhaustive": true,
+        "nodes": 812
+      },
+      "singlePositionChecks": [
+        {
+          "cell": 0,
+          "value": 30,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 99
+        },
+        {
+          "cell": 1,
+          "value": 6,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 81
+        },
+        {
+          "cell": 2,
+          "value": 4,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 123
+        },
+        {
+          "cell": 3,
+          "value": 24,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 508
+        },
+        {
+          "cell": 4,
+          "value": 12,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 548
+        },
+        {
+          "cell": 5,
+          "value": 24,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 38
+        },
+        {
+          "cell": 6,
+          "value": 2,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 139
+        },
+        {
+          "cell": 7,
+          "value": 20,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 318
+        },
+        {
+          "cell": 8,
+          "value": 12,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 548
+        },
+        {
+          "cell": 9,
+          "value": 22,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 90
+        },
+        {
+          "cell": 10,
+          "value": 18,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 214
+        },
+        {
+          "cell": 11,
+          "value": 8,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 279
+        },
+        {
+          "cell": 12,
+          "value": 4,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 560
+        },
+        {
+          "cell": 13,
+          "value": 10,
+          "solutions": 1,
+          "exhaustive": true,
+          "nodes": 287
+        },
+        {
+          "cell": 14,
+          "value": 6,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 499
+        }
+      ],
+      "removeOneGivenChecks": [
+        {
+          "removedCell": 0,
+          "solutions": 2,
+          "exhaustive": false,
+          "nodes": 720
+        }
+      ]
+    },
+    "wrongTrial": {
+      "cell": 1,
+      "value": 12,
+      "impliedUpper": 18,
+      "solutions": 0,
+      "nodes": 19,
+      "exhaustive": true
+    }
+  }
+]

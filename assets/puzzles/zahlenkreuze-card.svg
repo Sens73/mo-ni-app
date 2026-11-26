@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 424 307">
+  <title>Zahlenkreuze</title>
+  <desc>Originalbeispiel aus Sonntagsrätsel 03 mit schwarzen Kästchenrahmen.</desc>
+  <g fill="white" stroke="#000" stroke-width="2">
+    <path d="M124 6h59v59h-59z M242 6h59v59h-59z M6 65h59v59H6z M65 65h59v59H65z M124 65h59v59h-59z M183 65h59v59h-59z M242 65h59v59h-59z M124 124h59v59h-59z M242 124h59v59h-59z M124 183h59v59h-59z M183 183h59v59h-59z M242 183h59v59h-59z M301 183h59v59h-59z M360 183h59v59h-59z M124 242h59v59h-59z M242 242h59v59h-59z"></path>
+    <rect x="183" y="124" width="59" height="59" fill="#4d965b"></rect>
+  </g>
+  <g fill="#fd6b29" font-family="'Times New Roman',serif" font-size="32" font-weight="bold" text-anchor="middle">
+    <text x="153.5" y="46.7">15</text>
+    <text x="35.5" y="105.7">6</text>
+    <text x="94.5" y="105.7">12</text>
+    <text x="271.5" y="164.7">25</text>
+  </g>
+</svg>

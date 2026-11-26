@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "version": "0.12.1",
+    "schoolYear": "2026/27",
+    "updated": "15. November 2026",
+    "website": "https://www.mo-ni.de/",
+    "contactEmail": "mathepost.moundni@gmail.com",
+    "brandColor": "#176b4d",
+    "preview": true
+  },
+  "news": [
+    {
+      "id": "matheplus-serie-3",
+      "label": "MathePlus",
+      "title": "MathePlus Serie 3 ist da",
+      "body": "Die neuen Aufgabenblätter sind für den Bearbeitungszeitraum vom 16. November bis 22. Dezember verfügbar.",
+      "date": "15. November 2026",
+      "shared": true
+    },
+    {
+      "id": "mathe-ag-120",
+      "label": "Mathe-AG",
+      "title": "Das 120. Aufgabenblatt ist da",
+      "body": "Mit fünf Pinguinen, einem Zahlendreieck, Zahleneigenschaften, Honigbienen und KenKens. Am 23. November von 15:30 bis ca. 16:30 Uhr knobeln wir gemeinsam im Livestream.",
+      "date": "9. November 2026",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mathe-ag-57",
+      "label": "Klasse 5–6",
+      "date": "2. November 2026",
+      "title": "Livestream 57: Fensterputzer, Zahlen im Kreis und KenKen",
+      "body": "Am 16. November von 15:30 bis ca. 16:30 Uhr knobeln wir gemeinsam. Blatt 57 mit Fensterputzer, Zahlen im Kreis, Quersumme 9, Sarahs Bausteintürmen und drei KenKens ist jetzt in der Mathe-AG verfügbar.",
+      "grades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "sonntagsraetsel-07",
+      "label": "Sonntagsrätsel",
+      "title": "KenKens: drei Rätsel zum Knobeln",
+      "body": "Das Aufgabenblatt mit einem 4×4-, einem 5×5- und einem 8×8-KenKen und das Lösungsvideo sind verfügbar. Unter Spiel und Spaß kannst du die Rätsel auch direkt in der App lösen.",
+      "date": "31. Oktober 2026",
+      "shared": true
+    },
+    {
+      "id": "mathe-ag-119",
+      "label": "Mathe-AG",
+      "title": "Das 119. Aufgabenblatt ist da",
+      "body": "Mit Symbolen und Ziffern, verbundenen Vierecken, Würfelpyramiden, Baumabständen und Differenzpyramiden. Am 9. November von 15:30 bis ca. 16:30 Uhr knobeln wir gemeinsam im Livestream.",
+      "date": "26. Oktober 2026",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-56-start",
+      "label": "Klasse 5–6",
+      "date": "26. Oktober 2026",
+      "title": "Livestream 56: Die Mathe-AG geht wieder los!",
+      "body": "Am 2. November von 15:30 bis ca. 16:30 Uhr: Zahlenrätsel und Geometrie für Klasse 5 und 6. Blatt 56 und der öffentliche Livestream sind jetzt in der Mathe-AG verfügbar. Montags in ungeraden Kalenderwochen; in den Ferien findet keine AG statt.",
+      "grades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "sonntagsraetsel-06",
+      "label": "Sonntagsrätsel",
+      "title": "Deka Dots: Aufgabenblatt und Lösungsvideo",
+      "body": "Fünf Deka-Dots-Rätsel zum Knobeln: Aufgabenblatt und Lösungsvideo sind verfügbar. Unter Spiel und Spaß kannst du die Rätsel auch direkt in der App lösen.",
+      "date": "25. Oktober 2026",
+      "shared": true
+    },
+    {
+      "id": "mathe-ag-118",
+      "label": "Mathe-AG",
+      "title": "Das 118. Aufgabenblatt ist da",
+      "body": "Mit Türmen aus Dosen, Zahlen in den Vierecken, dem Ergebnis 33, einer Sitzordnung und Sumdoku. Der Livestream beginnt am 26. Oktober um 15:30 Uhr.",
+      "date": "28. September 2026",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "matheplus-serie-2",
+      "label": "MathePlus",
+      "title": "MathePlus Serie 2 ist da",
+      "body": "Die neuen Aufgabenblätter sind für den Bearbeitungszeitraum vom 28. September bis 13. November verfügbar.",
+      "date": "28. September 2026",
+      "shared": true
+    },
+    {
+      "id": "school-year",
+      "label": "Neu",
+      "title": "Willkommen im Schuljahr 2026/27!",
+      "body": "Alle wichtigen Termine der Grundschul-Olympiade sind jetzt auf einen Blick verfügbar.",
+      "date": "29. August 2026",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mathe-ag-117",
+      "label": "Mathe-AG",
+      "title": "Das 117. Aufgabenblatt ist da",
+      "body": "Mit Autos auf der Fähre, Eriks Zahl, einer Würfelpyramide und Turn-Mazes.",
+      "date": "15. September 2026",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sonntagsraetsel-01",
+      "label": "Sonntagsrätsel",
+      "title": "Das erste Sonntagsrätsel ist da",
+      "body": "Fünf Sumdokus zum Herunterladen, Ausdrucken und gemeinsamen Knobeln.",
+      "date": "18. September 2026",
+      "shared": true
+    }
+  ],
+  "dates": [
+    {
+      "id": "ag-115",
+      "date": "2026-08-31",
+      "time": "15:30–16:15",
+      "type": "Mathe-AG",
+      "title": "115. Mathe-Online-AG",
+      "description": "Gemeinsam knobeln, denken und Lösungswege entdecken.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-116",
+      "date": "2026-09-14",
+      "time": "15:30–16:15",
+      "type": "Mathe-AG",
+      "title": "116. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-117",
+      "date": "2026-09-28",
+      "time": "ab 15:30",
+      "type": "Mathe-AG",
+      "title": "117. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-send",
+      "date": "2026-10-19",
+      "time": "",
+      "type": "Olympiade",
+      "title": "Versand der Aufgaben zur 1. Stufe",
+      "description": "Bereits teilnehmende Schulen erhalten die Aufgaben automatisch.",
+      "accent": "blue",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-118",
+      "date": "2026-10-26",
+      "time": "15:30–16:30",
+      "type": "Mathe-AG",
+      "title": "118. Mathe-Online-AG",
+      "description": "Aufgabenblatt und Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-stage-1",
+      "date": "2026-10-26",
+      "endDate": "2026-12-18",
+      "time": "",
+      "type": "Olympiade",
+      "title": "1. Stufe: Einstiegsrunde",
+      "description": "Die Kontaktlehrkräfte legen die Durchführungsform fest.",
+      "accent": "blue",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-stage-2",
+      "date": "2027-02-10",
+      "time": "90 Minuten",
+      "type": "Olympiade",
+      "title": "2. Stufe: Auswahlklausur",
+      "description": "Die Auswahlklausur findet an den teilnehmenden Schulen statt.",
+      "accent": "red",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-feedback-2",
+      "date": "2027-03-03",
+      "time": "",
+      "type": "Organisation",
+      "title": "Rückmeldeschluss der 2. Stufe",
+      "description": "Termin für die teilnehmenden Kontaktlehrkräfte.",
+      "accent": "gold",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-stage-3",
+      "date": "2027-04-14",
+      "time": "90 Minuten",
+      "type": "Olympiade",
+      "title": "3. Stufe: Landesrunde",
+      "description": "Landesrunde an Schulen und ausgewählten zentralen Standorten.",
+      "accent": "red",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-feedback-3",
+      "date": "2027-05-10",
+      "time": "",
+      "type": "Organisation",
+      "title": "Rückmeldeschluss der 3. Stufe",
+      "description": "Termin für die teilnehmenden Kontaktlehrkräfte.",
+      "accent": "gold",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "certificates",
+      "date": "2027-05-12",
+      "endDate": "2027-05-13",
+      "time": "",
+      "type": "Organisation",
+      "title": "Versand der Urkunden und Preise",
+      "description": "Der feierliche Abschluss des Olympiadejahres.",
+      "accent": "gold",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-56-send-1",
+      "date": "2026-08-17",
+      "time": "",
+      "type": "Organisation",
+      "title": "Aufgaben zur 1. Stufe verfügbar",
+      "description": "Die Aufgaben werden für die teilnehmenden Schulen freigeschaltet. Bereits teilnehmende Schulen erhalten sie automatisch.",
+      "accent": "gold",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-56-stage-1",
+      "date": "2026-08-24",
+      "endDate": "2026-10-09",
+      "time": "bis 9. Oktober",
+      "type": "Olympiade",
+      "title": "1. Stufe: Aufgaben für zu Hause",
+      "description": "Vom 24. August bis 9. Oktober kannst du die Aufgaben zu Hause bearbeiten.",
+      "accent": "blue",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-56-send-2",
+      "date": "2026-11-02",
+      "time": "",
+      "type": "Organisation",
+      "title": "Aufgaben zur 2. Stufe verfügbar",
+      "description": "Die Aufgaben werden für die Schulen freigeschaltet. Neue Schulen können sich bis zu diesem Tag anmelden.",
+      "accent": "gold",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-video-660514",
+      "date": "2026-11-08",
+      "time": "10:00 Uhr",
+      "type": "Olympiade",
+      "title": "Lösungsvideo: Sierpinski-Dreieck (660514)",
+      "description": "Das Lösungsvideo zu Aufgabe 660514 ist auf YouTube verfügbar. Entdecke, wie das Sierpinski-Dreieck wächst und wie du die Dreiecke jeder Stufe zählen kannst.",
+      "accent": "blue",
+      "grades": [
+        5
+      ],
+      "source": "https://youtu.be/hs4j_vnnlGw"
+    },
+    {
+      "id": "mo-56-stage-2",
+      "date": "2026-11-11",
+      "time": "180 Minuten",
+      "type": "Olympiade",
+      "title": "2. Stufe: Schulrunde",
+      "description": "Die Auswahlklausur findet an deiner Schule statt. Für Klasse 5 und 6 stehen 180 Minuten zur Verfügung.",
+      "accent": "red",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627",
+      "audienceDetails": {
+        "713": {
+          "time": "240 Minuten",
+          "description": "Die Auswahlklausur findet an deiner Schule statt. Für Klasse 7 bis 13 stehen 240 Minuten zur Verfügung."
+        }
+      }
+    },
+    {
+      "id": "mo-56-feedback-2",
+      "date": "2026-12-02",
+      "time": "",
+      "type": "Organisation",
+      "title": "Frist: Ergebnisse der 2. Stufe melden",
+      "description": "Bis heute korrigieren die Kontaktlehrkräfte die Klausuren und melden die Ergebnisse online zurück.",
+      "accent": "gold",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-56-invitation-3",
+      "date": "2026-12-09",
+      "time": "",
+      "type": "Olympiade",
+      "title": "Wer kommt zur Landesrunde?",
+      "description": "Die Teilnehmenden werden ausgewählt. Deine Lehrkräfte geben bekannt, wer zur Landesrunde eingeladen wird.",
+      "accent": "blue",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-56-stage-3",
+      "date": "2027-02-26",
+      "endDate": "2027-02-27",
+      "time": "26.–27. Februar",
+      "type": "Olympiade",
+      "title": "3. Stufe: Landesrunde in Göttingen",
+      "description": "Am 26. und 27. Februar findet die Landesrunde am Mathematischen Institut der Universität Göttingen statt.",
+      "accent": "red",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    },
+    {
+      "id": "mo-34-registration",
+      "date": "2026-12-01",
+      "time": "",
+      "type": "Organisation",
+      "title": "Anmeldeschluss für neue Grundschulen",
+      "description": "Neue Grundschulen können sich bis heute zur Mathematik-Olympiade anmelden.",
+      "accent": "gold",
+      "grades": [
+        3,
+        4
+      ],
+      "source": "https://www.mo-ni.de/klasse-3-4/termine-202627"
+    },
+    {
+      "id": "mo-34-certificates-check",
+      "date": "2027-05-11",
+      "time": "",
+      "type": "Organisation",
+      "title": "Urkunden online prüfen",
+      "description": "Die Kontaktlehrkräfte prüfen die Urkunden vor dem Versand online.",
+      "accent": "gold",
+      "grades": [
+        3,
+        4
+      ],
+      "source": "https://www.mo-ni.de/klasse-3-4/termine-202627"
+    },
+    {
+      "id": "ag-119",
+      "date": "2026-11-09",
+      "time": "15:30–16:30",
+      "type": "Mathe-AG",
+      "title": "119. Mathe-Online-AG",
+      "description": "Aufgabenblatt und öffentlicher Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-120",
+      "date": "2026-11-23",
+      "time": "15:30–16:30",
+      "type": "Mathe-AG",
+      "title": "120. Mathe-Online-AG",
+      "description": "Aufgabenblatt und öffentlicher Livestream sind jetzt in der Mathe-AG verfügbar.",
+      "accent": "teal",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mo-bundesrunde-2027",
+      "date": "2027-05-30",
+      "endDate": "2027-06-02",
+      "time": "",
+      "type": "Olympiade",
+      "title": "4. Stufe: Bundesrunde in Kaiserslautern",
+      "description": "Die Bundesrunde der Mathematik-Olympiade findet vom 30. Mai bis 2. Juni 2027 in Kaiserslautern statt. Sie richtet sich an qualifizierte Teilnehmende ab Klasse 8.",
+      "accent": "red",
+      "grades": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source": "https://www.mo-ni.de/klasse-5-13/termine-202627"
+    }
+  ],
+  "resources": [
+    {
+      "id": "ag-115-resource",
+      "category": "mathe-ag",
+      "title": "Mathe-AG 115",
+      "subtitle": "Zwerge, Quadrate, Frühstück und Polyominos",
+      "grade": "Klasse 3/4",
+      "year": "2026/27",
+      "duration": "4 Seiten",
+      "video": "https://youtube.com/live/EOG2fIeU0TI",
+      "pdf": "https://www.mo-ni.de/fileadmin/JagtMrX/Mathe_AG/Schuljahr_2026_2027/AG_115__310826_.pdf",
+      "featured": true,
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ag-114-resource",
+      "category": "mathe-ag",
+      "title": "Mathe-AG 114",
+      "subtitle": "Aufgabenblatt und Aufzeichnung zum gemeinsamen Knobeln",
+      "grade": "Klasse 3/4",
+      "year": "2025/26",
+      "duration": "Video & Blatt",
+      "video": "https://youtube.com/live/7K0jtTuzTN4",
+      "pdf": "https://www.mo-ni.de/fileadmin/JagtMrX/Mathe_AG/Schuljahr_2025_2026/65034.pdf",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "olympiad-3",
+      "category": "olympiade",
+      "title": "Olympiadeaufgaben Klasse 3",
+      "subtitle": "Aufgaben aus mehreren Jahren und Wettbewerbsstufen",
+      "grade": "Klasse 3",
+      "year": "Archiv",
+      "duration": "Aufgabensammlung",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "olympiad-4",
+      "category": "olympiade",
+      "title": "Olympiadeaufgaben Klasse 4",
+      "subtitle": "Trainieren, Lösungswege vergleichen und weiterknobeln",
+      "grade": "Klasse 4",
+      "year": "Archiv",
+      "duration": "Aufgabensammlung",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "matheplus-3",
+      "category": "matheplus",
+      "title": "MathePlus Klasse 3",
+      "subtitle": "Zusätzliches Knobelfutter für neugierige Drittklässler",
+      "grade": "Klasse 3",
+      "year": "Sammlung",
+      "duration": "Übungsaufgaben",
+      "url": "https://www.mo-ni.de/matheplus",
+      "grades": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "matheplus-4",
+      "category": "matheplus",
+      "title": "MathePlus Klasse 4",
+      "subtitle": "Anspruchsvolle Aufgaben zum Entdecken und Begründen",
+      "grade": "Klasse 4",
+      "year": "Sammlung",
+      "duration": "Übungsaufgaben",
+      "url": "https://www.mo-ni.de/matheplus",
+      "grades": [
+        3,
+        4
+      ]
+    }
+  ],
+  "collections": {
+    "mathe-ag": {
+      "title": "Alle Mathe-AG-Folgen",
+      "body": "Die vollständige Übersicht mit Aufgabenblättern und Livestreams aufrufen.",
+      "url": "https://www.mo-ni.de/mathe-ag-grundschule"
+    },
+    "olympiade": {
+      "title": "Olympiade-Aufgabenarchiv",
+      "body": "Aufgaben nach Klassenstufe und Schuljahr auf der MO-Ni-Website entdecken.",
+      "url": "https://www.mo-ni.de/jagtmrx/olympiadeaufgaben"
+    },
+    "matheplus": {
+      "title": "MathePlus-Sammlung",
+      "body": "Alle verfügbaren MathePlus-Angebote für die Klassenstufen 3 und 4 öffnen.",
+      "url": "https://www.mo-ni.de/matheplus"
+    }
+  },
+  "workbooks": {
+    "title": "Arbeitshefte",
+    "description": "Mit MO und Ni knobeln, eigene Lösungswege finden und Mathematik entdecken.",
+    "availableFrom": "Jetzt verfügbar · Klasse 3 und 4",
+    "announcementTitle": "Arbeitsheft mit QR-Codes für MO65",
+    "announcementBody": "36 Aufgaben für Klasse 3 und 4 aus drei Stufen der Mathematik-Olympiade. 18 Erklärvideos sind bereits direkt im Heft verlinkt. Tippe in der PDF auf den QR-Code oder das Videofeld. Im gedruckten Heft scannst du den QR-Code.",
+    "pdfUrl": "./MO65-Arbeitsheft-33b39aeadce01a5c971c.pdf",
+    "fileName": "MO65-Arbeitsheft.pdf",
+    "details": "57 Seiten · PDF · 24,9 MB",
+    "videoCount": 18,
+    "revision": "33b39aeadce01a5c971c",
+    "sha256": "8b4fe3c1731361c5f01e20fd6f9f14748c3c716f607132ddb1a7214edcde7a2b",
+    "sizeBytes": 26098564,
+    "updatedAt": "2026-11-07T09:32:57.062Z"
+  },
+  "ag56Schedule": {
+    "startDate": "2026-11-02",
+    "endDate": "2027-07-07",
+    "firstNumber": 56,
+    "weekday": 1,
+    "isoWeekParity": "odd",
+    "timezone": "Europe/Berlin",
+    "source": "https://www.mk.niedersachsen.de/download/190060",
+    "holidays": [
+      {
+        "name": "Herbst",
+        "start": "2026-10-12",
+        "end": "2026-10-24"
+      },
+      {
+        "name": "Weihnachten",
+        "start": "2026-12-23",
+        "end": "2027-01-09"
+      },
+      {
+        "name": "Halbjahr",
+        "start": "2027-02-01",
+        "end": "2027-02-02"
+      },
+      {
+        "name": "Ostern",
+        "start": "2027-03-22",
+        "end": "2027-04-03"
+      },
+      {
+        "name": "Himmelfahrt",
+        "start": "2027-05-07",
+        "end": "2027-05-07"
+      },
+      {
+        "name": "Pfingsten",
+        "start": "2027-05-18",
+        "end": "2027-05-18"
+      },
+      {
+        "name": "Sommer",
+        "start": "2027-07-08",
+        "end": "2027-08-18"
+      }
+    ],
+    "daysOff": [
+      "2027-03-29",
+      "2027-05-17"
+    ]
+  }
+}
