@@ -6,6 +6,7 @@ const SHELL_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-shell`;
 const DATA_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-data`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-runtime`;
 
+// Ohne diese Dateien startet die App offline nicht; fehlt eine davon, bleibt die bisherige Version aktiv.
 const APP_SHELL = [
   "./app.js?v=0.14.0-release-4",
   "./styles.css?v=0.14.0-release-4b",
@@ -17,20 +18,10 @@ const APP_SHELL = [
   "./puzzles/kenken-view.js?v=0.14.0-release-4",
   "./puzzles/kenken.js?v=0.14.0-release-4",
   "./puzzles/kenken-levels.js?v=0.14.0-release-4",
-  "./assets/puzzles/kenken-example.png",
-  "./assets/puzzles/kenken-solution.png",
-  "./Sonntagsraetsel-07-KenKens-Aufgabenblatt.pdf?v=20261031",
-  "./assets/sonntagsraetsel-07-kenkens.png?v=20261031",
-  "./assets/puzzles/deka-dots-example.png",
-  "./assets/puzzles/deka-dots-solution.png",
-  "./assets/puzzles/deka-dots-card.svg?v=0.14.0-release-3",
-  "./assets/puzzles/zahlenkreuze-card.svg?v=0.14.0-release-3",
-  "./assets/puzzles/differenzpyramiden-card.svg?v=0.14.0-release-3",
   "./divisor-computer.js?v=0.14.0-release-2",
   "./divisor-computer-worker.js?v=0.14.0-release-2",
   "./divisor-game.js?v=0.14.0-release-2",
   "./divisor-game-view.js?v=0.14.0-release-2",
-  "./assets/games/teiler-vielfache.svg",
   "./statistics-config.js?v=0.14.0-release-2",
   "./usage-statistics.js?v=0.14.0-release-2",
   "./video-statistics.js?v=0.14.0-release-2",
@@ -43,32 +34,13 @@ const APP_SHELL = [
   "./journey-filters.js?v=0.14.0-release-2",
   "./video-content.js?v=0.14.0-release-2",
   "./data/video-playlists.json",
-  "./app.js?v=0.14.0-release-2",
   "./mental-math.js?v=0.14.0-release-2",
   "./mental-math-view.js?v=0.14.0-release-2",
   "./number-whirl.js?v=0.14.0-release-2",
   "./number-whirl-view.js?v=0.14.0-release-2",
   "./game-celebration.js?v=0.14.0-release-2",
-  "./assets/celebration/mo-ni-jubelfilm.mp4",
-  "./assets/celebration/mo-ni-jubelfilm-poster.png",
-  "./puzzles/puzzle-view.js?v=0.14.0-release-2",
   "./puzzles/solution-presentation.js?v=0.14.0-release-2",
-  "./puzzles/extension-library.js?v=0.14.0-release-2",
-  "./puzzles/sunday-types.js?v=0.14.0-release-2",
-  "./puzzles/sunday-presentation.js?v=0.14.0-release-2",
-  "./assets/puzzles/sumdoku-example.png",
-  "./assets/puzzles/sumdoku-solution.png",
-  "./assets/puzzles/zahlenpfade-example.png",
-  "./assets/puzzles/zahlenpfade-solution.png",
-  "./assets/puzzles/zahlenkreuze-example.png",
-  "./assets/puzzles/zahlenkreuze-solution.png",
-  "./assets/puzzles/polyominos-example.png",
-  "./assets/puzzles/polyominos-solution.png",
-  "./assets/puzzles/differenzpyramiden-example.png",
-  "./assets/puzzles/differenzpyramiden-solution.png",
-  "./puzzles/sunday-levels.js?v=0.14.0-release-2",
   "./data/sunday-publications.json",
-  "./Sonntagsraetsel-01-Sumdoku.pdf?v=20260918",
   "./puzzles/registry.js?v=0.14.0-release-2",
   "./puzzles/progress.js?v=0.14.0-release-2",
   "./puzzles/sumdoku.js?v=0.14.0-release-2",
@@ -105,45 +77,9 @@ const APP_SHELL = [
   "./data/journey.json",
   "./data/sunday.json",
   "./data/editorial.json",
-  "./Sonntagsraetsel-02-Zahlenpfade.pdf?v=20260925-aufgabenblatt",
-  "./Sonntagsraetsel-03-Zahlenkreuze-Aufgabenblatt.pdf?v=20261003",
-  "./Sonntagsraetsel-04-Polyominos-Aufgabenblatt.pdf?v=20261003",
-  "./Sonntagsraetsel-05-Differenzpyramiden-Aufgabenblatt.pdf?v=20261017b",
   "./manifest.webmanifest?v=0.14.0-release-2",
   "./assets/mo-ni-kanallogo.png",
   "./assets/mo-ni-kanallogo-56.png",
-  "./assets/mo-ni-reise.png",
-  "./assets/games/rechen-rallye.png",
-  "./assets/games/zahlenwirbel.png",
-  "./assets/games/raetsel.png",
-  "./assets/mo-ni-reise-56.png",
-  "./assets/mo-ni-mathe-713.png",
-  "./assets/mo-ni-geometrie-56.png",
-  "./assets/mo-ni-mathe-713-v2.png",
-  "./assets/mo-ni-mathe-713-v3.png",
-  "./assets/offers/mathefit-713-v2.png",
-  "./assets/offers/mathefit-713-v3.png",
-  "./assets/offers/kaenguru-713-v3.png",
-  "./assets/offers/kaenguru-713-v4.png",
-  "./assets/offers/kaenguru-713-v5.png",
-  "./assets/offers/kaenguru-713-v2.png",
-  "./assets/offers/olympiade-713-v2.png",
-  "./assets/mo-ni-arbeitsheft.png",
-  "./assets/offers/mathe-ag-34.png",
-  "./assets/offers/olympiade-34.png",
-  "./assets/offers/olympiade-56.png",
-  "./assets/offers/olympiade-713.png",
-  "./assets/offers/kaenguru-34.png",
-  "./assets/offers/kaenguru-56.png",
-  "./assets/offers/kaenguru-713.png",
-  "./assets/offers/matheplus-34.png",
-  "./assets/offers/matheplus-56.png",
-  "./assets/offers/sonntagsraetsel-34.png",
-  "./assets/offers/sonntagsraetsel-56.png",
-  "./assets/sonntagsraetsel-02-zahlenpfade.png?v=20260925",
-  "./assets/sonntagsraetsel-03-zahlenkreuze.png?v=20261003",
-  "./assets/sonntagsraetsel-04-polyominos.png?v=20261003",
-  "./assets/sonntagsraetsel-05-differenzpyramiden.png?v=20261004",
   "./assets/vendor/pdfjs/pdf.min.js",
   "./assets/vendor/pdfjs/pdf.worker.min.js",
   "./assets/icons/icon-192.png",
@@ -152,9 +88,70 @@ const APP_SHELL = [
   "./assets/icons/apple-touch-icon-180.png"
 ];
 
+// Bilder und Filme werden einzeln geladen. Eine fehlende Datei blockiert kein Update.
+// Aufgabenblätter (PDF) werden nicht vorab geladen; ein einmal geöffnetes Blatt bleibt über den Laufzeitspeicher offline verfügbar.
+const OPTIONAL_ASSETS = [
+  "./assets/puzzles/kenken-example.png",
+  "./assets/puzzles/kenken-solution.png",
+  "./assets/sonntagsraetsel-07-kenkens.png?v=20261031",
+  "./assets/puzzles/deka-dots-example.png",
+  "./assets/puzzles/deka-dots-solution.png",
+  "./assets/puzzles/deka-dots-card.svg?v=0.14.0-release-3",
+  "./assets/puzzles/zahlenkreuze-card.svg?v=0.14.0-release-3",
+  "./assets/puzzles/differenzpyramiden-card.svg?v=0.14.0-release-3",
+  "./assets/games/teiler-vielfache.svg",
+  "./assets/celebration/mo-ni-jubelfilm.mp4",
+  "./assets/celebration/mo-ni-jubelfilm-poster.png",
+  "./assets/puzzles/sumdoku-example.png",
+  "./assets/puzzles/sumdoku-solution.png",
+  "./assets/puzzles/zahlenpfade-example.png",
+  "./assets/puzzles/zahlenpfade-solution.png",
+  "./assets/puzzles/zahlenkreuze-example.png",
+  "./assets/puzzles/zahlenkreuze-solution.png",
+  "./assets/puzzles/polyominos-example.png",
+  "./assets/puzzles/polyominos-solution.png",
+  "./assets/puzzles/differenzpyramiden-example.png",
+  "./assets/puzzles/differenzpyramiden-solution.png",
+  "./assets/mo-ni-reise.png",
+  "./assets/games/rechen-rallye.png",
+  "./assets/games/zahlenwirbel.png",
+  "./assets/games/raetsel.png",
+  "./assets/mo-ni-reise-56.png",
+  "./assets/mo-ni-geometrie-56.png",
+  "./assets/mo-ni-mathe-713-v3.png",
+  "./assets/offers/mathefit-713-v3.png",
+  "./assets/offers/kaenguru-713-v5.png",
+  "./assets/offers/olympiade-713-v2.png",
+  "./assets/mo-ni-arbeitsheft.png",
+  "./assets/offers/mathe-ag-34.png",
+  "./assets/offers/olympiade-34.png",
+  "./assets/offers/olympiade-56.png",
+  "./assets/offers/kaenguru-34.png",
+  "./assets/offers/kaenguru-56.png",
+  "./assets/offers/matheplus-34.png",
+  "./assets/offers/matheplus-56.png",
+  "./assets/offers/sonntagsraetsel-34.png",
+  "./assets/offers/sonntagsraetsel-56.png",
+  "./assets/sonntagsraetsel-02-zahlenpfade.png?v=20260925",
+  "./assets/sonntagsraetsel-03-zahlenkreuze.png?v=20261003",
+  "./assets/sonntagsraetsel-04-polyominos.png?v=20261003",
+  "./assets/sonntagsraetsel-05-differenzpyramiden.png?v=20261004"
+];
+
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(SHELL_CACHE).then(cache => cache.addAll(APP_SHELL.map(url => new Request(url, { cache: "reload" })))));
+  event.waitUntil(caches.open(SHELL_CACHE).then(async cache => {
+    await cache.addAll(APP_SHELL.map(url => new Request(url, { cache: "reload" })));
+    await Promise.allSettled(OPTIONAL_ASSETS.map(async url => cache.add(new Request(url, { cache: "reload" }))));
+  }));
 });
+
+// Entfernt Einträge früherer Listen, wenn der Cachename gleich geblieben ist.
+async function pruneShellCache() {
+  const cache = await caches.open(SHELL_CACHE);
+  const wanted = new Set([...APP_SHELL, ...OPTIONAL_ASSETS].map(url => new URL(url, self.location.href).href));
+  const requests = await cache.keys();
+  await Promise.all(requests.filter(request => !wanted.has(request.url)).map(request => cache.delete(request)));
+}
 
 self.addEventListener("activate", event => {
   event.waitUntil(
@@ -162,7 +159,7 @@ self.addEventListener("activate", event => {
       keys
         .filter(key => key.startsWith(CACHE_PREFIX) && ![SHELL_CACHE, DATA_CACHE, RUNTIME_CACHE].includes(key))
         .map(key => caches.delete(key))
-    )).then(() => self.clients.claim())
+    )).then(pruneShellCache).then(() => self.clients.claim())
   );
 });
 

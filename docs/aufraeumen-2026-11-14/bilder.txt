@@ -1,0 +1,27 @@
+assets/games/raetsel.png: 1254x1254 1055 KB -> 480x480 205 KB
+assets/games/rechen-rallye.png: 1254x1254 1196 KB -> 480x480 236 KB
+assets/games/zahlenwirbel.png: 1254x1254 1304 KB -> 480x480 232 KB
+assets/mo-ni-arbeitsheft.png: 720x720 766 KB -> 480x480 335 KB
+assets/mo-ni-geometrie-56.png: 1254x1254 2069 KB -> 480x480 340 KB
+assets/mo-ni-kanallogo-56.png: 1254x1254 1345 KB -> 480x480 264 KB
+assets/mo-ni-mathe-713-v3.png: 1254x1254 1909 KB -> 480x480 312 KB
+assets/mo-ni-reise-56.png: 1254x1254 1926 KB -> 480x480 326 KB
+assets/mo-ni-reise.png: 720x720 778 KB -> 480x480 335 KB
+assets/offers/kaenguru-34.png: 1254x1254 2045 KB -> 480x480 346 KB
+assets/offers/kaenguru-56.png: 1254x1254 2122 KB -> 480x480 352 KB
+assets/offers/kaenguru-713-v5.png: 1254x1254 1714 KB -> 480x480 292 KB
+assets/offers/mathe-ag-34.png: 1254x1254 1893 KB -> 480x480 333 KB
+assets/offers/mathefit-713-v3.png: 1254x1254 1832 KB -> 480x480 301 KB
+assets/offers/matheplus-34.png: 1254x1254 2119 KB -> 480x480 345 KB
+assets/offers/matheplus-56.png: 1254x1254 2045 KB -> 480x480 342 KB
+assets/offers/olympiade-34.png: 1254x1254 2062 KB -> 480x480 339 KB
+assets/offers/olympiade-56.png: 1254x1254 2146 KB -> 480x480 363 KB
+assets/offers/olympiade-713-v2.png: 1254x1254 1827 KB -> 480x480 316 KB
+assets/offers/sonntagsraetsel-34.png: 1254x1254 2020 KB -> 480x480 331 KB
+assets/offers/sonntagsraetsel-56.png: 1254x1254 2086 KB -> 480x480 350 KB
+assets/sonntagsraetsel-02-zahlenpfade.png: 1672x941 1306 KB -> 1024x576 570 KB
+assets/sonntagsraetsel-03-zahlenkreuze.png: 1920x1080 777 KB -> 1024x576 315 KB
+assets/sonntagsraetsel-04-polyominos.png: 1920x1080 728 KB -> 1024x576 296 KB
+assets/sonntagsraetsel-05-differenzpyramiden.png: 1920x1080 783 KB -> 1024x576 317 KB
+assets/sonntagsraetsel-07-kenkens.png: 1920x1080 372 KB -> 1024x576 177 KB
+26 Bilder: 41.2 MB -> 8.5 MB

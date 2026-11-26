@@ -12,7 +12,8 @@ function deepFreeze(value) {
   }
   return value;
 }
-const journey = deepFreeze(JSON.parse(await readFile(new URL("../data/journey.json", import.meta.url), "utf8")));
+// Fester Stand vom 07.11.2026: Neue Videos in data/journey.json dürfen diesen Test nicht verändern.
+const journey = deepFreeze(JSON.parse(await readFile(new URL("./fixtures/journey-2026-11-07.json", import.meta.url), "utf8")));
 const videos = journey.videos;
 const sourceSnapshot = JSON.stringify(journey);
 assert.ok(videos.length >= 15);
@@ -20,9 +21,15 @@ videos.forEach(video => {
   assert.deepEqual(classifyJourneyItem(video), { grades: [3], competitions: ["olympiad"] }, video.code);
   assert.equal(matchesJourneyFilters(video, { grades: [3], competitions: ["olympiad"] }), true);
 });
-const nextGrade = Number(journey.nextPublication.code.slice(5, 6));
-assert.ok([3, 4].includes(nextGrade), "The next Knobelreise task is a grade-3 or grade-4 Olympiad task.");
-assert.deepEqual(classifyJourneyItem(journey.nextPublication), { grades: [nextGrade], competitions: ["olympiad"] });
+assert.deepEqual(classifyJourneyItem(journey.nextPublication), { grades: [4], competitions: ["olympiad"] }, "NI650411 gehört zu Klasse 4.");
+
+// Aktuelle Daten: Jedes Knobelreisevideo muss einer Grundschulklasse und der Olympiade zugeordnet sein.
+const liveJourney = JSON.parse(await readFile(new URL("../data/journey.json", import.meta.url), "utf8"));
+for (const item of [...liveJourney.videos, ...(liveJourney.nextPublication ? [liveJourney.nextPublication] : [])]) {
+  const { grades, competitions } = classifyJourneyItem(item);
+  assert.ok(grades.length && grades.every(grade => [3, 4].includes(grade)), `${item.code}: Klasse 3 oder 4`);
+  assert.ok(competitions.includes("olympiad"), `${item.code}: Mathe-Olympiade`);
+}
 assert.equal(filterJourneyItems(videos).length, videos.length);
 assert.equal(filterJourneyItems(videos, { grades: [3, 4], competitions: ["olympiad"] }).length, videos.length);
 assert.equal(filterJourneyItems(videos, { grades: [4] }).length, 0);

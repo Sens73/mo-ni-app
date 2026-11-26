@@ -142,6 +142,7 @@ assert.doesNotMatch(combined, /google-analytics|googletagmanager|matomo|plausibl
 const handlers = new Map();
 const cacheContents = new Map();
 let installRequests = [];
+const optionalRequests = [];
 let skippedWaiting = 0;
 let fetchResponse = new Response("Serverfehler", { status: 503 });
 const origin = "https://www.mo-ni.de";
@@ -149,6 +150,7 @@ const dataRequest = new Request(`${origin}/fileadmin/grundschule-app-test/data/c
 cacheContents.set(dataRequest.url, new Response('{"knownGood":true}'));
 const fakeCache = {
   addAll: async requests => { installRequests = requests; },
+  add: async request => { optionalRequests.push(request); if (/jubelfilm\.mp4$/.test(request.url)) throw new TypeError("404"); },
   put: async (request, response) => cacheContents.set(request.url, response),
   match: async request => cacheContents.get(typeof request === "string" ? request : request.url)?.clone()
 };
@@ -166,8 +168,14 @@ handlers.get("install")({ waitUntil: promise => { installPromise = promise; } })
 await installPromise;
 assert.equal(skippedWaiting, 0, "Ein Codeupdate aktiviert sich erst am sicheren Übergabepunkt.");
 assert.ok(installRequests.length > 0);
+assert.ok(optionalRequests.length > 0, "Bilder werden zusätzlich geladen.");
+assert.ok(![...installRequests, ...optionalRequests].some(request => /\.pdf$/.test(new URL(request.url).pathname)), "Aufgabenblätter werden erst beim Öffnen geladen.");
+assert.ok(!installRequests.some(request => /\.(png|pdf|mp4)$/.test(new URL(request.url).pathname) && !/\/icons\/|kanallogo/.test(request.url)), "Medien blockieren die Installation nicht.");
+const shellKeys = new Set(installRequests.map(request => request.url));
+assert.equal(shellKeys.size, installRequests.length, "Keine Datei steht doppelt in der Pflichtliste.");
+for (const pattern of [/\/app\.js\?v=0\.14\.0-release-2$/, /sunday-levels\.js\?v=0\.14\.0-release-2$/]) assert.ok(!installRequests.some(request => pattern.test(request.url)), `Veraltete Modulkopie ${pattern} wird nicht geladen.`);
 assert.ok(!installRequests.some(request => new URL(request.url).pathname === "/fileadmin/grundschule-app-test/"), "TYPO3-Ordner ohne index.html darf die Installation nicht blockieren.");
-for (const request of installRequests) await access(new URL(new URL(request.url).pathname.split("/grundschule-app-test/")[1], root));
+for (const request of [...installRequests, ...optionalRequests]) await access(new URL(new URL(request.url).pathname.split("/grundschule-app-test/")[1], root));
 
 let requestedResponse;
 handlers.get("fetch")({ request: dataRequest, respondWith: response => { requestedResponse = response; } });
