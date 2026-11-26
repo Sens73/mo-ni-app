@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const projectRoot = resolve(fileURLToPath(new URL("../", import.meta.url)));
 const runFile = promisify(execFile);
-const workbookWorker = fileURLToPath(new URL("../../../Serverautomatisierung/arbeitsheft/sync-workbook.py", import.meta.url));
+const workbookWorker = fileURLToPath(new URL("../Serverautomatisierung/arbeitsheft/sync-workbook.py", import.meta.url));
 
 function decodeXml(value = "") {
   return value

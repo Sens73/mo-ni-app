@@ -6,7 +6,7 @@ import {ag56Dates, isoWeek, videosFor, kangarooVideosFor, kangarooCardLabel, wit
 import {matchesAudience} from '../audience.js';
 import {parsePlaylistHtml, readPublicPlaylist, readApiPlaylist, makeCollections, synchronize} from '../scripts/sync-video-playlists.mjs';
 
-const serverImporter=await import('../../../Serverautomatisierung/sync-video-playlists.mjs');
+const serverImporter=await import('../Serverautomatisierung/sync-video-playlists.mjs');
 const content=JSON.parse(await readFile(new URL('../data/content.json',import.meta.url),'utf8'));
 const dates=ag56Dates(content.ag56Schedule);
 assert.equal(dates[0].date,'2026-11-02');

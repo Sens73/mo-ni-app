@@ -8,7 +8,7 @@ const grades56Updater = await readFile(new URL("scripts/update-mathe-ag-56-archi
 const olympiadUpdater = await readFile(new URL("scripts/update-olympiade-archive.mjs", root), "utf8");
 const mathePlusUpdater = await readFile(new URL("scripts/update-matheplus-archive.mjs", root), "utf8");
 const journeyUpdater = await readFile(new URL("scripts/update-knobelreise.mjs", root), "utf8");
-const serverJourneyUpdater = await readFile(new URL("../../Serverautomatisierung/sync-knobelreise.php", root), "utf8");
+const serverJourneyUpdater = await readFile(new URL("Serverautomatisierung/sync-knobelreise.php", root), "utf8");
 const editorial = JSON.parse(await readFile(new URL("data/editorial.json", root), "utf8"));
 
 for (const field of ["newsTitle", "newsBody", "updatedAt"]) {
