@@ -72,6 +72,23 @@ async function checkProfile(name, device) {
     if (overflow > 1) problems.push(`${name}: ${label} ist ${overflow} px breiter als der Bildschirm`);
   }
 
+  // PDF-Leser: Der Aufgabentext muss als echter, vorlesbarer Text über der Seite liegen.
+  const pdf = await page.evaluate(async () => {
+    const container = Object.assign(document.createElement("div"), { className: "pdf-pages" });
+    document.querySelector("#app").prepend(container);
+    const { renderPdfDocument } = await import("./pdf-viewer.js");
+    await renderPdfDocument({ url: "./Sonntagsraetsel-07-KenKens-Aufgabenblatt.pdf", container });
+    const sheet = container.querySelector(".pdf-sheet");
+    const word = [...sheet.querySelectorAll(".textLayer span")].find(span => span.textContent.includes("Fülle jedes leere"));
+    const box = word?.getBoundingClientRect(), frame = sheet.getBoundingClientRect();
+    const result = { text: Boolean(word), inside: Boolean(box && box.width > 20 && box.left >= frame.left && box.right <= frame.right + 1), hidden: sheet.querySelector("canvas").getAttribute("aria-hidden") };
+    container.remove();
+    return result;
+  });
+  if (!pdf.text) problems.push(`${name}: PDF-Leser zeigt keinen vorlesbaren Text`);
+  else if (!pdf.inside) problems.push(`${name}: Text im PDF-Leser liegt nicht auf der Seite`);
+  if (pdf.text && pdf.hidden !== "true") problems.push(`${name}: Seitenbild wird zusätzlich zum Text vorgelesen`);
+
   // Offline-Paket: Service Worker muss fertig installiert sein, danach im Flugmodus neu starten.
   const shell = await page.evaluate(async () => {
     const registration = await navigator.serviceWorker.ready;
@@ -99,7 +116,7 @@ async function checkProfile(name, device) {
 try {
   for (const [name, device] of profiles) {
     const result = await checkProfile(name, device);
-    console.log(`${result.name}: ${views.length + 1} Ansichten geöffnet, Offline-Paket ${result.files} Dateien, ${(result.bytes / 1e6).toFixed(1)} MB, Flugmodus-Start geprüft.`);
+    console.log(`${result.name}: ${views.length + 1} Ansichten geöffnet, Offline-Paket ${result.files} Dateien, ${(result.bytes / 1e6).toFixed(1)} MB, PDF-Text geprüft, Flugmodus-Start geprüft.`);
     console.log(`  Fremde Adressen beim Stöbern: ${result.external.length ? result.external.join(", ") : "keine"}`);
   }
 } finally {
