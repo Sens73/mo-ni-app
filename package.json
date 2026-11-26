@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node scripts/dev-server.mjs 4214",
     "test": "node scripts/run-tests.mjs",
+    "test:browser": "node browser-tests/app-check.mjs",
     "update:journey": "node scripts/update-knobelreise.mjs",
     "update:mathe-ag": "node scripts/update-mathe-ag-archive.mjs",
     "update:mathe-ag-56": "node scripts/update-mathe-ag-56-archive.mjs",

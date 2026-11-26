@@ -22,10 +22,14 @@ statt als neue Ordnerkopie.
 ```
 npm start     # Entwicklungsserver auf http://localhost:4214
 npm test      # alle automatischen Prüfungen
+npm run test:browser   # App im Browser in iPhone- und Android-Größe öffnen (braucht Playwright)
 ```
 
 Bei jedem Entwurf (Pull Request) laufen alle Tests automatisch auf GitHub
 (`.github/workflows/pruefung.yml`). Ein grüner Haken heißt: alles besteht.
+Dazu gehört eine Prüfung im echten Browser: Die App wird so ausgeliefert wie auf mo-ni.de,
+jeder Bereich wird in iPhone- und Android-Größe geöffnet, das Offline-Paket gemessen und
+ein Neustart im Flugmodus geprüft. Am Ende steht, welche fremden Adressen die App angefragt hat.
 
 ## Serverautomatisierung
 
