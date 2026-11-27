@@ -174,8 +174,10 @@ async function prepare({ appBase, output, log }) {
     const lastOrder = ["journey", "content"];
     changedData.sort((a, b) => lastOrder.indexOf(a.name) - lastOrder.indexOf(b.name));
     const addedTo = new Set(report.neu.map(line => line.split(":")[0]));
-    const labels = { "mathe-ag": "Mathe-AG 3/4", "mathe-ag-56": "Mathe-AG 5/6", olympiade: "Olympiade", matheplus: "MathePlus", journey: "Knobelreise", content: "Arbeitsheft" };
-    for (const { name } of changedData) files.push({ path: `data/${name}.json`, source: join(work, "data", `${name}.json`), grund: addedTo.has(labels[name]) ? "neue Einträge" : "aktualisierte Angaben (keine neuen Einträge)" });
+    const labels = { "mathe-ag": "Mathe-AG 3/4", "mathe-ag-56": "Mathe-AG 5/6", olympiade: "Olympiade", matheplus: "MathePlus", journey: "Knobelreise" };
+    const reason = name => name === "content" && newPdf && newPdf !== currentPdf ? "Verweis auf die neue Fassung des Arbeitshefts"
+      : addedTo.has(labels[name]) ? "neue Einträge" : "aktualisierte Angaben (keine neuen Einträge)";
+    for (const { name } of changedData) files.push({ path: `data/${name}.json`, source: join(work, "data", `${name}.json`), grund: reason(name) });
 
     await rm(output, { recursive: true, force: true });
     await mkdir(output, { recursive: true });
@@ -187,6 +189,11 @@ async function prepare({ appBase, output, log }) {
       report.hochladen.push({ pfad: file.path, typo3Ordner: `fileadmin/grundschule-app-test/${dirname(file.path) === "." ? "" : `${dirname(file.path)}/`}`, sha256: sha256(buffer), bytes: buffer.length, grund: file.grund });
     }
   } finally {
+    // Die Sperrdatei des Heft-Erzeugers hängt am (jedes Mal neuen) Arbeitsordner – mit aufräumen.
+    try {
+      const lock = `mo-ni-knobelreise-${sha256(join(realpathSync(work), "data", "journey.json"))}.lock`;
+      await rm(join(tmpdir(), lock), { force: true });
+    } catch { /* nichts aufzuräumen */ }
     await rm(work, { recursive: true, force: true });
   }
   await mkdir(output, { recursive: true });
