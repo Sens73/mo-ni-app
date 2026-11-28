@@ -39,7 +39,7 @@ fi
 cd "$PROJECT_DIR"
 
 CURRENT_VERSION="0.14.0"
-CURRENT_RELEASE="v0.14.0-release-6"
+CURRENT_RELEASE="v0.14.0-release-6b"
 IPHONE_PORT="4216"
 
 show_instructions() {

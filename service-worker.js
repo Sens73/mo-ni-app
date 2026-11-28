@@ -1,6 +1,6 @@
 // Preview 51: eigene Themenmotive und einheitliche Angebotskarten für alle Klassen.
 const CACHE_PREFIX = "moni-grundschule-";
-const RELEASE_CACHE = "v0.14.0-release-6";
+const RELEASE_CACHE = "v0.14.0-release-6b";
 // Schnellere Zahlenwirbel-Steine mit kontinuierlichen Rechteckkollisionen.
 const SHELL_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-shell`;
 const DATA_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-data`;
@@ -13,7 +13,7 @@ const RUNTIME_LIMIT = 60;
 
 // Ohne diese Dateien startet die App offline nicht; fehlt eine davon, bleibt die bisherige Version aktiv.
 const APP_SHELL = [
-  "./app.js?v=0.14.0-release-6",
+  "./app.js?v=0.14.0-release-6b",
   "./styles.css?v=0.14.0-release-6",
   "./puzzles/sunday-types.js?v=0.14.0-release-4",
   "./puzzles/sunday-presentation.js?v=0.14.0-release-4",
