@@ -360,7 +360,7 @@ assert.doesNotMatch(app, /class="eyebrow journey-star"/, "Offer introductions no
 assert.doesNotMatch(app, /journey-header"><span class="eyebrow">\$\{icon\("star"\)\} Unterwegs mit MO und Ni/);
 assert.equal(journey.description, "Begleite MO und Ni durch die Aufgaben der Mathematik-Olympiade.");
 assert.match(app, /Zurück zur Knobelreise/);
-assert.match(app, /Zurück zu den Sonntagsrätseln/);
+assert.match(app, /Zurück zum Rätsel-Archiv/);
 assert.match(app, /function sundayView\(\)/);
 assert.match(app, /data-view="sunday"/);
 assert.match(app, /data-role="sunday-search"/);

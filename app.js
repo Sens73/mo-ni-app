@@ -356,7 +356,7 @@ function homeView() {
         <button class="quick-card" type="button" data-view="journey"><span class="icon-tile home-accent">${icon(usesOlderVideos() ? "kangaroo" : "puzzleJourney")}</span><strong>${escapeHtml(journeyLabel())}</strong><span>${usesOlderVideos() ? "Aufgaben & Lösungsvideos" : "Videos zum Knobeln"}</span></button>
         ${usesOlderVideos() ? "" : `<button class="quick-card" type="button" data-view="kangaroo"><span class="icon-tile home-accent">${icon("kangaroo")}</span><strong>Mathe mit dem Känguru</strong><span>Aufgaben & Lösungsvideos</span></button>`}
         ${usesOlderVideos() ? "" : `<button class="quick-card" type="button" data-view="workbooks"><span class="icon-tile home-accent">${icon("workbooks")}</span><strong>Arbeitshefte</strong><span>Für Klasse 3–4</span></button>`}
-        ${usesSeniorVideos() ? "" : `<button class="quick-card" type="button" data-view="sunday"><span class="icon-tile home-accent">${icon("sundayPuzzle")}</span><strong>Sonntagsrätsel</strong><span>Aufgabenblätter & Videos</span></button>`}
+        ${usesSeniorVideos() ? "" : `<button class="quick-card" type="button" data-view="sunday"><span class="icon-tile home-accent">${icon("sundayPuzzle")}</span><strong>Rätsel-Archiv</strong><span>Alle Sonntagsrätsel mit Videos</span></button>`}
         ${senior ? `<button class="quick-card" type="button" data-view="training" data-tab="olympiade"><span class="icon-tile home-accent">${icon("olympiad")}</span><strong>${escapeHtml(olympiadLabel())}</strong><span>Aufgaben & Lösungsvideos</span></button>` : `<button class="quick-card" type="button" data-view="training" data-tab="matheplus"><span class="icon-tile home-accent">${icon("mathPlus")}</span><strong>MathePlus</strong><span>Aufgaben nach Klasse & Serie</span></button>`}
       </div>
     </section>
@@ -565,7 +565,7 @@ function viewerView() {
           : viewer.resourceCategory?.startsWith("olympiad") ? `Zurück zur ${olympiadLabel()}`
           : viewer.resourceCategory === "fit713" ? "Zurück zu Bist du fit"
           : viewer.resourceCategory === "sunday"
-            ? state.previousView === "games" ? "Zurück zum Rätsel" : "Zurück zu den Sonntagsrätseln"
+            ? state.previousView === "games" ? "Zurück zum Rätsel" : "Zurück zum Rätsel-Archiv"
         : "Zurück zur vorherigen Ansicht";
   const returnAction = `<button class="soft-button viewer-home-action" type="button" data-action="close-viewer" aria-label="${returnLabel}" title="${returnLabel}">${icon("back")} ${viewer.type === "web" || gameCards ? returnLabel : "Zurück"}</button>`;
   const materialActions = viewer.type === "pdf"
@@ -733,14 +733,14 @@ function sundayView() {
   const query = state.sundayQuery.trim();
   const filtered = items.filter(item => sundayMatches(item, query));
   const search = items.length
-    ? `<label class="search-field">${icon("search")}<input type="search" data-role="sunday-search" value="${escapeHtml(state.sundayQuery)}" placeholder="Sonntagsrätsel durchsuchen …" aria-label="Sonntagsrätsel durchsuchen" /></label>${query ? `<div class="search-summary"><strong>${filtered.length} ${filtered.length === 1 ? "Treffer" : "Treffer"}</strong><span>Rätsel mit „${escapeHtml(query)}“</span></div>` : ""}`
+    ? `<label class="search-field">${icon("search")}<input type="search" data-role="sunday-search" value="${escapeHtml(state.sundayQuery)}" placeholder="Rätsel durchsuchen …" aria-label="Rätsel-Archiv durchsuchen" /></label>${query ? `<div class="search-summary"><strong>${filtered.length} ${filtered.length === 1 ? "Treffer" : "Treffer"}</strong><span>Rätsel mit „${escapeHtml(query)}“</span></div>` : ""}`
     : "";
   const archive = items.length
-    ? `<section class="sunday-archive"><div class="section-header"><div><h2>Alle Sonntagsrätsel</h2></div>${query ? "" : `<span class="result-count">${items.length} Rätsel</span>`}</div><div class="resource-list">${filtered.length ? filtered.map(sundayCard).join("") : '<div class="empty-state">Kein passendes Sonntagsrätsel gefunden. Probiere einen ähnlichen Begriff.</div>'}</div></section>`
+    ? `<section class="sunday-archive"><div class="section-header"><div><h2>Alle Rätsel</h2></div>${query ? "" : `<span class="result-count">${items.length} Rätsel</span>`}</div><div class="resource-list">${filtered.length ? filtered.map(sundayCard).join("") : '<div class="empty-state">Kein passendes Rätsel gefunden. Probiere einen ähnlichen Begriff.</div>'}</div></section>`
     : `<article class="sunday-empty"><span class="icon-tile home-accent">${icon("sundayPuzzle")}</span><div><small>Demnächst</small><h2>Das erste Rätsel ist unterwegs</h2><p>Sobald das erste Aufgabenblatt bereitsteht, findest du es hier. Das passende Video kommt anschließend dazu.</p><span class="sunday-rhythm">${icon("calendar")} ${escapeHtml(sunday.rhythm)}</span></div></article>`;
 
   return `<main class="page training-page sunday-page" id="main-content">
-    ${offerHeader("sunday", sunday.title, "Knifflige Rätsel zum Nachknobeln – zu jedem zeigt ein Video den Lösungsweg.")}
+    ${offerHeader("sunday", "Rätsel-Archiv", "Alle Sonntagsrätsel zum Nachknobeln – zu jedem zeigt ein Video den Lösungsweg.")}
     ${search}
     ${archive}
   </main>`;
