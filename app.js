@@ -1040,8 +1040,17 @@ document.addEventListener("error", event => {
   const image = event.target;
   // Fehlt das Bild eines ganz neuen Videos noch, erscheint der MO-Ni-Platzhalter (nie das Google-Bild).
   if (image.matches?.("img[data-thumbnail]") && !image.dataset.thumbnailFallback) {
+    const original = image.currentSrc || image.src;
     image.dataset.thumbnailFallback = "1";
     image.src = THUMBNAIL_PLACEHOLDER;
+    // Oft ist das Bild nur kurz nicht erreichbar (z. B. gleich nach einem App-Update):
+    // nach wenigen Sekunden noch einmal versuchen und den Platzhalter dann ersetzen.
+    window.setTimeout(() => {
+      if (!image.isConnected) return;
+      const probe = new Image();
+      probe.onload = () => { if (image.isConnected && image.dataset.thumbnailFallback === "1") image.src = original; };
+      probe.src = original;
+    }, 2500);
   } else if (image.matches?.("img[data-card-thumbnail]")) image.hidden = true;
 }, true);
 
