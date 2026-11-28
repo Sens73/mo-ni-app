@@ -2,7 +2,7 @@ import { prepareMaterialLink } from "./material-links.js?v=0.14.0-release-2";
 import { fetchPdfFile } from "./download-manager.js?v=0.14.0-release-2";
 import { renderPdfDocument } from "./pdf-viewer.js?v=0.14.0-release-2";
 import { createPrintManager } from "./print-manager.js?v=0.14.0-release-2";
-import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-2";
+import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-6";
 import { statisticsEmbedUrl, observeVideo } from "./video-statistics.js?v=0.14.0-release-2";
 
 const parameters = new URLSearchParams(location.search);

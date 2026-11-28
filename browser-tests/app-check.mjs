@@ -157,7 +157,7 @@ async function checkInstallPaths() {
     await context.route(url => !url.href.startsWith(origin), route => route.abort());
     const page = await context.newPage();
     page.on("pageerror", error => problems.push(`Installation ${label}: Skriptfehler ${error.message}`));
-    await page.goto(`${appUrl}?install=1&audience=34`);
+    await page.goto(`${appUrl}?install=now&audience=34`);
     const modal = page.locator(".modal .install-guides");
     await modal.waitFor({ timeout: 15000 }).catch(() => problems.push(`Installation ${label}: Hilfe erscheint nicht`));
     const text = await modal.innerText().catch(() => "");
@@ -165,7 +165,7 @@ async function checkInstallPaths() {
     if (expected.link) {
       const href = await page.locator("[data-install-escape]").first().getAttribute("href").catch(() => "");
       if (!expected.link.test(href || "")) problems.push(`Installation ${label}: Knopf öffnet ${href}`);
-      if (!/install=1/.test(href || "")) problems.push(`Installation ${label}: Browser öffnet nicht die Installationshilfe`);
+      if (!/install=now/.test(href || "")) problems.push(`Installation ${label}: Browser öffnet nicht die Installationshilfe`);
     }
     if (expected.picture && !await page.locator(".install-picture svg").isVisible().catch(() => false)) problems.push(`Installation ${label}: Bild zum Seitenmenü fehlt`);
     if (expected.qr) {
@@ -180,6 +180,41 @@ async function checkInstallPaths() {
   return checked;
 }
 
+const QR_SHEET = "[data-open-sunday-resource][data-viewer-type=pdf]";
+// QR-Code auf dem Aufgabenblatt (install=1): Die App startet sofort, ohne Installationsfenster.
+// Der Hinweis kommt erst, wenn man von einem Aufgabenblatt zurückkommt; „Später“ pausiert ihn.
+async function checkQrStart() {
+  const checked = [];
+  for (const [label, device] of [["iPhone", devices["iPhone 13"]], ["Android", devices["Pixel 7"]]]) {
+    const context = await browser.newContext({ ...device, serviceWorkers: "block" });
+    await context.route(url => !url.href.startsWith(origin), route => route.abort());
+    const page = await context.newPage();
+    page.on("pageerror", error => problems.push(`QR-Start ${label}: Skriptfehler ${error.message}`));
+    await page.goto(`${appUrl}?install=1&audience=34`);
+    await page.locator(".bottom-nav").waitFor({ timeout: 15000 }).catch(() => problems.push(`QR-Start ${label}: App erscheint nicht`));
+    await page.waitForTimeout(500);
+    if (await page.locator(".modal").count()) problems.push(`QR-Start ${label}: Installationsfenster verdeckt die App`);
+    if (await page.locator(".install-hint").count()) problems.push(`QR-Start ${label}: Hinweis kommt schon beim ersten Öffnen`);
+    if (/install=/.test(page.url())) problems.push(`QR-Start ${label}: install=1 bleibt in der Adresse`);
+    await page.goto(`${appUrl}?view=sunday&audience=34`);
+    await page.locator(QR_SHEET).first().click().catch(() => problems.push(`QR-Start ${label}: kein Blatt zum Öffnen`));
+    await page.locator("[data-action=close-viewer]").first().click().catch(() => problems.push(`QR-Start ${label}: Blatt lässt sich nicht schließen`));
+    const hint = page.locator(".install-hint");
+    await hint.waitFor({ timeout: 5000 }).catch(() => problems.push(`QR-Start ${label}: Hinweis erscheint nach dem Blatt nicht`));
+    await page.locator("[data-action=install-hint-later]").click().catch(() => {});
+    if (await hint.count()) problems.push(`QR-Start ${label}: „Später“ blendet den Hinweis nicht aus`);
+    await page.reload();
+    await page.locator(".bottom-nav").waitFor({ timeout: 15000 }).catch(() => {});
+    await page.locator(QR_SHEET).first().click().catch(() => {});
+    await page.locator("[data-action=close-viewer]").first().click().catch(() => {});
+    await page.waitForTimeout(500);
+    if (await hint.count()) problems.push(`QR-Start ${label}: Hinweis kommt trotz „Später“ wieder`);
+    checked.push(label);
+    await context.close();
+  }
+  return checked;
+}
+
 try {
   for (const [name, device] of profiles) {
     const result = await checkProfile(name, device);
@@ -187,6 +222,7 @@ try {
     console.log(`  Fremde Adressen beim Stöbern: ${result.external.length ? result.external.join(", ") : "keine"}`);
   }
   console.log(`Installationshilfe geprüft: ${(await checkInstallPaths()).join(", ")}.`);
+  console.log(`QR-Start ohne Fenster, Hinweis nach dem Blatt geprüft: ${(await checkQrStart()).join(", ")}.`);
 } finally {
   await browser.close();
   server.close();

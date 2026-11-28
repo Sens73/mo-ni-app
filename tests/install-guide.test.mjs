@@ -24,10 +24,10 @@ assert.deepEqual(installSituation({ userAgent: ua.mac }), { device: "computer", 
 assert.deepEqual(installSituation({ userAgent: ua.mac, platform: "MacIntel", maxTouchPoints: 5 }), { device: "ios", browser: "safari" }, "iPad reports itself as a Mac");
 
 const page = installPageUrl("https://www.mo-ni.de/fileadmin/grundschule-app-test/index.html?audience=34#oben");
-assert.equal(page, "https://www.mo-ni.de/fileadmin/grundschule-app-test/index.html?audience=34&install=1");
+assert.equal(page, "https://www.mo-ni.de/fileadmin/grundschule-app-test/index.html?audience=34&install=now");
 assert.equal(openInBrowserUrl("ios", page), `x-safari-${page}`);
 const intent = openInBrowserUrl("android", page);
-assert.ok(intent.startsWith("intent://www.mo-ni.de/fileadmin/grundschule-app-test/index.html?audience=34&install=1#Intent;scheme=https;package=com.android.chrome;"));
+assert.ok(intent.startsWith("intent://www.mo-ni.de/fileadmin/grundschule-app-test/index.html?audience=34&install=now#Intent;scheme=https;package=com.android.chrome;"));
 assert.ok(intent.includes(`S.browser_fallback_url=${encodeURIComponent(page)}`));
 assert.equal(openInBrowserUrl("computer", page), "");
 assert.equal(openInBrowserUrl("ios", "javascript:alert(1)"), "", "Only web addresses are handed to the browser.");

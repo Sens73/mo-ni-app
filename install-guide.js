@@ -29,9 +29,10 @@ export function openInBrowserUrl(device, pageUrl) {
 }
 
 // Die Seite, die im Browser geöffnet werden soll, zeigt dort sofort die Installationshilfe.
+// „install=now“ heißt: Die Person will ausdrücklich installieren (anders als „install=1“ der QR-Codes).
 export function installPageUrl(currentUrl) {
   const url = new URL(currentUrl);
-  url.searchParams.set("install", "1");
+  url.searchParams.set("install", "now");
   url.hash = "";
   return url.href;
 }

@@ -1,4 +1,4 @@
-import { usageStatistics, videoStatisticsTarget } from "./usage-statistics.js?v=0.14.0-release-2";
+import { usageStatistics, videoStatisticsTarget } from "./usage-statistics.js?v=0.14.0-release-6";
 
 let apiPromise;
 function loadYoutubeApi(scope) {
