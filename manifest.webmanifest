@@ -96,9 +96,9 @@
       ]
     },
     {
-      "name": "Sonntagsrätsel",
-      "short_name": "Sonntagsrätsel",
-      "description": "Aufgabenblätter und Videos der Sonntagsrätsel öffnen",
+      "name": "Rätsel-Archiv",
+      "short_name": "Rätsel-Archiv",
+      "description": "Alle Sonntagsrätsel mit Aufgabenblättern und Videos öffnen",
       "url": "./index.html?view=sunday&source=shortcut",
       "icons": [
         {

@@ -402,8 +402,8 @@ console.log('Actual restored puzzle protects content/code updates; leaving it sa
 const dockLabels=['Start','Spiel und Spaß','Termine','Mehr'];
 const dockViews=['home','games','dates','more'];
 const starts={
-  '34':['Mathe-AG','Mathe-Olympiade','Knobelreise','Mathe mit dem Känguru','Arbeitshefte','Sonntagsrätsel','MathePlus'],
-  '56':['Mathe-AG','Mathematik-Olympiade','Mathe mit dem Känguru','Sonntagsrätsel','MathePlus'],
+  '34':['Mathe-AG','Mathe-Olympiade','Knobelreise','Mathe mit dem Känguru','Arbeitshefte','Rätsel-Archiv','MathePlus'],
+  '56':['Mathe-AG','Mathematik-Olympiade','Mathe mit dem Känguru','Rätsel-Archiv','MathePlus'],
   '713':['Bist du fit?','Mathe mit dem Känguru','Mathe-Olympiade']
 };
 function checkDock(harness,view) {
