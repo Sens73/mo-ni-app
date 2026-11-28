@@ -34,7 +34,7 @@ assert.match(server, /Content-Disposition/);
 assert.match(server, /\/file-bootstrap\.js/);
 assert.match(server, /location\.replace\("http:\/\/localhost:\$\{port\}\/\?version=0\.14&view=home"\)/);
 assert.match(server, /version: "0\.14\.0"/);
-assert.match(server, /const release = "v0\.14\.0-release-4"/);
+assert.match(server, /const release = "v0\.14\.0-release-6"/);
 assert.match(server, /version: "0\.14\.0", release/);
 assert.match(server, /MONI_BIND_ADDRESS/);
 assert.match(server, /server\.listen\(port, bindAddress/);

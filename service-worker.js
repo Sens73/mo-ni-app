@@ -1,6 +1,6 @@
 // Preview 51: eigene Themenmotive und einheitliche Angebotskarten für alle Klassen.
 const CACHE_PREFIX = "moni-grundschule-";
-const RELEASE_CACHE = "v0.14.0-release-4";
+const RELEASE_CACHE = "v0.14.0-release-6";
 // Schnellere Zahlenwirbel-Steine mit kontinuierlichen Rechteckkollisionen.
 const SHELL_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-shell`;
 const DATA_CACHE = `${CACHE_PREFIX}${RELEASE_CACHE}-data`;
@@ -29,12 +29,11 @@ const APP_SHELL = [
   "./divisor-game-view.js?v=0.14.0-release-2",
   "./statistics-config.js?v=0.14.0-release-2",
   "./usage-statistics.js?v=0.14.0-release-6",
-  "./video-statistics.js?v=0.14.0-release-2",
+  "./video-statistics.js?v=0.14.0-release-6",
   "./index.html",
   "./browser-install.html",
-  "./styles.css?v=0.14.0-release-2",
   "./audience.js?v=0.14.0-release-2",
-  "./material-presentation.js?v=0.14.0-release-2",
+  "./material-presentation.js?v=0.14.0-release-6",
   "./material-links.js?v=0.14.0-release-2",
   "./journey-filters.js?v=0.14.0-release-2",
   "./video-content.js?v=0.14.0-release-2",
@@ -68,15 +67,15 @@ const APP_SHELL = [
   "./download-manager.js?v=0.14.0-release-2",
   "./pdf-actions.css?v=0.14.0-release-2",
   "./workbook-print.js?v=0.14.0-release-2",
-  "./pdf-viewer.js?v=0.14.0-release-2",
-  "./offline-materials.js?v=0.14.0-release-5",
-  "./install-guide.js?v=0.14.0-release-5",
-  "./install-hint.js?v=0.14.0-release-5",
+  "./pdf-viewer.js?v=0.14.0-release-6",
+  "./offline-materials.js?v=0.14.0-release-6",
+  "./install-guide.js?v=0.14.0-release-6",
+  "./install-hint.js?v=0.14.0-release-6",
   "./external-view.html",
   "./workbook-view.html",
-  "./workbook-view.js?v=0.14.0-release-2",
+  "./workbook-view.js?v=0.14.0-release-6",
   "./workbook-view.css?v=0.14.0-release-2",
-  "./external-view.js?v=0.14.0-release-2",
+  "./external-view.js?v=0.14.0-release-6",
   "./data/content.json",
   "./data/mathe-ag.json",
   "./data/mathe-ag-56.json",
@@ -85,7 +84,7 @@ const APP_SHELL = [
   "./data/journey.json",
   "./data/sunday.json",
   "./data/editorial.json",
-  "./manifest.webmanifest?v=0.14.0-release-2",
+  "./manifest.webmanifest?v=0.14.0-release-6",
   "./assets/mo-ni-kanallogo.png",
   "./assets/mo-ni-kanallogo-56.png",
   "./assets/vendor/pdfjs/pdf.min.js",

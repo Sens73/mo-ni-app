@@ -12,7 +12,7 @@ const requestedPort = Number(process.argv[2] || 4213);
 const port = Number.isInteger(requestedPort) && requestedPort > 0 && requestedPort < 65536 ? requestedPort : 4213;
 const bindAddress = process.env.MONI_BIND_ADDRESS === "0.0.0.0" ? "0.0.0.0" : "127.0.0.1";
 const publicHost = String(process.env.MONI_PUBLIC_HOST || "localhost").replace(/[^a-zA-Z0-9.:-]/g, "") || "localhost";
-const release = "v0.14.0-release-4";
+const release = "v0.14.0-release-6";
 
 const contentFile = resolve(projectRoot, "data/content.json");
 const editorialFile = resolve(projectRoot, "data/editorial.json");
