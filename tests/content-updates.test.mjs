@@ -19,6 +19,7 @@ import { shouldUseOriginalPdfPrint, prepareOriginalPdfPrint } from "../original-
 import { createPrintManager } from "../print-manager.js";
 import { createOfflineMaterials, formatBytes } from "../offline-materials.js";
 import { installSituation, installPageUrl, openInBrowserUrl } from "../install-guide.js";
+import * as installHint from "../install-hint.js";
 
 const root = new URL("../", import.meta.url);
 const source = (await readFile(new URL("app.js", root), "utf8")).replace(/^import .*;\n/gm, "");
@@ -109,7 +110,7 @@ async function appHarness({ waitingWorker = null, focused = false, pdf = false, 
     usageStatistics, statisticsEmbedUrl, observeVideo,
     createMentalMathGame, createNumberWhirlGame, createPuzzleGame, createSundayPuzzleTypes, createDivisorGame,
     ...audience, ...filters, ...presentation, ...videos, ...updates,
-    prepareMaterialLink, createOfflineMaterials, formatBytes, installSituation, installPageUrl, openInBrowserUrl,
+    prepareMaterialLink, createOfflineMaterials, formatBytes, installSituation, installPageUrl, openInBrowserUrl, ...installHint,
     contentAvailabilitySignature: value => contentAvailabilitySignature(value, new Date(time)),
     sundayWorksheetIsAvailable: value => sundayWorksheetIsAvailable(value, new Date(time)),
     createPrintManager: pdf ? createPrintManager : () => ({}),

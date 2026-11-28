@@ -1,4 +1,4 @@
-import { usageStatistics, STATISTICS_EXCLUSION_KEY } from "./usage-statistics.js?v=0.14.0-release-2";
+import { usageStatistics, STATISTICS_EXCLUSION_KEY } from "./usage-statistics.js?v=0.14.0-release-6";
 usageStatistics.exclude();
 let persisted = false;
 try { persisted = localStorage.getItem(STATISTICS_EXCLUSION_KEY) === "1"; } catch { /* The explicit test URL remains safe without storage. */ }

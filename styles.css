@@ -4028,3 +4028,74 @@ body > .pdf-print-surface {
 .install-qr img { flex: none; width: 150px; height: 150px; }
 .install-qr figcaption { display: grid; gap: 4px; font-size: 13px; line-height: 1.45; }
 @media (max-width: 420px) { .install-qr { flex-direction: column; text-align: center; } }
+
+/* Installationshinweis: kleine Leiste über der unteren Navigation, verdeckt nichts Wichtiges. */
+.install-hint {
+  position: fixed;
+  z-index: 35;
+  right: 12px;
+  bottom: calc(86px + var(--safe-bottom));
+  left: 12px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 12px;
+  align-items: center;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 12px 14px;
+  border: 1px solid var(--action-border);
+  border-radius: var(--radius-md);
+  color: var(--green-dark);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  animation: install-hint-in .35s ease both;
+}
+
+.install-hint-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+}
+
+.install-hint-text strong,
+.install-hint-text span {
+  display: block;
+}
+
+.install-hint-text strong {
+  font-size: 14px;
+}
+
+.install-hint-text span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.install-hint-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+}
+
+.install-hint-actions .primary-button {
+  flex: 1;
+  min-height: 40px;
+  border-color: var(--green);
+  color: #fff;
+  background: var(--green);
+}
+
+.install-hint-actions .soft-button {
+  min-height: 40px;
+}
+
+@keyframes install-hint-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install-hint { animation: none; }
+}

@@ -1,7 +1,7 @@
 import "./download-manager.js?v=0.14.0-release-2";
 import { prepareWorkbookPrint } from "./workbook-print.js?v=0.14.0-release-2";
 import * as pdfjs from "./assets/vendor/pdfjs/pdf.min.js";
-import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-2";
+import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-6";
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("./assets/vendor/pdfjs/pdf.worker.min.js", import.meta.url).href;
 
 const status = document.querySelector("#reader-status");

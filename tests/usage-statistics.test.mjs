@@ -73,5 +73,5 @@ const app=await readFile(new URL("../app.js",import.meta.url),"utf8");
 const sw=await readFile(new URL("../service-worker.js",import.meta.url),"utf8");
 assert.match(app,/usageStatistics\.appStarted\(\)/);assert.match(app,/statisticsPdfOpened/);
 assert.match(sw,/statistics-test\.html/);assert.match(sw,/statistics-config\.js/);
-assert.equal(Object.values(STATISTICS_EVENTS).length,5);
+assert.equal(Object.values(STATISTICS_EVENTS).length,9);
 console.log("Validated five events, audience/content labels, preview/local/owner exclusions, no personal query data, failure isolation and single playback counting.");

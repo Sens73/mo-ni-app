@@ -13,8 +13,8 @@ const RUNTIME_LIMIT = 60;
 
 // Ohne diese Dateien startet die App offline nicht; fehlt eine davon, bleibt die bisherige Version aktiv.
 const APP_SHELL = [
-  "./app.js?v=0.14.0-release-4",
-  "./styles.css?v=0.14.0-release-4b",
+  "./app.js?v=0.14.0-release-6",
+  "./styles.css?v=0.14.0-release-6",
   "./puzzles/sunday-types.js?v=0.14.0-release-4",
   "./puzzles/sunday-presentation.js?v=0.14.0-release-4",
   "./puzzles/sunday-levels.js?v=0.14.0-release-4",
@@ -28,7 +28,7 @@ const APP_SHELL = [
   "./divisor-game.js?v=0.14.0-release-2",
   "./divisor-game-view.js?v=0.14.0-release-2",
   "./statistics-config.js?v=0.14.0-release-2",
-  "./usage-statistics.js?v=0.14.0-release-2",
+  "./usage-statistics.js?v=0.14.0-release-6",
   "./video-statistics.js?v=0.14.0-release-2",
   "./index.html",
   "./browser-install.html",
@@ -71,6 +71,7 @@ const APP_SHELL = [
   "./pdf-viewer.js?v=0.14.0-release-2",
   "./offline-materials.js?v=0.14.0-release-5",
   "./install-guide.js?v=0.14.0-release-5",
+  "./install-hint.js?v=0.14.0-release-5",
   "./external-view.html",
   "./workbook-view.html",
   "./workbook-view.js?v=0.14.0-release-2",

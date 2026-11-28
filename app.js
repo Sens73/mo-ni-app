@@ -12,11 +12,12 @@ import { fetchPdfFile } from "./download-manager.js?v=0.14.0-release-2";
 import { renderPdfDocument } from "./pdf-viewer.js?v=0.14.0-release-2";
 import { createOfflineMaterials, formatBytes } from "./offline-materials.js?v=0.14.0-release-5";
 import { installSituation, installPageUrl, openInBrowserUrl } from "./install-guide.js?v=0.14.0-release-5";
+import { installEntry, normalizeHintRecord, recordVisit, shouldOfferInstallHint, snoozeHint } from "./install-hint.js?v=0.14.0-release-5";
 import { createPrintManager } from "./print-manager.js?v=0.14.0-release-2";
 import { shouldUseOriginalPdfPrint, prepareOriginalPdfPrint } from "./original-pdf-print.js?v=0.14.0-release-2";
 import { canActivateAppUpdate, createAppUpdateCoordinator } from "./app-updates.js?v=0.14.0-release-2";
 import { contentAvailabilitySignature, sundayWorksheetIsAvailable } from "./content-updates.js?v=0.14.0-release-2";
-import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-2";
+import { usageStatistics } from "./usage-statistics.js?v=0.14.0-release-6";
 import { statisticsEmbedUrl, observeVideo } from "./video-statistics.js?v=0.14.0-release-2";
 let disposeVideoStatistics = () => {};
 
@@ -32,7 +33,9 @@ const supportedViews = new Set(["home", "dates", "training", "workbooks", "journ
 const supportedTrainingTabs = new Set(["mathe-ag", "olympiade", "matheplus", "bist-du-fit"]);
 const requestedView = initialParameters.get("view") === "community" ? "workbooks" : initialParameters.get("view");
 const requestedTrainingTab = initialParameters.get("tab");
-const requestedInstallHelp = initialParameters.get("install") === "1";
+// QR-Codes tragen „install=1“: Die App startet trotzdem sofort, der Installationshinweis kommt später.
+const installStart = installEntry(location.href);
+const requestedInstallHelp = installStart.openGuide;
 const requestedInstallDevice = location.hash.toLowerCase() === "#computer" ? "computer" : "";
 const localIphoneTest = initialParameters.get("iphone-test") === "1";
 const PUBLIC_APP_PATH = "/fileadmin/grundschule-app-test/";
@@ -93,42 +96,42 @@ const state = {
   online: navigator.onLine,
   serviceWorkerReady: false,
   waitingWorker: null,
-  modal: requestedInstallHelp ? "install" : null
+  modal: requestedInstallHelp ? "install" : null,
+  installHint: false,
+  installHintSuccess: false,
+  installHintShownTracked: false
 };
+
+function gameActivityChanged() {
+  const wasActive = state.gameActive;
+  state.gameActive = mathGame.active || whirlGame.active || puzzleGame.active || divisorGame.active;
+  if (!state.gameActive) requestAnimationFrame(() => {
+    applyPendingContent(); maybeApplyAppUpdate();
+    // Eine beendete Spielrunde ist ein Erfolgserlebnis: jetzt darf der Installationshinweis kommen.
+    if (wasActive) noteInstallSuccess();
+  });
+}
 
 const mathGame = createMentalMathGame({
   read: readJson, write: (key, value) => writeStored(key, JSON.stringify(value)), scope: window,
-  onActivityChange: () => {
-    state.gameActive = mathGame.active || whirlGame.active || puzzleGame.active || divisorGame.active;
-    const active = state.gameActive;
-    if (!active) requestAnimationFrame(() => { applyPendingContent(); maybeApplyAppUpdate(); });
-  }
+  onActivityChange: () => gameActivityChanged()
 });
 
 const whirlGame = createNumberWhirlGame({
   read: readJson, write: (key, value) => writeStored(key, JSON.stringify(value)), scope: window,
-  onActivityChange: () => {
-    state.gameActive = mathGame.active || whirlGame.active || puzzleGame.active || divisorGame.active;
-    if (!state.gameActive) requestAnimationFrame(() => { applyPendingContent(); maybeApplyAppUpdate(); });
-  }
+  onActivityChange: () => gameActivityChanged()
 });
 
 if (!readJson("puzzle-extension-backup",null)) writeStored("puzzle-extension-backup",JSON.stringify({release:"0.13.0-preview-21",progress:readJson("puzzle-progress",{}),ui:readJson("puzzle-ui",{})}));
 const puzzleGame = createPuzzleGame({
   types: createSundayPuzzleTypes(),
   read: readJson, write: (key, value) => writeStored(key, JSON.stringify(value)),
-  onActivityChange: () => {
-    state.gameActive = mathGame.active || whirlGame.active || puzzleGame.active || divisorGame.active;
-    if (!state.gameActive) requestAnimationFrame(() => { applyPendingContent(); maybeApplyAppUpdate(); });
-  }
+  onActivityChange: () => gameActivityChanged()
 });
 
 const divisorGame = createDivisorGame({
   read: readJson, write: (key, value) => writeStored(key, JSON.stringify(value)),
-  onActivityChange: () => {
-    state.gameActive = mathGame.active || whirlGame.active || puzzleGame.active || divisorGame.active;
-    if (!state.gameActive) requestAnimationFrame(() => { applyPendingContent(); maybeApplyAppUpdate(); });
-  }
+  onActivityChange: () => gameActivityChanged()
 });
 
 const icons = {
@@ -275,6 +278,37 @@ function systemBanners() {
     <button class="soft-button" type="button" data-action="activate-update">Aktualisieren</button>
   </aside>` : "";
   return `${offlineBanner}${updateBanner}`;
+}
+
+// Installationshinweis: erst nach einem Erfolgserlebnis oder beim Besuch an einem weiteren Tag.
+const installHintRecord = () => normalizeHintRecord(readJson("install-hint", null));
+const saveInstallHintRecord = record => writeStored("install-hint", JSON.stringify(record));
+const installDevice = () => installSituation(navigator).device;
+const installHintAllowedNow = () => state.content && !state.installed && !state.modal && !state.gameActive && state.view !== "viewer";
+
+function maybeShowInstallHint() {
+  if (state.installHint || !installHintAllowedNow()) return;
+  if (!shouldOfferInstallHint({ installed: state.installed, device: installDevice(), record: installHintRecord(), successThisVisit: state.installHintSuccess })) return;
+  state.installHint = true;
+  if (!state.installHintShownTracked) { state.installHintShownTracked = true; usageStatistics.track("install_hint_shown", `install:${installDevice()}`); }
+  render();
+}
+
+function noteInstallSuccess() {
+  state.installHintSuccess = true;
+  maybeShowInstallHint();
+}
+
+function installHintView() {
+  if (!state.installHint || !installHintAllowedNow()) return "";
+  const direct = Boolean(state.deferredInstall);
+  const ios = installDevice() === "ios";
+  const lead = ios ? "Leg MO-Ni auf deinen Home-Bildschirm: Dann ist die App immer mit einem Tipp da." : "Hol dir MO-Ni als App: Dann ist sie immer mit einem Tipp da.";
+  return `<aside class="install-hint" role="region" aria-label="MO-Ni als App holen">
+    <img class="install-hint-icon" src="./assets/icons/icon-192.png" alt="" width="44" height="44">
+    <div class="install-hint-text"><strong>Gefällt dir MO-Ni?</strong><span>${lead} Kostenlos und ohne App-Store.</span></div>
+    <div class="install-hint-actions"><button class="primary-button" type="button" data-action="install-hint-open">${direct ? `${icon("download")} Installieren` : "So geht’s"}</button><button class="soft-button" type="button" data-action="install-hint-later">Später</button></div>
+  </aside>`;
 }
 
 const navItems = [
@@ -883,7 +917,7 @@ function render() {
   puzzleGame.updateTypes(createSundayPuzzleTypes(state.content.sunday,state.content.puzzlePublications,new Date(),undefined,{allowPreviewWorksheets:["localhost","127.0.0.1","[::1]"].includes(location.hostname)}));
   const views = { games: gamesView, home: homeView, dates: datesView, training: trainingView, workbooks: workbooksView, journey: journeyView, kangaroo: kangarooView, sunday: sundayView, viewer: viewerView, more: moreView };
   document.documentElement.dataset.moniAudience = state.audience;
-  app.innerHTML = `<div class="app-header">${topbar()}${!["viewer", "games"].includes(state.view) ? audiencePicker() : ""}</div>${systemBanners()}${(views[state.view] || homeView)()}${bottomNav()}${modalView()}`;
+  app.innerHTML = `<div class="app-header">${topbar()}${!["viewer", "games"].includes(state.view) ? audiencePicker() : ""}</div>${systemBanners()}${(views[state.view] || homeView)()}${installHintView()}${bottomNav()}${modalView()}`;
   if (state.view === "games") {
     mathGame.mount(document.querySelector("[data-math-root]"));
     whirlGame.mount(document.querySelector("[data-whirl-root]"));
@@ -904,6 +938,8 @@ function render() {
 function syncViewUrl() {
   if (location.protocol === "file:") return;
   const url = new URL(location.href);
+  // Der QR-Zusatz „install=1“ wirkt nur beim Öffnen; beim Neuladen soll nichts erneut aufgehen.
+  url.searchParams.delete("install");
   url.searchParams.set("audience", state.audience);
   url.searchParams.set("view", state.view === "viewer" ? state.previousView || "training" : state.view);
   if ((state.view === "viewer" ? state.previousView : state.view) === "training") url.searchParams.set("tab", state.trainingTab);
@@ -1204,7 +1240,33 @@ document.addEventListener("click", async event => {
   } else if (action === "close-viewer") {
     const destination = state.previousView || "training";
     state.viewer = null;
+    // Zurück von einem Video oder Aufgabenblatt: ein guter Moment für den Installationshinweis.
+    state.installHintSuccess = true;
     setView(destination, undefined, true);
+    maybeShowInstallHint();
+  } else if (action === "install-hint-later") {
+    saveInstallHintRecord(snoozeHint(installHintRecord()));
+    state.installHint = false;
+    usageStatistics.track("install_hint_later", `install:${installDevice()}`);
+    render();
+  } else if (action === "install-hint-open") {
+    // Wer antippt, bekommt eine Woche Ruhe, ohne dass es als „Später“ zählt.
+    const record = installHintRecord();
+    saveInstallHintRecord({ ...record, snoozedUntil: Date.now() + 7 * 24 * 60 * 60 * 1000 });
+    state.installHint = false;
+    usageStatistics.track("install_hint_open", `install:${installDevice()}`);
+    if (state.deferredInstall) {
+      const installationPrompt = state.deferredInstall;
+      await installationPrompt.prompt();
+      const choice = await installationPrompt.userChoice.catch(() => ({ outcome: "dismissed" }));
+      state.deferredInstall = null;
+      window.__moNiDeferredInstallPrompt = null;
+      render();
+      showToast(choice.outcome === "accepted" ? "MO-Ni wird installiert." : "Die Installation wurde noch nicht gestartet.");
+    } else {
+      state.modal = "install";
+      render();
+    }
   } else if (action === "select-video" && state.viewer) {
     state.viewer.videoIndex = Number(actionButton.dataset.videoIndex || 0);
     render();
@@ -1309,6 +1371,8 @@ window.addEventListener("beforeinstallprompt", event => {
 
 window.addEventListener("appinstalled", () => {
   state.installed = true;
+  state.installHint = false;
+  usageStatistics.track("app_installed", `install:${installDevice()}`);
   state.deferredInstall = null;
   showToast("MO-Ni wurde erfolgreich installiert.");
   render();
@@ -1500,6 +1564,9 @@ async function start() {
     render();
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
     usageStatistics.appStarted();
+    saveInstallHintRecord(recordVisit(installHintRecord()));
+    // Beim Besuch an einem weiteren Tag kommt der Hinweis nach kurzer Zeit, nie sofort beim Öffnen.
+    window.setTimeout(maybeShowInstallHint, 8000);
   } catch (error) {
     console.error(error);
     app.innerHTML = `<div class="loading"><div><h1>Das hat noch nicht geklappt.</h1><p>Bitte lade die App neu oder öffne sie erneut.</p></div></div>`;

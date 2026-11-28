@@ -7,8 +7,12 @@ const PUBLIC_ORIGINS = new Set(["https://www.mo-ni.de", "https://mo-ni.de"]);
 const PUBLIC_PATH = "/fileadmin/grundschule-app-test/";
 export const STATISTICS_EVENTS = Object.freeze({
   app_open: "App geladen", video_open: "Video geöffnet", video_start: "Video gestartet",
-  pdf_open: "PDF geöffnet", download: "Download ausgelöst"
+  pdf_open: "PDF geöffnet", download: "Download ausgelöst",
+  install_hint_shown: "Installationshinweis gezeigt", install_hint_open: "Installationshinweis angetippt",
+  install_hint_later: "Installationshinweis später", app_installed: "App installiert"
 });
+const INSTALL_METRICS = new Set(["install_hint_shown", "install_hint_open", "install_hint_later", "app_installed"]);
+const INSTALL_TARGET = /^install:(ios|android|computer)$/;
 const UUID = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
 
 export function isStatisticsSourceAllowed(href, release, excluded = false, automated = false) {
@@ -52,6 +56,14 @@ export function createUsageStatistics({ scope = globalThis, release = STATISTICS
   const titles = new Map();
   let started = false;
   let pending = 0;
+  // Wie die App gestartet wurde: vom Home-Bildschirm, per QR-Code oder im Browser.
+  const start = () => {
+    let installed = false;
+    try { installed = scope.matchMedia?.("(display-mode: standalone)")?.matches === true || scope.navigator?.standalone === true; } catch { /* Tests without matchMedia. */ }
+    if (installed) return "Home-Bildschirm";
+    try { return new URL(href()).searchParams.get("install") === "1" ? "QR-Code" : "Browser"; } catch { return "Browser"; }
+  };
+  const firstStart = start();
   const audience = () => {
     let query;
     try { query = new URL(href()).searchParams.get("audience"); } catch { /* Non-browser unit tests. */ }
@@ -85,7 +97,8 @@ export function createUsageStatistics({ scope = globalThis, release = STATISTICS
   }
   function track(metric, target = "app") {
     if (!enabled() || scope.navigator?.onLine === false || !STATISTICS_EVENTS[metric] || !target || target.length > 500) return false;
-    if (metric === "app_open" ? target !== "app" : ["video_open", "video_start"].includes(metric) ? !target.startsWith("video:") : !target.startsWith("pdf:")) return false;
+    if (metric === "app_open" ? target !== "app" : INSTALL_METRICS.has(metric) ? !INSTALL_TARGET.test(target)
+      : ["video_open", "video_start"].includes(metric) ? !target.startsWith("video:") : !target.startsWith("pdf:")) return false;
     const grade = audience();
     const gradeLabel = { "34": "Klasse 3 und 4", "56": "Klasse 5 und 6", "713": "Klasse 7 bis 13" }[grade];
     let fallback = target;
@@ -94,7 +107,7 @@ export function createUsageStatistics({ scope = globalThis, release = STATISTICS
       hostname: new URL(href()).hostname, language: "de", referrer: "", screen: "0x0", title: "MO-Ni App",
       url: `${PUBLIC_PATH}index.html?audience=${grade}`, website: configuration.websiteId,
       name: STATISTICS_EVENTS[metric], data: {
-        Klassenbereich: gradeLabel, Inhalt: (titles.get(target) || (target === "app" ? "MO-Ni App" : fallback)).slice(0, 500), Kennung: target
+        Klassenbereich: gradeLabel, Start: firstStart, Inhalt: (titles.get(target) || (target === "app" ? "MO-Ni App" : fallback)).slice(0, 500), Kennung: target
       }
     };
     pending++;

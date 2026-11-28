@@ -259,7 +259,7 @@ assert.match(index, /V0\.14/);
 assert.match(index, /location\.protocol === "file:"/);
 assert.doesNotMatch(index, /file-bootstrap\.js/, "A file-opened preview must not redirect to another running version.");
 assert.match(index, /Start-Version-0.14-Vorschau\.command/);
-assert.match(index, /await import\("\.\/app\.js\?v=0\.14\.0-release-4"\)/);
+assert.match(index, /await import\("\.\/app\.js\?v=0\.14\.0-release-6"\)/);
 assert.match(externalView, /Zurück zur App/);
 assert.equal((externalView.match(/Zurück zur App/g) || []).length, 1);
 assert.doesNotMatch(externalView, />← Zurück zur App</);
