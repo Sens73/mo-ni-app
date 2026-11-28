@@ -17,7 +17,7 @@ const iphoneInstall = await readFile(new URL("iphone-install.html", root), "utf8
 
 const desktopRelease = launcher.match(/CURRENT_RELEASE="([^"]+)"/)?.[1];
 const iphoneRelease = iphoneLauncher.match(/CURRENT_RELEASE="([^"]+)"/)?.[1];
-assert.equal(desktopRelease, "v0.14.0-release-4");
+assert.equal(desktopRelease, "v0.14.0-release-6");
 assert.equal(iphoneRelease, desktopRelease);
 assert.ok(serviceWorker.includes(`const RELEASE_CACHE = "${desktopRelease}";`));
 
@@ -57,14 +57,14 @@ assert.match(index, /manifest\.webmanifest/);
 assert.match(index, /noindex, nofollow/);
 assert.match(index, /styles\.css\?v=0\.14\.0-release-6/);
 assert.match(index, /app\.js\?v=0\.14\.0-release-6/);
-assert.match(app, /pdf-viewer\.js\?v=0\.14\.0-release-2/);
+assert.match(app, /pdf-viewer\.js\?v=0\.14\.0-release-6/);
 assert.match(app, /print-manager\.js\?v=0\.14\.0-release-2/);
-assert.match(externalView, /styles\.css\?v=0\.14\.0-release-2/);
-assert.match(externalView, /external-view\.js\?v=0\.14\.0-release-2/);
-assert.match(externalScript, /pdf-viewer\.js\?v=0\.14\.0-release-2/);
+assert.match(externalView, /styles\.css\?v=0\.14\.0-release-6/);
+assert.match(externalView, /external-view\.js\?v=0\.14\.0-release-6/);
+assert.match(externalScript, /pdf-viewer\.js\?v=0\.14\.0-release-6/);
 assert.match(launcher, /api\/health/);
 assert.match(launcher, /PORT_CANDIDATES=\(4213 4214 4215/);
-assert.match(launcher, /CURRENT_RELEASE="v0\.14\.0-release-4"/);
+assert.match(launcher, /CURRENT_RELEASE="v0\.14\.0-release-6"/);
 assert.match(launcher, /listener_dir/);
 assert.match(launcher, /listener_dir" == "\$PROJECT_DIR/);
 assert.match(launcher, /version=\$CURRENT_VERSION&release=\$CURRENT_RELEASE&autoupdate=1&view=home/);
@@ -72,7 +72,7 @@ assert.match(launcher, /open -na "Google Chrome" --args --new-window/);
 assert.match(iphoneLauncher, /MONI_BIND_ADDRESS="0\.0\.0\.0"/);
 assert.match(iphoneLauncher, /iphone-test=1/);
 assert.match(iphoneLauncher, /IPHONE_PORT="4216"/);
-assert.match(iphoneLauncher, /CURRENT_RELEASE="v0\.14\.0-release-4"/);
+assert.match(iphoneLauncher, /CURRENT_RELEASE="v0\.14\.0-release-6"/);
 assert.match(iphoneLauncher, /lan_health/);
 assert.match(iphoneLauncher, /local_health/);
 assert.match(iphoneLauncher, /listener_dir" == "\$PROJECT_DIR/);
